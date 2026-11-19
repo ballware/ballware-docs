@@ -1,0 +1,70 @@
+---
+id: tenant-save-batch
+title: "Save existing or new items in batch"
+description: "Save existing or new items in batch"
+sidebar_label: "Save existing or new items in batch"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1V9tuGzcQ/ZUBX9wCaykXx2n1ljgt4BZJDF+eDD+MyFktYy65JrlSVEH/Xgy51q51aZ0A1osk7nDmzNmZ4eFKRJwFMbkV12TRRnFXCNeQx6idPVdi0q1f4Zw+YpSVKESDHmuK5HnfSlisSUyEVmSjLjV5UQhtxUQ8tOSXohCeHlrtSYlJ9C0VIsiKahSTlYjLhreG6LWdifX6LhtTiB+dWrKFdDaSjfwTm8ZomYCNvwVneW3HFXqPHFNHqsNg3U2/kYwM3nN6UVN6yhluwyiEoiC9bjgSE1ARtFY/tAR9jlA6D7HSAWLmrRCl8zVGMRFtq5VYF+JLIuY57plCcOWWQ9sag1NDmbfkcK5nmPf9n9s/6ikpRQr+uvr6BTJPoKjUVrNFh5+6aEcB7MY5hOhbGVtP+0Bc6lkVw1lF8v4qxfsRLDjH/AB03RiqycYcMiU/QONTFJAcRtsZGDfTch+ca6obg5HCC1BStyZqaFrfuEBASkcwuHRthLiJugfSFfk5+UzOp437lwAYUiQIWhF0vPbmoYBFpWUFEi1MCdpACqLrmQfZhuhqUBgRUEoKIfMMaBXv8FSSJytJQeldnWIf5GQvFZ/R4ozUJ4w4xTDshqlzhtDucHBuFTc5BVhUFCvaylh1nkAHqLNzmC6TTViGSDU4D7oE6awlmVhTFFGbAOgJGu/mWvV7sl/QMZApuWcvsoF/Xt9u0HR+PfPbBtqeDgXQaDaCozqEB3NUwFHjQpx5CkejwwX0gxC6WkClPL/IAwiMk2gqF+IRE3WkpiP6jlwQI+nq/WjOMKJxsx+Ek0baFoj9yR44Df472dwbO0nqErpjYmpob7ib8Fxm20B+kMW+IuyrbG+sCwxh4fwzz5ims/75eJfUOB8zof3geYG541OghCu41kt69qzJO/fOisfW++wUmReFP5x7m86tOeyhPJI3Gm7MZdiQ1KWWkOVFAKPvCeaaFoHbq/FOkmr9oWOC1E8OxE3FQ6hca9KwDkTMwaIiCwHnfGjKCu2MAicQB90zEut1IVCpRA+ai4EkKtEEKkTUkZE+isL1mnc81XFpITTOhnz2vnn1ir+egv/6Nw/Vk1evdx/dWGxj5bz+h1Q2Otk1+uIi/OlaqxLkp89YkgJ91yFyrs6DpQUk3QfawrQTqzXFyrGO5ZGbxGusxESMa4o4ziSOA87p0T6QbL2OyyRtnVaStbFryGqVveGHRos7lqqPpqnhMgl5Q686G7Ln6ix3rSie/r/xRkxEFWMTJuNxlpZxOZqiMQv0NFI09oSmDuPHpfFoQcYc31u3sOOM6Vg6W+pZmwV7Yom18WWvov/I8z3lkwT92xJ/e1eenhy/e//6/fHJu9M3x9O3pTx+I38/fVuenmKJp+JRvfY9NxSf/eoeNdg/HGizfvGgOupNdlRDvjf0Z/O2t+HK5rgaGHVHTL+ST4H+fz+pB6kdmKaDXYcm1hDfpl/u+FpUulQeXXs9vlj4TBHhw8W5KMScfMhO5q+5L7hua0xjsLtpPa/wnzTLpiIjfY/jxqC27LvlElx1PXGbqlsUYnMB6fvirhAsGthoteJ3cuPNes3L+ZLHxaV04PmmNkNkC8HmKid+uewmya/A4fYhu6fl9p1yjqZlQ8FMztHrPE1v79aFqAhTYdyuup1nOdjxNTvv9+7cIdnXZkRcfL26FoWYdndPPhHERHhc8CUWFxybe3ij5tPaShi0sxZnbJt98udfNjdkFw==
+sidebar_class_name: "post api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Save existing or new items in batch"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/meta/tenant/savebatch"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Save existing or new items in batch
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"Id":{"type":"string","description":"The unique identifier for this tenant","format":"uuid"},"Name":{"type":"string","description":"The name of this tenant","nullable":true},"Navigation":{"type":"string","description":"Embedded JSON schema definition for the tenant's navigation structure","nullable":true},"RightsCheckScript":{"type":"string","description":"Embedded Javascript implementation of the tenant's rights checking logic","nullable":true},"Templates":{"type":"string","description":"Embedded JSON schema definition for the tenant's multi purpose edit layout templates","nullable":true},"ServerScriptDefinitions":{"type":"string","description":"Embedded JSON schema definition for the tenant's server side script definitions, which can be used to implement custom data access logic and be referenced from the multi purpose edit layouts","nullable":true},"ManagedDatabase":{"type":"boolean","description":"Indicates whether the tenant's database is managed by the system or if connection details are provided by the tenant itself"},"Provider":{"type":"string","description":"The database provider to use for this tenant, e.g. 'mssql', 'postgres'.","nullable":true},"Server":{"type":"string","description":"The database server address for this tenant, e.g. 'localhost' or 'db.example.com'.","nullable":true},"Catalog":{"type":"string","description":"The database name for this tenant.","nullable":true},"Schema":{"type":"string","description":"The database schema for this tenant, if applicable.","nullable":true},"User":{"type":"string","description":"The username for the tenant's database connection.","nullable":true},"Password":{"type":"string","description":"The password for the tenant's database connection.","nullable":true},"ReportSchemaDefinition":{"type":"string","description":"Embedded JSON schema definition for the tenant's report datasources, which can be used to implement custom reports","nullable":true},"ProviderModelDefinition":{"type":"string","description":"Embedded JSON schema definition for the tenant's custom data provider models, which can be used to define custom database specific objects like views or procedures","nullable":true},"Seed":{"type":"boolean","description":"Indicates whether this tenant should be seeded when saving changes to the database."}},"additionalProperties":false,"title":"Tenant"}}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK"},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

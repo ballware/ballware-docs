@@ -1,0 +1,69 @@
+---
+id: entity-metadata-by-identifier
+title: "Query metadata for entity"
+description: "Query metadata for entity"
+sidebar_label: "Query metadata for entity"
+hide_title: true
+hide_table_of_contents: true
+api: eJyVVU1v2zgQ/SvGnLYAG6VFTrql2SQw+pUm7cnwYSyObTYUyZLDZLWC/vtiRDuxm2KhnGyR75Fvvh57YNwkqBdw6dhwB0sFPlBENt7NNdS79c/EqJHxQzfX5NisDUVQEDBiS0xRjujBYUtQgzmEGAc1BOQtKIj0K5tIGmqOmRSkZkstQt0Dd0GYiaNxGxiGpYBT8C5Rkv33p6fyoyk10QQRBzV8/QgKGu+YHMsuhmBNM0qvfiaB9C+v8Kuf1LBojxIom3KBxPq7DAVrH1tkqCFno2FQIHk4AK68t4ROds6fL//TSS5biytLJfRB7fM9Bfq3ScFi92XM7gT8B0z0I9pJ2DlT+xlDMG5zN6Z2MuuWHigmej35I3UX3uZ2Wp4+eX+fQ5qEvTHNvTWJp6EvcmLfFuHTGNfR6E/Y+Twt0Ett+BXwoucqu0aaaJqiO0amV2RzxN8SJu9ewfpObbDINEXToAC1NhIC2puDGVujTaSADQt2nKTdDAyDsM5O370c8R8OM299NP/SOH9np2cvQV88z658dhrknOO9b5liN2t39jVb+zijcquClnjrxeM2NBqCmFQNlYCrAqr2xLWPu5X+2d0GUJCoyXEc5EUP3uhGvNQHckaXG/A8GFiKoe2hd2JJJZeF8OxNgdxcX3jnikUdfY8TDVvmkOqqKiq4O1mhtY8Y6URTFQltm6r9UnXySNa+vXf+0VVF09vGu7XZ5GLwY76MW/tRw64we/ZMKjQ7v5mDApn0ks+Hd1KG4BO3ODbPzvP/L89HFXkKlukfroJFM9pnLn5VarAYEwcKDkt1XAdQUB+8M0sFW59YqH2/Kv43DLL8S4RBvVgqeMBoSqcuetAmyX/91Ji/qXx6V+Cv292z9WYG6s/qd4voRNcD2ixfoOCeuuP3cFgOCraEmuKoogDOm4YCH1BfvGTSP0/ten35HYbhP0Qasys=
+sidebar_class_name: "get api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query metadata for entity"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/meta/entity/metadataforentity/{identifier}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query metadata for entity
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"identifier","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Meta":{"type":"boolean"},"Application":{"type":"string","nullable":true},"Entity":{"type":"string","nullable":true},"DisplayName":{"type":"string","nullable":true},"BaseUrl":{"type":"string","nullable":true},"ItemMappingScript":{"type":"string","nullable":true},"ItemReverseMappingScript":{"type":"string","nullable":true},"KeyColumn":{"type":"string","nullable":true},"Lookups":{"type":"string","nullable":true},"Picklists":{"type":"string","nullable":true},"CustomScripts":{"type":"string","nullable":true},"GridLayout":{"type":"string","nullable":true},"EditLayout":{"type":"string","nullable":true},"CustomFunctions":{"type":"string","nullable":true},"StateColumn":{"type":"string","nullable":true},"StateReasonColumn":{"type":"string","nullable":true},"Templates":{"type":"string","nullable":true}},"additionalProperties":false,"title":"MetaEntity"}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

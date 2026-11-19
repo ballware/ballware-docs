@@ -1,0 +1,69 @@
+---
+id: statistic-by-id
+title: "Query existing item"
+description: "Query existing item"
+sidebar_label: "Query existing item"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1VMFu2zAM/ZWApw1Q63ToybeuaIdga9et6ynIQbGYWK0sqRLVzjP87wPlJE2aAssG7GTIeo+kHh/ZAcllhHIKtyRJR9IVzAQ4j0GSdnaioHy5+thOFAjwMsgGCQMTO7CyQShBK7SkFxoDCNAWSnhMGFoQEPAx6YAKSgoJBcSqxkZC2QG1nqmRgrZL6HuxFe1fowhYuNBIghJS0gr6fsbk6J2NGBn/YTzmj8JYBe35mVDC188goHKW0BLfSu+NrrIIxX1kSLef0s3vsSKWJLBkpIcErNofyxJwYUlT+xbUJmPk3ODw1l7A5EXcQ+DXWcQDgFfSe22Xt1mIgxjnKZJrBkI8iHGJVNW3j+YvwIeX80W2Lh0GvULa7t3cOYPSsutAKqW509LcbDVyIU1EAaSJo2xNSN8z6XR8sm+jOysT1S7oX5h7fDo+3QddOxpdumRVTr57943tPsKfnMkuR5qwAQENUu14FpeY7SaphhKKBkkWcV1XMW/z2ESsUsjOmnbgtKp4vp1Hm2+Zc+Y1zHgu1tBbdvZg3oHwYnGPdqLOnbWD03fOd8FACTWRj2VRDBuA2uO5NOZZBjxWWASUponF+ldx/IzGHD1Y92yLoaajytmFXqZh42RJtF24XMNK+jV7xD0cnd1MQMAThjhI9nTCSnsXqZF5Tlc75G0pd+TePJPwJxXeSG05VgrZrYPM0ywZ67oxgIAs9UxA7SIxpOvmMuJdMH3Pv4elxforHdmFamOnV/k3KwfefV9tuPcjEG/X9YDt6037JE1iIPDy/C/JdpLM+BD0MFjTWS+gRql4LU27FeOsqtDTFmtvlXKUjaM/XfyAvv8NstFAAQ==
+sidebar_class_name: "get api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query existing item"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/meta/statistic/byid"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query existing item
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}},{"name":"id","in":"query","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Entity":{"type":"string","nullable":true},"Identifier":{"type":"string","nullable":true},"Name":{"type":"string","nullable":true},"MappingScript":{"type":"string","nullable":true},"CustomScripts":{"type":"string","nullable":true},"FetchSql":{"type":"string","nullable":true},"FetchScript":{"type":"string","nullable":true},"Layout":{"type":"string","nullable":true},"Meta":{"type":"boolean"}},"additionalProperties":false,"title":"Statistic"}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

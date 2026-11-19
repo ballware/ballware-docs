@@ -1,0 +1,70 @@
+---
+id: tenant-create-or-update-schema-for-tenant
+title: "Create or update schema in tenant database"
+description: "Create or update schema in tenant database"
+sidebar_label: "Create or update schema in tenant database"
+hide_title: true
+hide_table_of_contents: true
+api: eJyVlN1v0zAQwP+V6J5Acpd9dpA3mECaENrE1qeqD9f40hoc29jOSonyv6Oz03aDwURekpx937+7HiKuAlRzuCeDJsJCgHXkMSprriVUo/zKE0a68TMnMdJdvaYWP1o/Kglw6LGlSJ5t9WCwJaggpuNrCQKUgQocxjUI8PS9U54kVNF3JCAkc1D1ELeO9UL0yqxAQGN9ixEq6DolYRgWWZlCfG/lljVqayKZyJ/onFZ1irz8Gqxh2cH0wekcbr19UJI8CLgjr1CrnyRzLp+tJM1VGEOxy69Upww91yUqCmxtFshzeV4MWRycPXPZdFrjUlOuxPC3cF7WHASglIpzR337KNQGdSABUUW+O3Yz9w8GVnvajCQIzpqQ8zw9PuaXpFB75dg8VHDzifM6Pz7582hmsItr6zkDYPNPjzNGhfVFl0Aqcn8KZYrMSiEx4hIDgYCW4toygs6GzFhcQwUlOlXm22Wd7FmfrWVjjfXjab/jbwABgerOq7hNfFolawbBOjKK8VyRIa/qd07Bginb3U6VyqXIOvtOsOq1vLLGZD6e/M+8hgrWMbpQlaWSZKKK26Mlar1BT0eSSk+o21DuROXRhrSefDN2Y8oc1qS2plGrLg9jqiZj/eUwAB9+YOu4rwcg4azBNxfN9HxycXlyOTm/mJ5OlmdNPTmt307PmukUG5zCYyoPTP0Fvt2Fgae4sakGI0676ItMVPHu9hoEPJAPud8PJ6zF/WsxzeO4GP6LgycI7esf6UcsnUZl2EXn05RkROaAToEY1w8I+CcmIKDaL6qFgDXTVs2h79n/zOthYPH3jjzDsxDwgF7l2Zv3IFXgb7kftd/C3S8oePVlHLXXBYjn0xiFaLZcRtQd/4GAb7R9vE6HxSBgTZj6N+/H46vsaXLPRg7qf6xF5ns/W7c3d/cgYDmu09ZK1vG44T2Nm+zepmzSFCRZDxrNqsMV3802+fkF3tAv9g==
+sidebar_class_name: "post api-method"
+info_path: api/generic-schema/ballware-schema-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create or update schema in tenant database"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/tenant/createorupdateschemafortenant/{tenantId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Create or update schema in tenant database
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenantId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"required":["Provider","SerializedTenantModel"],"type":"object","properties":{"UserId":{"type":"string","format":"uuid"},"Provider":{"type":"string","nullable":true},"SerializedTenantModel":{"type":"string","nullable":true}},"additionalProperties":false,"title":"TenantSchema"}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK"},"401":{"description":"Unauthorized"}}}
+>
+  
+</StatusCodes>
+
+
+      

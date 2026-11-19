@@ -1,0 +1,70 @@
+---
+id: subscription-save-batch
+title: "Save existing or new items in batch"
+description: "Save existing or new items in batch"
+sidebar_label: "Save existing or new items in batch"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVVFz2jgQ/iuefbqbsWMgQFq/pZ1mJnN3aaYkL8fwsFhrUCtLriRDOMb//WYtwECYlrwQS9+udrXf92kLHhcOsilM6rnLray8NBpmMZiKLPLHo4DsZHeCK/qEPl9CDBVaLMmT5Rxb0FgSZCAFaS8LSRZikBoy+FmT3UAMln7W0pKAzNuaYnD5kkqEbAt+U3Go81bqBTTNLIDJ+U9GbBiRG+1Je/4Xq0rJvC0v/e6M5rV3qdBa5DOlp9IdrZv5d8o9F2+5SS+p3eU+z8uIoTC2RA8Z1LUU0MTw6sheCf0HpboE1LVSOFcULqGJYd/hb4H33mO+LHe3sIPPjVGEGk72H6Sip3YaV6R9Mjyt/DDuK3p7aIej8+O6pfa0aGd+gEvtbwdtZbmXK7pc9d/o/IS0mHgsq1+eLtBT4mVJl7rgNF+sNfaKnpsYUAjJDaN6PuJBgcpRDF56xp6qomk47pTC7YKrjHaBRYNej38EdWEZfP2L2xz2+u+3XjXWfmms/I9EAA3fg56Mjx5MrQVwAad7rMaI3qTzUi8iYyNN66ilfCR1NN/ptCS/NCzkyriW+uiXkEEqTF4zXVJ31GjqcEX7SEd5baXftPo2UuRsFqYiLQXEsI+/ryTMWLN7+ITVGK4kBHXyq0g/is9G66DCk+9XqyCDpfeVy9I0+Ijf3MxRqTVauhGUWkJVunS/lN6sSankhzZrnYa6ktzoQi7q4F/tnbFJfOvs5MsblhUPeBp0D7cFfhgV42EyuuvfJcPReJDMb4s8GeQfx7fFeIwFjqET/7X44AAdC4PQu+9jPQdDvKTgDn8u1GvrOFJrr9NiOPFMfTDoDYZJ7y4ZfHzpj7JRPxt8uOnd9f+FE4UdjHrGDl+YdsA70exHE+3ZEdWObHT//AgxrMi6wNxVnwnPhCyxdfDd63Edo09UcCCXpzefVgplayy1bf03kH16ICuz+ljXMXSEn8WwZIlkU9hu5+jo1aqm4eXwhDFjhHRsJeLgFme1HB4q+OPbziz+jCC+XOMP2py/mCtUNQPby12hlcG4prMmhiWhINuWESI/h8OSF07exb57ITnXwQWev05eIIb57t0pjeAYi2t+onHNZ7MwObqVcLu2BYV6UeOCsSEn//0Pn1bM/Q==
+sidebar_class_name: "post api-method"
+info_path: api/reporting/ballware-document-user-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Save existing or new items in batch"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/document/subscription/savebatch"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Save existing or new items in batch
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"UserId":{"type":"string","format":"uuid"},"Mail":{"type":"string","nullable":true},"Body":{"type":"string","nullable":true},"Attachment":{"type":"boolean"},"AttachmentFileName":{"type":"string","nullable":true},"NotificationId":{"type":"string","format":"uuid"},"Frequency":{"type":"integer","format":"int32"},"Active":{"type":"boolean"},"LastSendStamp":{"type":"string","format":"date-time","nullable":true},"LastError":{"type":"string","nullable":true}},"additionalProperties":false,"title":"Subscription"}}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK"},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

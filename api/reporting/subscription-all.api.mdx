@@ -1,0 +1,69 @@
+---
+id: subscription-all
+title: "Query all"
+description: "Query all"
+sidebar_label: "Query all"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVE1vGjEQ/StoTq3kZEma095olVRR2/Qj5RRxGNYD68RrO/aYlKL979XsAoGAKrigtd+M37x5MytgnCcoH+A+T1MVTWDjHUwU+EAR5eNWQ7l3O7IWFASM2BBTlOgVOGwISjCaHJuZoQgKjIMSnjPFJSiI9JxNJA0lx0wKUlVTg1CugJdBQhNH4+bQthMBp+BdoiT3l8Oh/Gl65VfC9y+goPKOybHcYgjWVB3h4jEJZHX4BMaIwsUwNWnn3E8fqWIpKkrZbPqHpfK39BTMfGyQoYScjYZWwThRPBH6DY09BnTZWpxa6sVpFXz0enkScMSMVd2sVVjDp95bQgd79zfG0l3XpRPS3nnpYrU1wAm13UiHyVW7vI1jmnde2MKN4w+XHbOKzYKOs/6Kie/J6XvGJvz3dY1MZ2waOlaFpLmO0ccTam4VoNZGCkb7Y8cHM7SJFLBhwe7PSSs/BVfDi0OHjh1mrn00f6nT52p4dQi68zy48dlpkDz7dz9lcgbYTVtDXHsZxDl1PkWuoYRC+ypLb4u0w6roQxJVORpeduPpja5kyn0gZzQo2ESOgoGJjNwGfi9D0/u/D3qdkkDuVn/yzvXDsvc9jhZKqJlDKouiXwO8PJ+itS8Y6VxTEQltk4rNUXH+QtaePTn/4oqe11nl3czMc794OkmMm/mOw1r+TfRgU8AgJ4qD0Y9bULCgmHrtFhciefCJG+x2wXo/7Wq6p/a2SqY/XASLpjNijt289no/bFUTeXd9oEBSThTUPrEAV6spJhpH27Zy3C9BaYQ2SUynt756w2K70uDdr/XGfD8AdZzdEy3f7twF2ixAkJ4uMJre4g+TVkFNqCl2NPrIUVVR4J2ogy0qWbbe+3z9G9r2Hw0/JBg=
+sidebar_class_name: "get api-method"
+info_path: api/reporting/ballware-document-user-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query all"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/document/subscription/all"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query all
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"UserId":{"type":"string","format":"uuid"},"Mail":{"type":"string","nullable":true},"Body":{"type":"string","nullable":true},"Attachment":{"type":"boolean"},"AttachmentFileName":{"type":"string","nullable":true},"NotificationId":{"type":"string","format":"uuid"},"Frequency":{"type":"integer","format":"int32"},"Active":{"type":"boolean"},"LastSendStamp":{"type":"string","format":"date-time","nullable":true},"LastError":{"type":"string","nullable":true}},"additionalProperties":false,"title":"Subscription"}}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,69 @@
+---
+id: subscription-active-by-frequency
+title: "Query active subscriptions by frequency"
+description: "Query active subscriptions by frequency"
+sidebar_label: "Query active subscriptions by frequency"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VUtz0zAQ/iuZPcGMWpfCybeUaZkMUAohp0wOG2uTqJUlV1qnGI//O7N2Hk4bIFzIxZH2/e1+qxoYlxHSKYzLecyCKdh4BzMFvqCAchhpSA+kw4zNmq6qm0CPJbmsAgUFBsyJKYivGhzmBCkwOXQ80qDAOEihQF6BArEzgTSkHEpSELMV5QhpDVwVYhc5GLcEBQsfcmRIoSyNhqZRO9eLXvB/8m0c05JC37lx/PYSmmYm5rHwLlIUi8uLC/lo2gOTwpePoCDzjsmxSLEorMlapJL7KCr1y6AYAraZMuWxd+/n95Sx4BcEbzZdYIH8r2AomEQKJ6p+RmOPKbrSWpxb6uBqFFx5XZ2kOGTGbJVvUNioz723hA4O5DfG0m3btRPc3no2iw2eJ9a2n8NTuqygm9/jWX/CyGNyesyYF3+MrpHpjE1Ox6oQN9ch+HBCzY0C1NpIwWjvenOwQBtJARsW3UOCNvJT8O7izcsJnTgseeWD+UktZ56Jv5YUqgG2IAxiz2kczKtBn1c58coL+5fUzqgwLIVE+6yUviZ946RzOK86zqPTO09Jvd0DTVLvbhtQECkrg+Gq3Rne6EwWkS/IGVkZ2zjDwsBMyLlVHwu9OqZ0Rns+FeRG+r13rqPVwXkSLKSwYi5imiRGk2PD1fkcrX3CQOeakkBo85hsr5LzJ7L27MH5J5d0eZ1l3i3Msux2YwuvcQvf5rBp1NZ6sC1gECmsTUaD4d0IFKwpxK4V6zcyc4WPnGO7ODbL7fQWHbR2BwPTD04Ki6ad6TK01O/aN93BKvj3R0rB71sICtLeMk/3gpmClY8sjut6jpEmwTaNXD9KEZBOZwrWGEw38dMatInyX+8G/FkNu90Kr75tlvnrAajjtW33q5MU12hLOYGCB6r67488HP8x7h6eZtYoWBFqCm3xnXyYZVRwz/LFIyLjvqPfh+vv0DS/AB/7q1A=
+sidebar_class_name: "get api-method"
+info_path: api/reporting-service/ballware-document-service-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query active subscriptions by frequency"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/document/subscription/activebytenantandfrequency/{tenantId}/{frequency}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query active subscriptions by frequency
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenantId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}},{"name":"frequency","in":"path","required":true,"schema":{"type":"integer","format":"int32"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"UserId":{"type":"string","format":"uuid"},"Mail":{"type":"string","nullable":true},"Body":{"type":"string","nullable":true},"Attachment":{"type":"boolean"},"AttachmentFileName":{"type":"string","nullable":true},"NotificationId":{"type":"string","format":"uuid"},"Frequency":{"type":"integer","format":"int32"},"Active":{"type":"boolean"},"LastSendStamp":{"type":"string","format":"date-time","nullable":true},"LastError":{"type":"string","nullable":true}},"additionalProperties":false,"title":"Subscription"}}}}},"401":{"description":"Unauthorized"}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,69 @@
+---
+id: page-all
+title: "Query all"
+description: "Query all"
+sidebar_label: "Query all"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVU1v4zYQ/SvEnFqAG2WLnHQLFtsi/cimzeYU+DAWRxY3FKmQQ6euof9eDGkndhKgLrC+COZ8vDeP5OMWGFcJ2nu4wRXBQkOYKCLb4K8MtGX10jnQMGHEkZiiZG/B40jQgjXk2faWImiwHlp4zBQ3oCHSY7aRDLQcM2lI3UAjQrsF3kxSmjhav4J5XkhymoJPlCT+0/m5fAylLtpJqEALX34DDV3wTJ4litPkbFeINt+SpGzfQmCMKFws05gO1sPyG3UsQ0UZl20Flolf09OveHwdSGVvHzOpl9lVH6LiwSbF5NFL5z7EERlayNkamDVcvSh1EshB99DX5hOuSOVEpuBF6imS76xfHYStVzyQOpAHNPjsHC4d1b2YNVyX3TuFhuzzMQEOKg3h6USk33ETMv831udxScaQUb/efrlWhnrrrYQqNilX+hwxeRcuhIc8pe+AVxtVua3fjx7cEuN7wDe2e3A28XeAnvatTgb/lBOH8bZg/C8CuMZa9Q6NrjRVtfBULrMGNKb0QXdzcLt6dIk0sGXJrW4zy0/DxfnHt/f9zmPmIUT7D5Xrc3F+8TbpOrD6OWRvQPocx/4UH1JYvGskHoLY2YrKrUceoIVmJMZG5mlqWqIuR8ubYnDBmk58MUzkralN8HKysBDD2qfeiuVU96gFLx4zkb8yn4L31WqO/t9FBy0MzFNqm6Zedd6cLdG5J4x0ZqiJhG5MzX6pOXsi5z48+PDkm8rpQxd8b1e52nWRwPo+FA47mffV6g9iVJc3V6BhTTFVidYfRdkpJB6xGOjO1A+lOxL1eTimv7mZHFovHbJMs93Jel+EKiqXKyptFhqGkFiC2+0SE91FN8+yXF8L0dvYJOfIPB+VV8jP3g8//LV7Wn5UoN9n9ECb14/TGl2WRJDtW2O09dTeL2YNA6ERX77f7iovu44mPqh689xIl+dj9cvnrzDP/wLxrIja
+sidebar_class_name: "get api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query all"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/meta/page/all"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query all
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"Id":{"type":"string","description":"The unique identifier for this tenant","format":"uuid"},"Identifier":{"type":"string","description":"The identifier of this page used for referencing this page in the application","nullable":true},"Name":{"type":"string","description":"The name of this page to show in the application","nullable":true},"Layout":{"type":"string","description":"Embedded JSON definition of the layout of this page","nullable":true},"Lookups":{"type":"string","description":"Embedded JSON definition of the lookups used in page toolbar","nullable":true},"Picklists":{"type":"string","description":"Embedded JSON definition of the picklists used in page toolbar","nullable":true},"CustomScripts":{"type":"string","description":"Embedded JavaScript definition of the custom scripts used in page toolbar","nullable":true}},"additionalProperties":false,"title":"Page"}}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

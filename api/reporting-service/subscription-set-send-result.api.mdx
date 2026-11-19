@@ -1,0 +1,70 @@
+---
+id: subscription-set-send-result
+title: "Send send result for subscription"
+description: "Send send result for subscription"
+sidebar_label: "Send send result for subscription"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VMFu2zAM/ZWApw1Q63bYSbet2CHYoUXTnoIcGIuJtdqSKlFJM8P/PlBO0qTdgB2G+WBblPhEvkeyB8Z1Aj2HWV6mOtrA1jtYKPCBIspiakCf7c6IZ+TMPaXcMigIGLEjpig4PTjsCDQwOXQ8NaDAOtAQkBtQEOk520gGNMdMClLdUIege+BdEL/E0bo1KFj52CGDhpytgWFQR2j770AXozMl/urNTjxq75gcyy+G0Nq6kFD9SN6J7U/QwzC8jaMYUvAuURKHT1dX8jH0yrOG2+8wKPh8df1+69Fh5sZH+5NK/m+2RYNJklcsSkxWPk7SqYoKOuLGi37Bp1EqbkBDZXydO3JcnZ6vErHgjXBVf1BwqHprBlCQqM7R8q7I7K2ppW58IFcEOWB+CRYWQuzh+EwoGykYnY7cie/U3HjnqJbwztaPsQUNDXNIuqqsIceWd5dLbNstRro0VEXCtkvVwVRdbqltL56c37pqjOui9m5l13ks5cKiKHn/qvm3F+xCe1Yk1q18idJy2TjgTw4pThLFja1p8uVuCgo2FNOoyeZa1BSyOyzlsq/Yv9HqTN0jRUwvXIUWrRPkLJz0exnnR8pFm3OwMylBgT5pR22NNHgjJaHn0PdLTPQY22EQ83OmKAovFGwwWlwKBfMejE3yb0CvsE30Lt5j38CH+30bfJyA+n0eeyO6ndCHbZYVKHii3enokJ7/j/fKRFgMChpCQ7FkPW7cjHdcPIj7q+O7+SBVf2y5u9vZAyhY7udK5434RNzKwMLteLEveZTeKLYeWnTrjGs5O2LK8wtjZfWd
+sidebar_class_name: "post api-method"
+info_path: api/reporting-service/ballware-document-service-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Send send result for subscription"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/document/subscription/setsendresult/{tenantId}/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Send send result for subscription
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenantId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}},{"name":"id","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"string"}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK"},"401":{"description":"Unauthorized"}}}
+>
+  
+</StatusCodes>
+
+
+      

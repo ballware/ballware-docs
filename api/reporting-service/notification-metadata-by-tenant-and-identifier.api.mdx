@@ -1,0 +1,69 @@
+---
+id: notification-metadata-by-tenant-and-identifier
+title: "Query notification metadata by tenant and identifier"
+description: "Query notification metadata by tenant and identifier"
+sidebar_label: "Query notification metadata by tenant and identifier"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VE1P20AQ/SvWnFppwYFy8o1+KqpKaSmnKIeJd5Is2LtmdxzqWvvfq7Gd4BBUEIee7N2dz/feTAuMqwDZDC4cm6XJkY2zMFfgKvLdYaoh23v9RowaGd83v8ii5XOrp5qsGJAHBRV6LInJS9wWLJYEGXBnO9WgwFjIoEJegwJPd7XxpCFjX5OCkK+pRMha4KYSv8De2BUoWDpfIkMGdW00xKh2oc04+2uCxzgX41A5GyjI++lkIh9NIfem6jDJ4PtXUJA7y2RZXrGqigGT9CaISXuYwi1uKGeBxQukbPoEguqzPSoYAfuEua2LAhcF9f1FBRcdIC8w/OjyuqSOj2fLeML9ipHHiYxlWnXw71yN5XenMEp1KbIIL6guKkCtjcCKxeUItSUWgRSwYbHdV2yM4nc2OTmk7dpizWvnzR/qMD2bnB0aXThOPrvadsp69PajJt8kdpQuKYcZSBZN0is7QauTPSWWxGsnw7Oijn/RZAapHvBIxwH3Dtvgi6YPjVY/BE7b7STFtH24jqAgUF57w003ds7oXObaVWQ7Erd5zysDcxH81vxKJNursnd60G5Fdqo/OGt7Ce+dr30BGayZq5ClaV8JN8cLLIp79HSsKfWERRnS7VV6fE9FcXRr3b1N+7qOcmeXZlX7LYsywEvX1TDQvPVOtg0kgfzG5JScX05BwYZ86HnanAi9lQtcYjeMw354JX97IthhwvSb06pAYyVZLSC0A7ezHcYi6rE694//5BcUZKNdmY1e5grWLrAkatsFBrr2RYxyfScdQjabK9igN/0wzVrQJsi/3s3Oo552ywze/Bx25dsE1NO9DpdoG0Edi1pOoOCWmvF+l8X8H/OO8InzqGBNqGVbztrB4DzPqeKR68HalmHYDeuXT78gxr+LZHr9
+sidebar_class_name: "get api-method"
+info_path: api/reporting-service/ballware-document-service-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query notification metadata by tenant and identifier"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/document/notification/notificationmetadatabytenantandidentifier/{tenantId}/{identifier}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query notification metadata by tenant and identifier
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenantId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}},{"name":"identifier","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Identifier":{"type":"string","nullable":true},"Name":{"type":"string","nullable":true},"DocumentId":{"type":"string","format":"uuid","nullable":true},"State":{"type":"integer","format":"int32"},"DocumentParams":{"type":"string","nullable":true}},"additionalProperties":false,"title":"Notification"}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

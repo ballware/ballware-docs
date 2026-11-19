@@ -1,0 +1,69 @@
+---
+id: job-by-id
+title: "Query existing item"
+description: "Query existing item"
+sidebar_label: "Query existing item"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1VE1v2zAM/SsBTxug1unQk2/d0A7ZsPVrOQU5yBYTK5UlV6Kaeob/+0A5SZsmwIoBOxmWHvnIp0d2QHIZIJ/BN1fAXIBr0EvSzk4U5Hz4uZ0oENBIL2sk9AzuwMoaIQet0JJeaPQgQFvI4TGib0GAx8eoPSrIyUcUEMoKawl5B9Q2HBrIa7uEvhevsv1rFgEL52tJkEOMWkHfzzk4NM4GDIz/NB7zR2EovW64Qcjh+jsIKJ0ltMS3smmMLlP72SowpDukdMUKS2JJPItFeiBgvf5aloD7skIVDfpjaBuNkYXBod1ewORF3/fAr9f2OHK/jGORSZLwLpY7DNHQu6D3JAkZiTbW7LKpfbBubUHAbcSIXMvE3ni39BgCCLjSVocqnV967zxb8i0LaWIKNmfKH9hEIJXS3IM0N6/eZSFNwL0Q6HuGn4/PDv0wtTJS5bz+jemxzsfnh6CfjkZXLlqVaPfvbtm3I3zWgbRdjjRhDQJqpMrxOC0x+UZSBTlkNZLMVq7IijY9SsAyek1tGjCnVcmCuQZtumX0RaNhztbeQtlN9eC/IeDFpQ3aifrirB3Muvc/9QZyqIiakGfZMMTUnhbSmLX0eKow8yhNHbLtUXa6RmNO0uNlQ00npbMLvYzDukhiaLtwqYaN3Nvo0Q8kObq4mYCAJ/RhEOvpjDVuXKBaplHbrIHjIu4JvWuT8JmyxkhtOVfkvrqNwLMkGQhYuQIEJJHnAioXiC+7rpABp970PR8PG4eVVzqwh9XOPG+Yd/sCPtxt1tPHEYjjFT1g+3ZNPkkTGQi8+f4L2R7JnH+8HsZyNu8FVCgVr4lZt4m4KEts6FXUwR7kLDsXf738BX3/B1T2H7w=
+sidebar_class_name: "get api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query existing item"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/meta/job/byid"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query existing item
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}},{"name":"id","in":"query","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Scheduler":{"type":"string","nullable":true},"Identifier":{"type":"string","nullable":true},"Owner":{"type":"string","format":"uuid","nullable":true},"Options":{"type":"string","nullable":true},"Result":{"type":"string","nullable":true},"State":{"enum":["Unknown","Queued","InProgress","Finished","Error"],"type":"string","title":"JobStates"}},"additionalProperties":false,"title":"Job"}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

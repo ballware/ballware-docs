@@ -1,0 +1,69 @@
+---
+id: generic-all
+title: "Query all"
+description: "Query all"
+sidebar_label: "Query all"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9U01v2zAM/SsBTxugRunQk27B0BXBgH3nVOSg2EysVZZUiU7mGf7vA/0Fp9llQDFfDJt8j+R7ZAOkjwnUIzygw2gy2AnwAaMm490mBzUG1taCgKCjLpEwMqYBp0sEBToEa7IOAgKMAwVBUwECIj5XJmIOimKFAlJWYKlBNUB1YGiiaNwR2lZMbOjIUP0KRCZnqoPBOJI9Vxjrf2LbcXIK3iVMHH+3WvErx5RFE7qJFXz+CAIy7wgdcXSmh/yZOKW5LqFj1N2UhCVTt/wIuFvdXhfYOl1R4aP5jTl0SXfXSZ88LT74yuUswovYVx58oTsPS6TCs7NHpM5SKkCBPPY+y2bWfSub3o1W9tiEWRXZHXbfmzzj1fEBnclBwECxDgZ2rNyY/Z1n7/XrMZMIDN3k771zmHEzF9/baEFBQRSSkrJ3k+rlXlt71hGXOcqI2pZJjr/k8ozW3jw5f3ayb+sm8+5gjlW/0Z00xh1814Mhy02M6MWw6ov1lw0IOGFMvXqnWxY9+ESl7swcFmyu6oXe03yEv0gGq41jhooHagbFH0e5QIC6vCA1nQBz7wQUPhEjmmavE26jbVv+3a8zW5GbpPeWF/qgbcKrdqblhDffht1/uwDx9zafsH55PSdtK04EtvWko+Fqr195PA1Xz2uOHc1F4jP/j6UHQ9pdK6BAnWPshu+D6yzDQDPY1f2zatPZPdz/gLb9Azoc3yo=
+sidebar_class_name: "get api-method"
+info_path: api/generic/ballware-generic-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query all"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/generic/{application}/{entity}/all"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query all
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"application","in":"path","required":true,"schema":{"type":"string"}},{"name":"entity","in":"path","required":true,"schema":{"type":"string"}},{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"array","items":{}}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

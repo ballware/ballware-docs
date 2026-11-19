@@ -1,0 +1,59 @@
+---
+id: entity-select-list-rights
+title: "Query list of all defined entity rights"
+description: "Query list of all defined entity rights"
+sidebar_label: "Query list of all defined entity rights"
+hide_title: true
+hide_table_of_contents: true
+api: eJyVU01P3DAQ/SvRnA2BqqfcEELVql+0lNNqD7PxZDPg2MGeLN1G+e/VOMvCQg80lyTOm5fn955HENwkqJZw5YVlBysDoaeIwsEvLFT79RtyVMsXTvKTN60kMBAp9cEnSlCN8OHsTG+WUh2512Go4PtnMFAHL+RFv2LfO64zdXmXFDJCqlvqUJ9k1xNUgDHiDgywUJepIz0MHMmqyIUlL9wwRRW6nwjrO6oFDPRRpQvPklT9gTVJZL8BA02IHQpUMAxsYTIvKf8B94NzuHYElcSBJgPfsKN3AS+DF2T/LtrJAFrLagy66xe7aNAlMiAsit1nkRN4DuTKS9zBpJeBj2fnb3O49ThIGyL/IQuKOv78Y6C4KxwnKUJToHOFpYY92YLy/4r4FHlH0gYtxYay3ygtVFB2JFjO2DJlXUp2mEpUD1G7VS1HCGxrTTL05NnOnHjRM6ym1TP0RlsxxzgPHCzUuYW9DN7PmR+930YHFbQifarKku2s6XSNzj1ipFNLZSR0XSqflsrTR3Lu5N6HR1/Omk7q4BveDPMZyH6xb0LWsM/habr4SoLFxfUCDGwpptnP7bn2qg9JOswd97kz/+HzUT6HrQv9lrJ3yF75B93ruM9gmW0EAzNTNv1VDisDbUii2HFcY6Lb6KZJlx9UF1TLlYEtRp57uVxNBlpCqwVejnBPO6jgoq6pV9u36IZ8Wl8faU3xUJNPV79gmv4CZkaJSg==
+sidebar_class_name: "get api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query list of all defined entity rights"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/meta/entity/selectlistrights"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query list of all defined entity rights
+
+<ParamsDetails>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"array","items":{"required":["Identifier"],"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Identifier":{"type":"string","nullable":true},"Name":{"type":"string","nullable":true},"Container":{"type":"string","nullable":true}},"additionalProperties":false,"title":"EntityRightSelectListEntry"}}}}},"401":{"description":"Unauthorized"}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,69 @@
+---
+id: tenant-drop-entity-schema-for-tenant
+title: "Drop entity schema in tenant database by identifier"
+description: "Drop entity schema in tenant database by identifier"
+sidebar_label: "Drop entity schema in tenant database by identifier"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9U8Fu2zAM/RWDpw1Q63TYSbdizYBgAzZs7anIQbGYWKgsqRKdzDP87wMtJ3Xa7rAedjJMio+P75E9kNolkPdwi045grUAHzAqMt6tNMgpfhN9WDoy1P2samzUZx+nAgFBRdUgYWScHpxqECTQmF5pEGAcSAiKahAQ8bE1ETVIii0KSCMcyB6oC1yXKBq3AwFbHxtFIKFtjYZhECdoo9GR2RqMbwSfg7UJ4xPLxxZjB/9Ca81tU/AuYeL3HxYL/mhMVTSBZQQJ377AIODj4upl6s6plmofzW8cp3yWZuELHJUvMqnCuCKLW2hFaqMSFpuuOBOlQao9u6fRIuFoEtUgoVTBlLm61NGHjJyBtz5Omf5o3lD2T7gD64JVGw11o9Pe6IpXh2EMS7hDh9FU18HAmoU5vh53JsuTa06yculKf/LOYcW7dPZ/Fy1IqIlCkmWZiVB3uVHWHlTES41lRGWbVB5D5eUBrb14cP7gykzrovJua3ZtXulRYeO2fuRgyDKJY3WRd7u4/r4CAXuMKXuwv2L3gk/UKMeF0+q8zZszf09CEP6iMlhlHPdqefJ+Mu0eVDAgpotihL8ZBwLk7O7krO9aQO0TMVrfM6+7aIeBw3nl2U9tktpYPp+tsgkFPGA3v5C9si1zBfZ2r6Lh169XPhuy8o7Q8dW8+zHd6PuCR3pt+CmoXDfveWRzmo9v+D/2nWk5rIfZid0svy5vlzAMfwDFS9RV
+sidebar_class_name: "delete api-method"
+info_path: api/generic-schema/ballware-schema-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Drop entity schema in tenant database by identifier"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/api/tenant/dropentityschemafortenant/{tenantId}/{identifier}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Drop entity schema in tenant database by identifier
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenantId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}},{"name":"identifier","in":"path","required":true,"schema":{"type":"string"}},{"name":"userId","in":"query","schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK"},"401":{"description":"Unauthorized"}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,69 @@
+---
+id: attachment-drop-all-for-tenant-behalf-of-user
+title: "Drop all attachments for tenant"
+description: "Drop all attachments for tenant"
+sidebar_label: "Drop all attachments for tenant"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9k0Fv1DAQhf9KNCeQ3KZFnHxbaJFWIBXR7qnaw2w82Vh1bNeebFmi/Hc0SXa7pQguiFMSe+bl+XueHhi3GfQ9LJixalryDGsFIVJCtsEvDeiTvasU4sK5TyHdkUfPH6hBV9/Uq0wJFERM2BJTEskePLYEGngsXRpQYD1oiMgNKEj02NlEBjSnjhTkqqEWQffA+yh9mZP1W1BQh9Qig4auswaGQR2lu0zpHwqvpTnH4DNlqX93cSEPQ7lKNgoP0HDzGQYF7y8uX2+tPHbchGR/0Ojzl22hV6BzBR6B5qIOqZgIgYKWuAmC3JAjphEpN6ChzBwSbql8bi1NChGdq0Oa+jdjGKEWKGV/oD6U/URpAAWZqi5Z3o/xBGsqiX6WXkQLa0FwKLoVbhOIqfQIMETyS/MxeE+V2H7xvUoONDTMMeuytIY8W96fb9C5J0x0bqhMhK7N5WGpPH8i584efHjypWhZc1YFX9ttN93CkaX1dRg9WHZi4tBd3E7+i1tKO1tRsfi6BAU7SnnCvruUwGLI3KIXhfny/D2OF/EdT8/0ncvo0HrR7eS4/ZzTESYoeFYVpT9kBQr0yYzo+VKvFTQhs4j2/QYzrZIbBll+7ChJhGsFO0wWN8Ljvgdjs7wb0DW6TK/8V8Gz2NHw5ts8I28LUL8/17yIfi8w0XXyBQoeaH860zKM//G/M5thPZwMy9X1l+u7axiGn15kqvE=
+sidebar_class_name: "delete api-method"
+info_path: api/storage-service/ballware-storage-service-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Drop all attachments for tenant"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/storage/attachment/dropallfortenantbehalfofuser/{tenantId}/{userId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Drop all attachments for tenant
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenantId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}},{"name":"userId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK"},"401":{"description":"Unauthorized"}}}
+>
+  
+</StatusCodes>
+
+
+      

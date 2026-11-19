@@ -1,0 +1,47 @@
+{
+  "fetchedAt": "2026-11-19T07:21:44.008Z",
+  "note": "Snapshots taken from the local ballware-docker-compose stack; see scripts/fetch-openapi.mjs",
+  "services": [
+    {
+      "service": "meta",
+      "port": 5001,
+      "docs": [
+        "meta",
+        "service"
+      ]
+    },
+    {
+      "service": "generic",
+      "port": 5002,
+      "docs": [
+        "generic",
+        "service",
+        "schema"
+      ]
+    },
+    {
+      "service": "ml",
+      "port": 5003,
+      "docs": [
+        "ml",
+        "service"
+      ]
+    },
+    {
+      "service": "reporting",
+      "port": 5004,
+      "docs": [
+        "document",
+        "service"
+      ]
+    },
+    {
+      "service": "storage",
+      "port": 5005,
+      "docs": [
+        "storage",
+        "service"
+      ]
+    }
+  ]
+}

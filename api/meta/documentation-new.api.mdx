@@ -1,0 +1,69 @@
+---
+id: documentation-new
+title: "Query new item template"
+description: "Query new item template"
+sidebar_label: "Query new item template"
+hide_title: true
+hide_table_of_contents: true
+api: eJyFVE1v2zAM/SsGTxug1unQk2/F1g7FsK776CnIgbGYWK0sqRKVLDP83wfaSdokHXYybD1Sj+89ugPGZYJqCp98nVtyjGy8g5kCHygOL7caqsPjO1qDgoARW2KKUt+Bw5agAqPJsVkYiqDAOKjgOVPcgIJIz9lE0lBxzKQg1Q21CFUHvAlSmjgat4S+nwk4Be8SJTn/MJnIQ1OqowkDwQq+fQEFtXdMjuUUQ7CmHviVj0kg3ekVfv5INQv5KPOxGS+QEY9pKFj42CJDBTkbDb2Ca8eGN29BXbYW55bG2XoFN4bsm01PkB9fRvgPtleAWhuZEO39qwEWaBMpYMOCPbKy76XwcnJxKuGDw8yNj+YPDfNdTi5PQXeeixufnQbpc3j2XawtHK0Lw9QWTG2wyAQKWuLGS3CWNMiN3EAFZUuMpX7Nr3RDmBLVOQ7iTjvwRteSSR/IGT12w6tgYCbR2EF/irmjf2PBi8uB3K3+6J0bzT54f4gWKmiYQ6rKcowrb87naO0aI51rKiOhbVO5+1Ser8nasyfn164cOZ3V3i3MMsedxpL1hR84bF3YVRdfibG4ur8FBSuKaVRudSGCB5+4xSGq2/X5t6IHyu9HZfrNZbBonPTLMlu3VXs6yCaVB3lQIIrPFDQ+saC6bo6JHqLte/k8rqvYoE2S9Ol9wI4o7JcP3v3Y7vb7AtTb1J5oc/x3WKHNAgRxdYXRjFmfznoFDaGmONAYK6/qmgK/qjrZd+myj93n61/Q938BQ0qvxg==
+sidebar_class_name: "get api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query new item template"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/meta/documentation/new"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query new item template
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Entity":{"type":"string","nullable":true},"Field":{"type":"string","nullable":true},"Content":{"type":"string","nullable":true}},"additionalProperties":false,"title":"Documentation"}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

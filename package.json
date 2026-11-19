@@ -12,15 +12,23 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "api:fetch": "node scripts/fetch-openapi.mjs fetch",
+    "api:status": "node scripts/fetch-openapi.mjs status",
+    "api:check": "node scripts/fetch-openapi.mjs check",
+    "api:gen": "docusaurus gen-api-docs all --plugin-id openapi",
+    "api:clean": "docusaurus clean-api-docs all --plugin-id openapi"
   },
   "dependencies": {
     "@docusaurus/core": "3.10.1",
     "@docusaurus/faster": "3.10.1",
     "@docusaurus/preset-classic": "3.10.1",
+    "@docusaurus/theme-mermaid": "^3.10.1",
     "@easyops-cn/docusaurus-search-local": "^0.55.3",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
+    "docusaurus-plugin-openapi-docs": "^5.2.0",
+    "docusaurus-theme-openapi-docs": "^5.2.0",
     "prism-react-renderer": "^2.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

@@ -1,0 +1,69 @@
+---
+id: subscription-by-id
+title: "Query existing item"
+description: "Query existing item"
+sidebar_label: "Query existing item"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1VMFu2zAM/ZWApw1Q67Trybd2aIdgW9cty6nIQbGYmK0suRKdNgv87wPlJE2aYAsG7GTIehTJx/e4BNazCPk9DJtJLALVTN7BWIGvMWg5DAzkO7dXi4EBBbUOukLGIOFLcLpCyIEMOqYpYQAF5CCHpwbDAhQEfGoooIGcQ4MKYlFipSFfAi9qCY0cyM2gbdXWa//6ioKpD5VmyKFpyEDbjiU41t5FjII/7/flY/C17Ry+fQYFhXeMjuVW17WlIvGQPUSBLPdT+skDFiyUBGGNqUsgxP21LAWjiOFI6FdN9hDQNdbqicWOlFbBlTeLo4CXzLooq1W3K/jEe4vawc79DVm8TVM54tlbLxooNvo5orcbmSy6YrtucoyzpKQNnBx/OE+VFUxzPFz1Fx15iM4MWVf1H7MbzXjCVOGhLuSZ6xB8OKLnVoE2hqRhbe+2dDDVNqICJhbsrs3aVuIu+mf7Qhw53XDpA/3CRM9F/2IfdOu5d+MbJ/JWb+6+i2F6+EKRyc16xFiBggq59GLoGSbBai4hh8z4opEhZ3GrvGyySP6LWDSBeJFs7skUsi58jS7drkMva4KxmGwNH4pNOid0Qa9+qdENzEfvXGebnfMoWMihZK5jnmXdOuHF6URb+6wDnhrMAmpbxWz9Kzt9RmtPHp1/dllX10nh3ZRmTbfBEjvkpj7VsBrEOrq3bqDXRAy9y7sBKJhjiB2N8zNhv/aRK53cv9pMh+ndGcGmX8YXzmqrKYmzCcnDHfX3G/6E6G1tKEj0jxWUPrIgl8uJjjgKtm3ld7cRZSaGoijRbMT2pozNPoN3P1br830P1OHyHnHxdo3PtW0ECLKZ/0uynSRjOQTqzHU/bhWUqA2G1GsXcVkUWPNW1N6ellc2Yv90/RPa9jcFVWK3
+sidebar_class_name: "get api-method"
+info_path: api/reporting/ballware-document-user-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query existing item"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/document/subscription/byid"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query existing item
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}},{"name":"id","in":"query","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"UserId":{"type":"string","format":"uuid"},"Mail":{"type":"string","nullable":true},"Body":{"type":"string","nullable":true},"Attachment":{"type":"boolean"},"AttachmentFileName":{"type":"string","nullable":true},"NotificationId":{"type":"string","format":"uuid"},"Frequency":{"type":"integer","format":"int32"},"Active":{"type":"boolean"},"LastSendStamp":{"type":"string","format":"date-time","nullable":true},"LastError":{"type":"string","nullable":true}},"additionalProperties":false,"title":"Subscription"}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

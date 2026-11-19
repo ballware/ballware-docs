@@ -1,0 +1,70 @@
+---
+id: entity-right-save-batch
+title: "Save existing or new items in batch"
+description: "Save existing or new items in batch"
+sidebar_label: "Save existing or new items in batch"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNlE1v2zAMhv+KwdMGOHU/0823tuuAYlhbtOspyIGx6FibLLkSnTQz/N8HWmk+2h2aSxKKpCjyedkB4zxAPoFry5pXD3peMUxTcA15ZO3sjYJ89/ARF3SJXFSQQoMea2LykqEDizVBDlqRZV1q8pCCtpDDc0t+BSl4em61JwU5+5ZSCEVFNULeAa8aCQ3stZ1D30+jMwW+dGolHoWzTJblJzaN0cVQXfY7OCu2d6nQe5Q7NVMdduxu9psKluK9vJE1DafyzLdlpFA6XyNDDm2rFfTpuhH/c7WtMTgzFN/Wp3CzbcNH3L/p0Bhc3Q49/ID/lbOM2n4oe58CKqWlYWjud95dogmUAmsW3z0G+l7C9ic2GELjbIhNOz48lC9FofC6kfSQw90PadTp4dH7oyeLLVfO67+kotPpe6dbx8l311oFUsD+mcCX0IsOrO08cT6xtEyGCSfaJrM1ljVx5QTbxoVh0sgV5JDVxJjR8EYvb8wCLug1KFDR+mG2kw6cVoWIwjVktYop8aLRMBUyX10fhbnYiRiwhawhe6OunLWRtb3/T95ADhVzE/Isi2rh1cEMjVmipwNFmSc0dcheTdnBkowZ/bFuabNY06hwttTzNop0aJVI4WErmusXrBsZ6yTSDSclfjkrx6ejs/Oj89Hp2fh4NDspi9Fx8XV8Uo7HWOIYtohvadoleWvdA3Zr3uFyI+ep7IHSDQ1ao/b6tOQnMSYX9zeQwoJ8iHNeHAkeMr4aB3mvV8vH5r/HzGYmTC+cNQa1ldytDKFbozEZ5gsp7MAhSGzwmKZQCUv5BLpuhoGevOl7McfVJj1WOojk1EZVb8rYLDD49LBW1ecE0v+X94dWbzfpAk0rjkM7F+h1FPhk2qdQESrp+KRbR17Fy0a/JPk29t3mlFwbudzfPf6CFGbrjVs7JTEel7K6cSl3C8oSPUA/2DowaOctzsU35pTPP9gNL0I=
+sidebar_class_name: "post api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Save existing or new items in batch"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/meta/entityright/savebatch"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Save existing or new items in batch
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Entity":{"type":"string","nullable":true},"Identifier":{"type":"string","nullable":true},"DisplayName":{"type":"string","nullable":true},"Container":{"type":"string","nullable":true}},"additionalProperties":false,"title":"EntityRight"}}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK"},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

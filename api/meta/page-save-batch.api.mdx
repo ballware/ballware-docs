@@ -1,0 +1,70 @@
+---
+id: page-save-batch
+title: "Save existing or new items in batch"
+description: "Save existing or new items in batch"
+sidebar_label: "Save existing or new items in batch"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVktv4zgM/isCT7uAU/eZ2fVtppgFuo82mLSnIAfaomNNbcmV5KSZwP99QSmJk7bAZoHJpQlF8uPzYzfgceEgm8EEFwTzBExLFr0y+k5CFqRTXNIX9EUFCbRosSFPlm02oLEhyEBJ0l6ViiwkoDRk8NKRXUMCll46ZUlC5m1HCbiiogYh24Bft2zqvFV6AX0/j8rk/Bcj16xRGO1Je/6KbVurIoSVfndGs+ydK7QWGVN5atyB3OTfqfAcvOXkvKLwyvm9DSMBSa6wqmUkyOCxItFp9dKRGHIUpbHCV8oJTxo1ey6NbdBDBl2nJPQJ3A0VOQnkwLspo/MWFyQ6RzLgWSrJki6UXhw8Ky18ReKgPJCA7uoa85pizfsE7kOXTgmD+3kcgDfCVWZ1ItLfuDad/2+sr01OUpIUf04f7oWkUmnFTxGbRB38HEXyIZwxz13rfgJedBTLrfQudVPnaD8CnqjiuVbO/wTodufqZPDbznnTTAPG/woAlxitPgijCE5FNDw1lj4BlDL4wXpysF0l1o4S8MqzbuSWvmf9Y0IIAtca7eJOXp6f85/jBB7+4o26Pr94//SksfOVseoHyah0/V7p3njxh+m0BA7g+I25TdCrcp4Xy1ihaSUCgXD2+Zb1GvKVYTpsjQtEgr6CDNKGPKZcotThknbajorOKr8ODGmULJheTUtayegLP7cK5sx4O9Upc1ksQTQYyKslfSdvjdaRw45+P9kaMqi8b12WppFD/Posx7peoaUzSaklrBuX7kTp2YrqevSszUqnMaZRYXSpFl1k/VAjpthvAxl/fcWm5UbOImvCVYm/3ZTj69HNp4tPo+ub8eUovyqL0WXx+/iqHI+xxDEck+AwnZGNht87zjiQ7NZ6EB0s3CB8swj7WzLnI1SaUMXtBO7yF/+QR/F5cgcJLMm6OAXLCx4ebm6D4bZs79pp03E0UfvGeXr1aVuj0uy7405ttoMzC0MQ5ijw2jA88wQqHrFsBptNjo6ebN33LI4HlTsgleMVlPste4O/P5vwy7ftsv0qIPk4rmdav73fS6w7Vgx1XKJVceFn8z6BilByN2ebreVtBBs9svPB9t29Zl/7LZo8TB8hgXx75xsj2cbiiv9hwBVj86CzdViJINtAjXrRccUyiD758y+2KgfZ
+sidebar_class_name: "post api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Save existing or new items in batch"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/meta/page/savebatch"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Save existing or new items in batch
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"Id":{"type":"string","description":"The unique identifier for this tenant","format":"uuid"},"Identifier":{"type":"string","description":"The identifier of this page used for referencing this page in the application","nullable":true},"Name":{"type":"string","description":"The name of this page to show in the application","nullable":true},"Layout":{"type":"string","description":"Embedded JSON definition of the layout of this page","nullable":true},"Lookups":{"type":"string","description":"Embedded JSON definition of the lookups used in page toolbar","nullable":true},"Picklists":{"type":"string","description":"Embedded JSON definition of the picklists used in page toolbar","nullable":true},"CustomScripts":{"type":"string","description":"Embedded JavaScript definition of the custom scripts used in page toolbar","nullable":true}},"additionalProperties":false,"title":"Page"}}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK"},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

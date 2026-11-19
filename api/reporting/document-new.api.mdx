@@ -1,0 +1,69 @@
+---
+id: document-new
+title: "Query new item template"
+description: "Query new item template"
+sidebar_label: "Query new item template"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVE1P20AQ/SvWnFppwYFy8g0KrVAlSqGcohw23kk8sN5ddsdJU8v/vRo7MYFQiZM/9s3smzdvpgXWywTFFC592dToGGYKfMComby7NlCMJze4BgVBR10jY5SoFpyuEQogg45pQRhBATko4LnBuAEFEZ8bimig4NigglRWWGsoWuBNkNDEkdwSum4m4BS8S5jk/HQykYfBVEYKQgcK+PkDFJTesVAtWtAhWCp7svljEkh7eIWfP2LJQj5KaUzDBVLdWxoKFj7WmqGApiEDnYJLSsHqzU1f6SHeNdbqucWhwE7BlWPizYeg96x5Pyk5xmWv4ciCHH85FRp3GHzkC3I6vpt8jJhvGN+7bEhwu+vfBwh2CrQxJOJqe7un3ULbhAqYWLAv3uk6iTmbnBw27sHphisf6S/2qp5Nzg5BN56zb75xBiTP67NfYqjM4TojxjpjrIPVfaU1cuXFqUvsm6y5ggJys2X18uJ6Bycsm9h3aNqCJ1OK/X1ARwYU7MDngWAmntzB78VVg3GGoBd7BXTX5qt3bnDZq++HaKGAijmkIs+HOeHN8Vxbu9YRjw3mEbWtU777lR+v0dqjJ+fXLh94HZXeLWjZDFPZi0Nu4XsO2x7sorNdAVmTMGbnt9egYIUxDSquTkT84BPXuh+W7QD/X91XXRhrZvzDebCanORrpMh2q/x01HBPTjEXrmW5VD6xgNp2rhM+RNt18nvYF9ISQ0k8aEabvWEwTj98utsul88ZqPeZPeHm7XpaadsIEKS7Kx1pcPx01imoUBsZjWm7jTwvSwy8F3WwcCTL6MDvV7+h6/4BSNjYkQ==
+sidebar_class_name: "get api-method"
+info_path: api/reporting/ballware-document-user-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query new item template"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/document/document/new"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query new item template
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"DisplayName":{"type":"string","nullable":true},"Entity":{"type":"string","nullable":true},"State":{"type":"integer","format":"int32"},"ReportBinary":{"type":"string","format":"byte","nullable":true},"ReportParameter":{"type":"string","nullable":true}},"additionalProperties":false,"title":"Document"}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

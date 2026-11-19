@@ -1,0 +1,69 @@
+---
+id: temporary-download-by-id
+title: "Download temporary file by ID"
+description: "Download temporary file by ID"
+sidebar_label: "Download temporary file by ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9U8Fu1DAQ/ZVoTiC5TUE9+VYooBUSINqeqj3MxrMbq47t2pNdosj/jia7G7YUBAfEKbFn5nneezMjMG4y6Hu4pS6GhGmApYIQKSHb4BcG9I/Qddh5F9C8GRYGFERM2BFTEoARPHYEGpg8ep4SrAcNEbkFBYkee5vIgObUk4LctNQh6BF4iFKXOVm/AQXrkDpk0ND31kApaoa2/w50KcU5Bp8pS/7riwv5GMpNslGog4bPH0FBEzyTZ4lijM42kzB1aJj4LHMi7CT2F0+vrBd9SylFweXF5fMHPwWu3ofeT7R/ih3Fr/hoR7W2jqrVUC2uQUFH3Aaxa0M8mcMtaKgzh4Qbqueq2hyAVoM19Xi0q9SjNQUUZGr6ZHmYPA3WNDIdB5SraGEp2h2TboT1XsF96kw/RPIL8zZ4T4308+R8lxxoaJlj1nVtDXm2PJyv0LkdJjo3VCdC1+X6eFWf78i5swcfdr4WLGvOmuDXdtPvJ3VSzPp1mHqw7KSJY3V1s++/usuUqqsvC1CwpZT3ym5fQVEQQ+YOvZQfxu1Pij/xZybO9I3r6NB6Qe2F6XhwY9YRFMyYAnTiCCjQJyukrZGFbENmqR/HFWa6S64UuX7sKYlRSwVbTBZXwvp+BGOz/BvQa3SZnrU6zzS8+HpYoZeVNPUrCodL9NLqFl0vJ1DwQMPpusue/sd3ZYuXRUFLaChNrPeBq6ahyCclv91aGeR5az68u4VSvgMfr70U
+sidebar_class_name: "get api-method"
+info_path: api/storage/ballware-storage-user-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Download temporary file by ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/storage/temporary/downloadbyid/{tenantId}/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Download temporary file by ID
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenantId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}},{"name":"id","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/octet-stream":{"schema":{"type":"string","format":"binary"}}}},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

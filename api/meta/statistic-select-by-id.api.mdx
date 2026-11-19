@@ -1,0 +1,69 @@
+---
+id: statistic-select-by-id
+title: "Query select item by id"
+description: "Query select item by id"
+sidebar_label: "Query select item by id"
+hide_title: true
+hide_table_of_contents: true
+api: eJyFVE1v2zAM/SsGTxug1unQk2/d0A3Btq5b11OQA2MxMVtZciW6nWf4vw+0kzT9GHqyJZLS43uP6kFwk6BYwJWgcBIuYWkgNBRROPi5heIxdEWOSvnYzS0YaDBiTUJRy3vwWBMUwBpiDwU0KBUYiHTXciQLhcSWDKSyohqh6EG6RiuSRPYbMLAOsUaBAtqWLQzDUotTE3yipPkfZjP9WEpl5EbRQQE/voKBMnghLxrFpnFcjtjzm6Qp/cGVj2AWMLfkhddMUTveggmrGypFu4vKgfB0tdLwJmBzeOQr6b51DleOJiYGAxcjZW8mDgbQWtaW0F0e4FqjS2RAWDT3uUzfOMm5l9jBMOgZp7OTl/Rde2ylCpH/0tjB6ez0ZdJFkOxzaL2KYp7FfrYUuyyNN2YsVGerLhtNUJNUQe2zoZFQtUMBeU2CedpBzafKVcc279kOYCBR2UaWbnRVYFuqWKEhvzsVzxqGpdpjl3qlAk9KTQV7TrVubj8F7ydZn6yvo4MCKpEmFXnOo3jSHa/QuQeMdGwpj4SuTvluKz9+IOeObn148PmE6agMfs2bdpqXkSH26zBi2Aqzq86+k2B2djkHA/cU08Tg/YkS34QkNY523U7S/5l9osC+VaE/kjcO2et5rfbWb1lfjLQpt/shV/J2zIOBgq1OQRWSaHrfrzDRdXTDoNt3CgWKxdLAPUaevLnowXLSf7u34jNk+7mEd7+2k/c+A/M64u0m+k7pQdfqCgzcUje9K8NyMFARWh2vRb8NnJUlNXJQ8uIFUKfszfjl/DcMwz/Sk7WA
+sidebar_class_name: "get api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query select item by id"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/meta/statistic/selectbyid/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query select item by id
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"id","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"required":["Identifier"],"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Identifier":{"type":"string","nullable":true},"Name":{"type":"string","nullable":true}},"additionalProperties":false,"title":"StatisticSelectListEntry"}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

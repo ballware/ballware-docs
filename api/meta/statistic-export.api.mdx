@@ -1,0 +1,69 @@
+---
+id: statistic-export
+title: "Export by query"
+description: "Export by query"
+sidebar_label: "Export by query"
+hide_title: true
+hide_table_of_contents: true
+api: eJx9k01v2zAMhv+KwdMGqHE69ORbMHRFMOwD63IKcmAsJtYqS6pEJ/UM//eBdpwuy9CTIfFDLx++7oBxn6BYwyMjm8SmhI0CHygiG++WGorX0P1L8JFBQcCINTFFKe3AYU1QgNHk2OwMRVBgHBTw3FBsQUGk58ZE0lBwbEhBKiuqEYoOuA1Smjgat4e+30hyCt4lShL/MJ/LR1MqowkiCQr49hkUlN4xOZYohmBNOQjOfyVJ6d54ou8V3M1vr9uuHDZc+Wh+k4Yh6e466avn7JNvnAbpcxkb+WTbNpsGr4krLwz3NHLjCgrIa2LM04Q1p4lrorKJhtuBqje6lM34QM7osRkugoGNUJpSH2XOkdVYcB5Y6pb6o3eOSml+cV5FCwVUzCEVeT5ujtvZFq09YqSZpjwS2jrl01U+O5K1N0/OH10+aropvduZfTN6ZQBi3M4PGgxbETFVZ1+IMVt8X4KCA8U0AjvcCufgE9c4bO3kpGuQF6DPIzK9cB4sGid9GpmpO0FeD7iE6dnYCk6gNwoqn1iSum6LiVbR9r1cj88JfW0Sbq1Ydoc20ZWCs/3g3Y+Tu99noP6v7Inaf/+PA9pGEkGWecBo5DUo1pteQUWoKQ4yxspFWVLgv6quHC9dzmZ7uP8Jff8HDctVGA==
+sidebar_class_name: "get api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Export by query"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/meta/statistic/export"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Export by query
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"string"}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,69 @@
+---
+id: documentation-export
+title: "Export by query"
+description: "Export by query"
+sidebar_label: "Export by query"
+hide_title: true
+hide_table_of_contents: true
+api: eJx9k8tu2zAQRX9FmFULMKFTZMWd0aSFUfSBtl4ZXtDi2GJDkQw5sqMK+vdiRNuI66IrgZwH75y5GoD0LoNawUOouxY9abLBw1pAiJimw8KAugw/vsSQCAREnXSLhIlbDOB1i6DAGvRktxYTCLAeFDx3mHoQkPC5swkNKEodCsh1g60GNQD1kUszJet3MI5rTs4x+IyZ4+9mM/4YzHWycdKo4OsnEFAHT+iJozpGZ+tJovyVOWX4zxPjKOB+dnfddul1R01I9jcamJLur5O+BKo+hM4b4D6XscKn2vTVafAWqQnMcYeFGzWgQLZIWprXaCWe2Gasu2Spn8gGa2reUojorSkN9TxaWDOpU+oPnrXwKgXnobluYd4H77Hm5hfnZXKgoCGKWUlZtkf97UY7d9AJbw3KhNq1WZ6u5O0Bnbt58uHgZdF0Uwe/tbuueGaCYv02TBosORZxqq4+I+lq/m0BAvaYcoG2v2PWMWRq9bS5o5uuYV7APo9I+EIyOm099+l4puEIejXh4soLkws4wl4LaEImThyGjc64TG4c+bo8yRswNuuNY+tutct4peJsQ3jz/ejytxWIf6t7wv7v/2SvXceJwAvd62T5NVCr9SigQW0wTTJK5byuMdKrqivnc5ez6T4+/oRx/ANTc1ug
+sidebar_class_name: "get api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Export by query"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/meta/documentation/export"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Export by query
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"string"}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

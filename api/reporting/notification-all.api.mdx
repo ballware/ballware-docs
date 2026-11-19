@@ -1,0 +1,69 @@
+---
+id: notification-all
+title: "Query all"
+description: "Query all"
+sidebar_label: "Query all"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVMtu2zAQ/BVjTy3ARE6ak25GXzAKpGnTnAwf1uLaYkKRDLly6gr692Il2ZHtHOKLIXKGnJ2dZQOMmwT5Am49m7UpkI13sFTgA8XuY64hP9qdWQsKAkasiCkKuwGHFUEORpMTJEVQYBzk8FxT3IGCSM+1iaQh51iTglSUVCHkDfAuCDVxNG4DbbsUcAreJUqyfz2dyp+mVEQTOn05/PwBCgrvmBzLLoZgB33ZYxJIc34FxoiixTBVabTuV49UsBQVpWw2/cVS+ak8BWsfK2TIoa6NhlbB/LXmN+CuthZXlvq6WwW3nVPvAH7xRV2R4/fIeIN+z8jji4xj2nR9OVCN40/XMLrqTpqa3qGuVYBaG7Eb7d3ItTXaRArYsGCPU9XKT8HN9Oq8nw8Oay59NP+oM/VmenMOuvU8+eZrp0HOOd77JTmbYJfNirj0EtsNdV1FLiGHTA9VZm6kKuspiYo6Gt51YfZGFzITPpDrzN0zZ8HAUgK6h99LxPq09KTXTAVyc/3ZO9dH6+j7IVrIoWQOKc+yfmh4d7lCa18w0qWmLBLaKmX7pezyhay9eHL+xWW9rovCu7XZ1HHvrkzc2ncaBvv37Mm+gEmdKE5md3NQsKWYeu+2V2J58Ikr7CZnmOaxp0duH6pk+stZsGicnFBLWc3g9+LgmsRnnAMFcuRSQekTC7BpVpjoIdq2leX+yZBGaJMkdPqQqxMVhwcAPvwe3pePE1Bvq3ui3ekLtUVbCxCkp1uMpo/4YtkqKAm1jPSiGZizoqDAI9bZmyOnHLL3/esfaNv/J53bmQ==
+sidebar_class_name: "get api-method"
+info_path: api/reporting/ballware-document-user-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query all"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/document/notification/all"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query all
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Identifier":{"type":"string","nullable":true},"Name":{"type":"string","nullable":true},"DocumentId":{"type":"string","format":"uuid","nullable":true},"State":{"type":"integer","format":"int32"},"DocumentParams":{"type":"string","nullable":true}},"additionalProperties":false,"title":"Notification"}}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

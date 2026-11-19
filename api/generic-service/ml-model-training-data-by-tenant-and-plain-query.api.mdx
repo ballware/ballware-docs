@@ -1,0 +1,70 @@
+---
+id: ml-model-training-data-by-tenant-and-plain-query
+title: "Query model training data by tenant and sql query"
+description: "Query model training data by tenant and sql query"
+sidebar_label: "Query model training data by tenant and sql query"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVE1v2zAM/SsGTxug1u2wk29Zt0MwFO3a9BTkwFhMrFWWXIlO6hn+7wPlOP3aBzZfbFPi49N7pHpg3EYolnBpL70mCysFvqGAbLybayimhUVA44zbfkbGT92CHDqeOX1t0bhvLYUOFDQYsCamIIg9OKwJCuC0d65BgXFQQINcgYJAD60JpKHg0JKCWFZUIxQ9cNdIXuRg3BYUbHyokaGAtjUahmE1JlPkT153klF6x+RYPrFprCkT/fx79E5iv4MehuE1jxSIjXeRoiR8ODuTl6ZYBtMIKhRw9RXUP9fEEFBEMky1QA9DKv/x7PxtgTuHLVc+mB8kB1avlpPeWS22ZHzwJdPImK27bJQ7Q6ez+GCzh4M3NXHlxc/GR05ecQUF5EyOHOe1TXD5BCdo627EQqcbsTlB5f3k5wAKIpVtMNwlv73RpbSSb8gZsXtLjoIpZ42Blbg27b4VbUZ9x5yjSJI61xfeOSqF5Yv/u2ChgIq5iUWeG02ODXena7R2j4FONeWB0NYxn0L56Z6sPbl3fu/ykdZJ6d3GbNuxw5O4YtnNU0N9ecS6sS860LiNTywNp4UJP7ulsDMlZbPrOSjYUYijQ7tzGFSSusbUDodZ+B/nXnh/VIrpkfNki1RqRZr+YOoSRlPF9dFWUPBXY0FBcRzVlYJK+qRYQt+vMdJdsMMg4XFvsVwp2GEwuBZBlj1oE+VbQ7FBG+kN7eO4wLubw8S9z4TXr44zjYwTVju0rfyBgnvqnl8ow2pQUBFqConDuHwxVjpZCMhT+pshHdSUMStLaviPe1fPJuj66nYBCtaHy0cUhgIC7uVWw/1I1aeTpx5PsR4sum2LW9k7YsrzE6sg7SM=
+sidebar_class_name: "post api-method"
+info_path: api/generic-service/ballware-service-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query model training data by tenant and sql query"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/tenent/mlmodel/trainingdatabytenantandplainquery/{tenantId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query model training data by tenant and sql query
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenantId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"string"}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"array","items":{}}}}},"401":{"description":"Unauthorized"}}}
+>
+  
+</StatusCodes>
+
+
+      

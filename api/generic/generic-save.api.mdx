@@ -1,0 +1,69 @@
+---
+id: generic-save
+title: "Save existing or new tenant"
+description: "Save existing or new tenant"
+sidebar_label: "Save existing or new tenant"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9U01r20AQ/StiTi1sIqfktLdQaDGFJtT1yfiwlsbWktXsZndkxxX672X0Yey4FAqhJ6GdrzfvvWmBzS6BXsFXJIy2gLUCHzAatp7mJegpsDB7BAXBRFMjY5SiFsjUCBpMCM4WfQ0osAQaguEKFER8aWzEEjTHBhWkosLagG6Bj0FKE0dLO+g6deqGxJaP79DIltJqazFOzV4ajMd/6raW5BQ8JUwS/zSbyafEVEQb+o01PH6DTsH97O46tCTTcOWj/YXlkHR/nfTdc/bFN1QK/DcxIT7DV5vY0i7zMSM8ZIxkiEFBjVx5kSn4xL0+XIGGfDeolrdn0nR5O1Db5WlQM2HRROFatPS2LMQJPiDZEhSMPR6ChbXwMGUvhKyBjaHmxJqUzsvPnggLQXPxv4wONFTMIek8H7Th4+3GOHcwEW9LzCMaV6d8espvD+jczTP5A+UDrJvC09bumsGgPV2Wtr7HYNkJiKk6G52bPTzNQcEeYxoY3d+JEEJYbUgqR7v8nekLVU4bM75yHpyxJD0bWbEdRVhNBIICfXkh+mTxXoi1gkrk0yto241JuIyu6+R58KuoU9pkNk4cuzUu4RWewhMjMWj48GM098cM1J9xPuPx7XnsjWskEUTpvYlWpr3/5PHR0PF85oTonCW54/84elSkW3dnR/X0uPgJXfcbbS3DdA==
+sidebar_class_name: "post api-method"
+info_path: api/generic/ballware-generic-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Save existing or new tenant"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/generic/{application}/{entity}/save"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Save existing or new tenant
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"application","in":"path","required":true,"schema":{"type":"string"}},{"name":"entity","in":"path","required":true,"schema":{"type":"string"}},{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK"},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

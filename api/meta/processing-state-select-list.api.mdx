@@ -1,0 +1,59 @@
+---
+id: processing-state-select-list
+title: "Query all processing states"
+description: "Query all processing states"
+sidebar_label: "Query all processing states"
+hide_title: true
+hide_table_of_contents: true
+api: eJyFU01P3DAQ/SurORsCtCffUEUrVNpSKKfVHmad2c2AYxt7sjSN8t8rO7AfFNRcknjefPi9NwMIrhPoOVxHbygldutbQSFYKPCBIgp7d1mDfg24JUtGrjgJKIiUgneJEugBzk5O8qumZCKHnA8afnwFBcY7ISc5iiFYNqV6dZ8yZIBkGmoxf0kfCDRgjNiDAhZq0965X96TyX1DzDMKT43zmFtMkshuDQpWPrYooKHruIZRwXds6S2g66zFpSXQEjsaFUxE7JDshNYU92uykw9nueiVNw+033/pvSV0OfaZHafmvegNYfLuhh47jm9jRgVY15y5Qnu9d+UV2kQKhCVP/b5CF05iD2N+FHw8Of1XnjuHnTQ+8h+qS8PD8M+OYj9Da2dh22OWcpMEClqSxmeLrKmIgtKAhqolwWqHL/AqlaHsZJtEpossPej5AJ5rk43oAzmup7J4HhgW42IHvc0emeSeEnamCOQu60/euckbB/930YKGRiQkXVVckxOW/niJ1j5hpOOaqkho21S9HFXHT2Tt0YPzT66aZjoy3q143U1LUWhit/JlhmcJXrJn30hwdn59CQo2FNNE4+Y0Cx58khaL412x4n/oPZBie12h31IFi1xM1OX7Dc/Uzwt103rsk18Y39K/UND4JBk+DEtMdBftOObjxzwO6PlCwQYjTzsxX4wKGsKaYpHrgXrQcG4Mhcz2Bm1XVvb1Xmfxtgb5cvELxvEviqeOuw==
+sidebar_class_name: "get api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query all processing states"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/meta/processingstate/selectlist"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query all processing states
+
+<ParamsDetails>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Name":{"type":"string","nullable":true},"State":{"type":"integer","format":"int32"},"Locked":{"type":"boolean"},"Finished":{"type":"boolean"},"ReasonRequired":{"type":"boolean"}},"additionalProperties":false,"title":"ProcessingStateSelectListEntry"}}}}},"401":{"description":"Unauthorized"}}}
+>
+  
+</StatusCodes>
+
+
+      

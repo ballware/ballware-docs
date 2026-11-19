@@ -1,0 +1,69 @@
+---
+id: lookup-metadata-for-tenant
+title: "Query lookup metadata by tenant"
+description: "Query lookup metadata by tenant"
+sidebar_label: "Query lookup metadata by tenant"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVEtv2zAM/isBTxug1m23k2/dsEewbuvW9BTkwFhMrFaWVIlO5xn+7wP9yNIH0Ppim+QnkR8/sgXGbYJ8CRfe39YBVgp8oIhsvJtryEf7d2LUyPjZxwU5dAwKAkasiCkKvgWHFUEO3LvnGhQYBzkE5BIURLqrTSQNOceaFKSipAohb4GbILjE0bgtKNj4WCFDDnVtNHTdSsApeJcoSfzZyYm8NKUimiB5Qg4/v4GCwjsmx+LFEKwp+iqymyQh7dMrMUZsJE+mKh3Y/fqGir7CKFywGS4WOl5MV4FQdRC49t4SOvF8xXQpnD3vXfSWvcc4pi3FwxuM43dnEjrX5NhsDMXnMnK1tbi2NFDdKfjRd+YVgRcm8a+aYvOq6A/NXL82ulOAWhvpB9rLA1o3aBMpYMMSO6mwk0fB+5PTp62+dlhz6aP5SyIP9cjdZzSz/TmzapTtbN3MeNJtRVx6kfaWBhlzCTlkEpsNuPE1odfNgM3aSdwdKEhU1NFw04vfG13IFPlAzujhEjwPBlai3yn0ShQ4iGkA/JdcIDfXH71zg/Ie/F9HCzmUzCHlWWb65nNzvEZr7zHSsaYsEtoqZZMpO74na49unb932ZDTUeHdxmzrYbR74ozb+D6HkfwJPbuiuDMFzc4v56BgRzEN3O5ORX3BJ66wH6lx5l/m/EGP9lUz/eEsWDT9ANRSZjv2Y9kzCAqGU/cfj3sCCvL9ylkpKH1iQbftGhNdR9t1Yr4bdLpcKdhhNIMyly1ok+Rb74X4KNH9SoE3v8cN9nYG6vkCprXiZKns0NbyBwpuqTlcjN2qU1ASahnfZTu6z4uCAh8An6wwUdJeu18+LaDr/gHGAf0j
+sidebar_class_name: "get api-method"
+info_path: api/meta-service/ballware-service-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query lookup metadata by tenant"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/meta/lookup/lookupmetadatabytenant/{tenantId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query lookup metadata by tenant
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenantId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Meta":{"type":"boolean"},"HasParam":{"type":"boolean"},"Type":{"type":"integer","format":"int32"},"Identifier":{"type":"string","nullable":true},"Name":{"type":"string","nullable":true},"ListQuery":{"type":"string","nullable":true},"ByIdQuery":{"type":"string","nullable":true}},"additionalProperties":false,"title":"Lookup"}}}}},"401":{"description":"Unauthorized"}}}
+>
+  
+</StatusCodes>
+
+
+      

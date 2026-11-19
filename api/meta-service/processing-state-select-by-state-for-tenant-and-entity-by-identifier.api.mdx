@@ -1,0 +1,69 @@
+---
+id: processing-state-select-by-state-for-tenant-and-entity-by-identifier
+title: "Query single processing state for entity by identifier and state"
+description: "Query single processing state for entity by identifier and state"
+sidebar_label: "Query single processing state for entity by identifier and state"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VE1T2zAQ/SuePbUzAgPtyTfoQCdTpqUETpkcFGsTC2TJSOtQ16P/3pGUOIbQz+lwSmRp9+3ue297IL5yUMzgypoSnZN6NSVOCHMGpkHLSRo9EVA8fzBFhSWddfFwYewNaq7pVItzTZK6s24iUJNcSrTAoOGW10hoA1YPmtcIBVCMmQhgIDUU0HCqgIHFh1ZaFFCQbZGBKyusORQ9UNeEOEdW6hUwWBpbc4IC2lYK8J4NqeUY/V+Sj5O5OJG/zCM14SrCD1VKTe9OwPt5CHeN0Q5diDg5Ogo/Al1pZRMmDgV8+QQMSqMJNYVb3jRKlpGP/M6FJ/0+qFncYUlh4DawRzIBBAJ/Oz0Gn2O7+w91qxRfKEy9egZJIn/SK4NLU97jGH9hjEKuw92F1NJVP7u9Ru6Mvh4Gvf/GM+BCyDATrq5GLS+5csiAJIWqX9bupXR0rsl24H3I9P7oeJ+FW81bqoyV3zEK7Nn11xZtl4XECrNmQMmiYrKlsRlGO2SLLttJMuNaZFtR1UiVCQZbYSQuyKuAvEbi+S5jfJ27WPiii6elsclAXIuEkvdbR/m838H5vI8BHhg4LFsrqYs2NFKUwfumQS1FqoWfNhLmQaLbp9MgsqSjFLBTW4N6Ij4YrZPonpxvrYICKqLGFXkuNyUeLrhSj9ziocDcIle1y7ef8sNHVOrgXptHnaeaDkqjl3LVpj0UCZB6aWING2630dkU7VqWmJ1eTYDBGq1LHK2Pg5ga46jm0TUbV/8H7p6IYRgL4TfKG8VlVHEb5tBveJ3FESd/jpmNzPySW2BQjPZl8WTBFW67syvjKMD0/YI7vLXK+/D5IfQKxWzOYM2tTGae9SCkC//F4JhnHQ37B95sffg2A/Zyp5uPXIdi11y14QQM7rEbL/uwWF8RdzSoV0ZOpPi5Z1AhF2jjyNPdaVliQ6OovfUeLDjsho/nN+D9DyzprMk=
+sidebar_class_name: "get api-method"
+info_path: api/meta-service/ballware-service-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query single processing state for entity by identifier and state"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/meta/processingstate/selectbystatefortenantandentity/{tenantId}/{identifier}/{state}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query single processing state for entity by identifier and state
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenantId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}},{"name":"identifier","in":"path","required":true,"schema":{"type":"string"}},{"name":"state","in":"path","required":true,"schema":{"type":"integer","format":"int32"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Name":{"type":"string","nullable":true},"State":{"type":"integer","format":"int32"},"Locked":{"type":"boolean"},"Finished":{"type":"boolean"},"ReasonRequired":{"type":"boolean"}},"additionalProperties":false,"title":"ProcessingStateSelectListEntry"}}}},"401":{"description":"Unauthorized"}}}
+>
+  
+</StatusCodes>
+
+
+      

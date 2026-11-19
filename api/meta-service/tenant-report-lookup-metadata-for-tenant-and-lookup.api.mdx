@@ -1,0 +1,69 @@
+---
+id: tenant-report-lookup-metadata-for-tenant-and-lookup
+title: "Query additional metadata for lookup by tenant, datasource and identifier"
+description: "Query additional metadata for lookup by tenant, datasource and identifier"
+sidebar_label: "Query additional metadata for lookup by tenant, datasource and identifier"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VE1v2zAM/SsGTxug1u3Qk27BsA7Bvrp2PQU5MBYTq7UlVaLTZYb/+0A7H86yy4qhvtgWn0jqvSe2wLhKoGfwgxw6hrkCHygiW++mBvR2/ZaCj/zZ+8cmfCFGg4zXPg7BiTNDBBQEjFgTU5SkLTisCTRwj5saUGAdaAjIJSiI9NTYSAY0x4YUpKKkGkG3wJsg+xJH61agYOljjQwamsYa6Dq1Ty2dJN/Egl6YfJzMGnJsl5bii5PNBZyCd4mSxN9dXMjLUCqiDUIraPj2CRQU3jE5liiGUNmiJz1/SAJpT0v4xQMVDArQGCtQrG6iiMW2L9XJo+Dq4vK04L3Dhksf7S8y0IOuTkFfPWfXvnE9wX/EvjcUN9mhclZvXZAtfcyqXv5ssckGpVV2kCVDZ7IjYmvi0ou3VsS9ZbgEDblkzIf9eez9NqTdVVr6OEQPudGZQ+a83dmsy9sDpsvbA6YDBYmKJlre9Ab11hRifx/IWTM0h5NgYS5K7qB3osWg57DhIEogNzXvvXODNkf/97ECDSVzSDrPhy54c77AqnrGSOeG8khY1SnfLeXnz1RVZ4/OP7t86Oms8G5pV81wJ3tprFv6vgfLlTSx253dUVzbgrLJzRQUrCmmQb31pYgefOIae3Nt/f4/VT3yy54fpp+chwqtkw4aIaTdKj7ruQa1nQ79Lft31UGBHo0XfTQP9Ag3V1D6xFK3bReY6D5WXSfLT8IC6NlcwRqjxYWQOmvB2CTfBvQSq0QnR9xfYHhzu50PbzM5z9+Ovl1EtxFlsGrkDxQ80mY8IGUYvWLdEVuvXHmkTDfvFJSEhmLP+wCYFAUFHm09GZJyQ/ez5OOHH9B1vwEuk2I8
+sidebar_class_name: "get api-method"
+info_path: api/meta-service/ballware-service-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query additional metadata for lookup by tenant, datasource and identifier"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/meta/tenant/reportlookupmetadatafortenantdatasourceandidentifier/{tenantId}/{datasource}/{identifier}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query additional metadata for lookup by tenant, datasource and identifier
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenantId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}},{"name":"datasource","in":"path","required":true,"schema":{"type":"string"}},{"name":"identifier","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","additionalProperties":{}}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

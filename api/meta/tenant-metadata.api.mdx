@@ -1,0 +1,69 @@
+---
+id: tenant-metadata
+title: "Query tenant metadata by id"
+description: "Query tenant metadata by id"
+sidebar_label: "Query tenant metadata by id"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVE1v2zAM/SsGTxug1unWk29FsQ7BsK7rxynIgbGYWK0sqRKdzjP83wfaTtY2w9pTYuo9+5HviR0wbhIUC7glh45hqcAHisjGu7mGYqp/J0aNjKAgYMSamKLQOnBYExTAA2yuQYFxUEBArkBBpMfGRNJQcGxIQSorqhGKDrgNwkscjduAgrWPNTIU0DRGQ98vhZyCd4mS4D/NZvKjKZXRBJEHBfz4BgpK75gcyymGYE05iM/vk0C6w0/61T2VLJ1EaZXN+AHp9k1ZCi6Hfg+BrrEWV5bGTgfg1mxwFPoO+LXZVJzOKyofboYO38W6pTpY5LGDN9C9AtTaiCK0V896X6NNpIANCxbE6ykNfS+s09nJ4ejvHDZc+Wh+0zCX09nnQ9CFjyujNbkRcXqIuPScXfjGieXq1dnPhmKbjcnK6imB2arNjMSsJq68JHRDg5kSuAJyweUjJ99x1j5OlW6X0x4UJCqbaLgdcuyNLuUe+EBu9348CwaWEsUd9EbCNE57JPxNVSA31+feuTFcL57vooUCKuaQijw3mhwbbo9XaO0TRjrWlEdCW6d8V8qPn8jaowfnn1w+ajoqvVubTTNezmFexq39oGGybsfOxMPs7GoOCrYU0zjP7YnYEHziGodQTnf3/3N+4cm+XaZfnAeLZrC2kf66yYPFMDpQ006YRvnCB1BQ7DfGUkHlEwux61aY6C7avpfyowiDYrFUsMVoxiwvOtAmyX+9j+4rjfuNAB+upwX0MRNB/9I+FdG1Miy0jTyBggdqn++1ftkrqAg1xUHDeHxWlhT4GfFgA0l69lH9+uUW+v4PRtriDg==
+sidebar_class_name: "get api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query tenant metadata by id"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/meta/tenant/metadatafortenant/{tenantId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query tenant metadata by id
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenantId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Name":{"type":"string","nullable":true},"Navigation":{"type":"string","nullable":true},"RightsCheckScript":{"type":"string","nullable":true},"Templates":{"type":"string","nullable":true}},"additionalProperties":false,"title":"MetaTenant"}}}},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

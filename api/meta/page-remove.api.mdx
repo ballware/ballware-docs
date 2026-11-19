@@ -1,0 +1,69 @@
+---
+id: page-remove
+title: "Query existing tenant"
+description: "Query existing tenant"
+sidebar_label: "Query existing tenant"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVcFuGzcQ/RViTi3AeJ3Cp70ZiQO4TR03jk+CDtRypGXMJWlyKEdd7L8XQ0qqFLmICuQkLTkz780j+WYEUqsE7Qzu1QphLsEHjIqMd7ca2rL6GQe/RpAQVFQDEkZOGMGpAaEFo0GCcdBCUNSDhIjP2UTU0FLMKCF1PQ4K2hFoEzgjUTRuBRKWPg6KoIWcjYZpmnNyCt4lTBz/2+Ul/2hMXTSBSUELn/4ACZ13hI54V4VgTVcoN18Th4ynkH7xFTviHiI3SKYCcI+ntI7xvvQosjPPGYXR6MgsDUax9FFQb5IgdMrRaTMSbvfR54EcVPfLWjyoFYqcUBe8iEuM6DrjVgfbxgnqURzIABJctlYtLNYzmCTclcM6hwYf6zEB8iL1/uVMpI9q4zP9GOtmWKDWqMXvD5/uhMalcYa3KjYKW+ocMXkVzvunHNJPwKuFqtzG7Vr3dqHia8D3pnuyJtFPgA67UmeDv8uJ/PBQMP4XAbVWNesVGl0pKmriuVwmCUrrUkfZ+4PXtVQ2oQQyxLHVX6aJ468u354+60enMvU+mr+xvJ6ry6vToDtP4oPPjs3i+x7/yhg3Ar+ZROWB7N7lgNR79jKNFqn6GPXQQjMgqYa7a2KxuGY0egIJCbscDW2Ky3mjO/ZHH9AVq+Os62Bgzna1C31gw6meUhP+dZ6A7la/885VAzr6fowWWuiJQmqbphoAbS4WytoXFfFCMzVlh9TslpqLF7T2zZPzL66pnN503i3NKlfbLsoYt/SFw1b8Xbb4E0mJ6/tbkLDGmKpy67csePCJBlXsc+vs/6Xoke77Rgm/UROsMo6rZe5s3Eo9K6IV5csjjruJ0hrNM6f3iThqHBcq4WO008TLz4wP7WwuYa2iqZduNoI2if/r/R37jtB+OMAvn7ez6FcB8nWi20XlNqyJspm/QMITbupwm+aThB6VZh+fjduN667DQAcpJ2OIr8f+7r2/+Xjz5Qam6R9jHJWM
+sidebar_class_name: "delete api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query existing tenant"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/meta/page/remove/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query existing tenant
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"id","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"Id":{"type":"string","description":"The unique identifier for this tenant","format":"uuid"},"Identifier":{"type":"string","description":"The identifier of this page used for referencing this page in the application","nullable":true},"Name":{"type":"string","description":"The name of this page to show in the application","nullable":true},"Layout":{"type":"string","description":"Embedded JSON definition of the layout of this page","nullable":true},"Lookups":{"type":"string","description":"Embedded JSON definition of the lookups used in page toolbar","nullable":true},"Picklists":{"type":"string","description":"Embedded JSON definition of the picklists used in page toolbar","nullable":true},"CustomScripts":{"type":"string","description":"Embedded JavaScript definition of the custom scripts used in page toolbar","nullable":true}},"additionalProperties":false,"title":"Page"}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

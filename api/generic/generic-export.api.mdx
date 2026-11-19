@@ -1,0 +1,69 @@
+---
+id: generic-export
+title: "Export by query"
+description: "Export by query"
+sidebar_label: "Export by query"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VE1v2zAM/SsGTxugVunQk2/B0BXBgG3YllORg2IzsVZZUiU6qWfovw/0F5KmGDCg2CmwyPdIvkemA1L7CPkD3KPFoAvYCHAegyLt7KqEfArcPXsXCAR4FVSNhIFhHVhVI+SgvDe66FEgQFvIwSuqQEDAp0YHLCGn0KCAWFRYK8g7oNYzNFLQdg8piZkNLWlq34BIl0y10xgmsqcGQ/tPbBtOjt7ZiJHjHxYL/ikxFkH7fuIcvn4GAYWzhJY4eqKH/BU5pftLiZQE3C5uLmnXVjVUuaB/Ywl90u1l0hdH2SfX2JJHfxEbbMu2bTYNXiNVjo3d42AnVZCD3A82y+6k8yS7wYkkcbI/YtEENofNd7oseHmcR6tLEDCyLL2GDQs3Zf/g0Qf5BsysAUNX5UdnLRbMf/a9DgZyqIh8zKUczKT2equMOaqA1yXKgMrUUU5P8vqIxlw9Wne0cmjrqnB2p/fNsNO9RtruXN+DJsNNTOhsXPZs+W0FAg4Y4iDj4YbV9y5SrXovx/26lPdM/nlKwmeS3ihtmafhsbpR+odJNBCQn59RPt/BKP9GQOUiMajrtiriOpiU+Hkoz56UOqqt4cXeKRPxoqN5SeHd9/EG3mcgXu/0EduXV3RQpuFEYH8PKmiu9vaVx0dl29OaU0enOvG5/8fSoydpkwRUqEoM/fBDcFkU6OkEdvE/wKrNJ3h/9xNS+gOSRuTh
+sidebar_class_name: "get api-method"
+info_path: api/generic/ballware-generic-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Export by query"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/generic/{application}/{entity}/export"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Export by query
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"application","in":"path","required":true,"schema":{"type":"string"}},{"name":"entity","in":"path","required":true,"schema":{"type":"string"}},{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"string"}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

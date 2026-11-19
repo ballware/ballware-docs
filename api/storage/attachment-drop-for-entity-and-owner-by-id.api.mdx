@@ -1,0 +1,69 @@
+---
+id: attachment-drop-for-entity-and-owner-by-id
+title: "Drop attachment for entity and owner by ID"
+description: "Drop attachment for entity and owner by ID"
+sidebar_label: "Drop attachment for entity and owner by ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VMtu2zAQ/BVhTi3AREnRE29u4gJGC6Ro6lPgAy2uLSISqZAru66gfy9W8iNu2kOLIieJy93Z4QyXHdisE/QDJsymKGvyjIVCaCgadsHPLPSzvdsYmo8hTj073k28vdt6ih92MwuFxkRTE1MUvA7e1AQNGlKh4Dw0GsMlFCI9tS6ShebYkkIqSqoNdAfeNVKVODq/Rt+rI1CQVkOjf0FSWIVYG4ZG2zp7huz+H+hCilMTfKIk+e+uruRjKRXRNSIoNO4+oVd4f3X9cmvuTctliO4HDRx/2Rb5M3N0I1uFmI0CZ8bbbJAoW+6y2S0UauIyiH2WKmIaHOISGnniEM2a8hNSbmNoViGOYMbbAWq5czbvxlifd3sH+rxztodCoqKNYq7YHZwt5B7tsSeNw0LkOCTdi4ajKGPqUczQkJ/Zm+A9FQx1vp7HCholc5N0njs7krlcmqramkiXlvJIpqpTfgjll1uqqotHH7Y+FyxnL4rgV27djld60NX5VRg4OK6ExKE6ux/5Z/NEMZt8mUFhQzGN+m+uxbkmJK6Nl/L9DforX84sParA9J3zpjLOS4tWjt3tDTuKCoVTE0H6k2lQ0MfB06fJ0c7KdJchscB23dIkmseq7yX81FIUMxcKGxOdWYoyDx2sS/JvoVemSvTiBEXwLIQ03nzdT87bDOr3J9sHjRdqG1O1soLCI+1Or4UM5yt2PQj0ym3lxVj0zwb1dvp5+m2Kvv8Jz6bsYg==
+sidebar_class_name: "delete api-method"
+info_path: api/storage/ballware-storage-user-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Drop attachment for entity and owner by ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/storage/attachment/dropforentityandownerbyid/{entity}/{ownerId}/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Drop attachment for entity and owner by ID
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"entity","in":"path","required":true,"schema":{"type":"string"}},{"name":"ownerId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}},{"name":"id","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK"},"401":{"description":"Unauthorized"}}}
+>
+  
+</StatusCodes>
+
+
+      

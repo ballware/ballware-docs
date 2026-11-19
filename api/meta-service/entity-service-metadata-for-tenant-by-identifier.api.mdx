@@ -1,0 +1,69 @@
+---
+id: entity-service-metadata-for-tenant-by-identifier
+title: "Query metadata for entity"
+description: "Query metadata for entity"
+sidebar_label: "Query metadata for entity"
+hide_title: true
+hide_table_of_contents: true
+api: eJztWU1v2zgQ/SvGnHYBNkoXOemWDZLCaDfNxsleDKOgxbHNhiIVkrKjFfTfi6GkWLGdRA7aHgKfbFMzw5k3H5QfS/B87iAew7n20hcwYWAytNxLo4cC4mZ9hHYpE/wHPRfc8wtjb1Bz7f8uhgK1lzOJFhhk3PIUPVoyWYLmKUIMPogOBTCQGmLIuF8AA4v3ubQoIPY2RwYuWWDKIS7BFxnpOW+lngODmbEp9xBDnksBVcUeTcvu7m8xXlUTEnaZ0Q4dPf/r+Jg+BLrEyoxwgBi+fgYGidEetaenPMuUTAJK0XdHIuX2Fmb6HRNPsFjC1Mt6A4L11RgZnK632CWvc6X4VGEdYMXaBPYRPcudN+koxOded/j8waMWKK7lfOHd2QKTux7bVAy4EJL85+qqY3DGlUMGXnqShaa0avefelYx+ISaqhHFaBPdqTEKuSahS1NX4ZPwO88/Y3FmVJ72A7L24SLXCfnexYdbywsqNI9pWF9X2RikoOZ5GUm5M/VbHtQCJaDOUzLNBfUOCkkWBc54rvy3erH9tZS46vxsZPHBo9Vcha+ZsbQm0/Bl7eujH21GuqloYbgpMgwJMdkmKs/E2hZ0j3gFKplKj/bXllUby9cmhJ9hiyDZiueLdP7fHG3Rv3Y6Y+w+aPaopUedPhjfb/jzUjY6k6+HPJffUNOK2NF9O+S7h0Q/eMKwb/B4FZf6ZNijy34yIG8qqlAtVy0wO4vKoqPOTsIgO0D3FLrrAE4z5LfRe7vhc+1tsTMf9OpzaPJDkx+a/B03+SWuDj1+6PFDj7/jHh8lXHH7H1c5bvb683iMPPe4x5/KEV9i0EkbBuEwTQ7T5DBN3t80ucbU7G715+Goda5soEE0t0Xg2GoWrJcBIhz2EG987K9A/3X2EceZsRhGXn+lfcUJ4VOlzAr3cW2ohUzQ/aqqg6oixZPjj9sc8q3muV8YK//HQPCeHJ9sC10aP7gwuQ4098azUHmDtOHgBzNjBw3rySBFvzDE188xNDCx4DFEJBzVQpGrHW31Z8bWxPy0WJ8ZUdmS9VVUrpcrYOAwyW2gWMclGCkSmiMmQy1FvT8/zSRMiE9vRQNnW4NdK6w5wwz1UJwZreuB8+T3rVUQw8L7zMVRJBtq92jKlVpxi0cCI4tcpS5ql6KjFSr14U6blY5qnz4kRs/kPK+vMgKaUs9M8KHJXKs9aFI4OL0aAoMlWlcDvvxIecqM8ynX60n4YiJ2jzaPDz7KFJdhDOUUYNkkaRywI4a2NdEnUcAg7tyrxJ0nEwYL4zxZLsspd3hrVVXRcnPYjycMltzKutjHJQjpmoO6qe2NIB4vPuCP6+YQ+XMAbHdw7fGjKZQlvVVBDMDgDovuXRBd4vzGfTv4VJOKwQK5oFekcdkInCYJZr6junXFQ5X92Gafzm+gqn4AcpahtA==
+sidebar_class_name: "get api-method"
+info_path: api/meta-service/ballware-service-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query metadata for entity"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/meta/entity/servicemetadatafortenantbyidentifier/{tenantId}/{identifier}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query metadata for entity
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenantId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}},{"name":"identifier","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Application":{"type":"string","nullable":true},"Entity":{"type":"string","nullable":true},"CustomScripts":{"type":"object","properties":{"ExtendedRightsCheck":{"type":"string","nullable":true}},"additionalProperties":false,"title":"ServiceEntityCustomScripts"},"GeneratedSchema":{"type":"boolean"},"NoIdentity":{"type":"boolean"},"KeyColumn":{"type":"string","nullable":true},"CustomFunctions":{"type":"array","items":{"required":["id"],"type":"object","properties":{"id":{"type":"string","nullable":true},"type":{"enum":["add","edit","default_add","default_view","default_edit","external","export","import"],"type":"string","title":"EntityCustomFunctionTypes"},"options":{"type":"object","properties":{"format":{"type":"string","nullable":true},"delimiter":{"type":"string","nullable":true}},"additionalProperties":false,"title":"ServiceEntityCustomFunctionOptions"}},"additionalProperties":false,"title":"ServiceEntityCustomFunction"},"nullable":true},"ListQuery":{"type":"array","items":{"required":["identifier","query"],"type":"object","properties":{"identifier":{"type":"string","nullable":true},"query":{"type":"string","nullable":true},"description":{"type":"string","nullable":true},"ai_enabled":{"type":"boolean","nullable":true},"parameters":{"type":"array","items":{"required":["name","type"],"type":"object","properties":{"name":{"type":"string","nullable":true},"type":{"type":"string","nullable":true},"description":{"type":"string","nullable":true}},"additionalProperties":false,"title":"ServiceEntityQueryParameter"},"nullable":true},"result_columns":{"type":"array","items":{"required":["name","type"],"type":"object","properties":{"name":{"type":"string","nullable":true},"type":{"type":"string","nullable":true},"description":{"type":"string","nullable":true}},"additionalProperties":false,"title":"ServiceEntityQueryResultColumn"},"nullable":true}},"additionalProperties":false,"title":"ServiceEntityQueryEntry"},"nullable":true},"ByIdQuery":{"type":"array","items":{"required":["identifier","query"],"type":"object","properties":{"identifier":{"type":"string","nullable":true},"query":{"type":"string","nullable":true},"description":{"type":"string","nullable":true},"ai_enabled":{"type":"boolean","nullable":true},"parameters":{"type":"array","items":{"required":["name","type"],"type":"object","properties":{"name":{"type":"string","nullable":true},"type":{"type":"string","nullable":true},"description":{"type":"string","nullable":true}},"additionalProperties":false,"title":"ServiceEntityQueryParameter"},"nullable":true},"result_columns":{"type":"array","items":{"required":["name","type"],"type":"object","properties":{"name":{"type":"string","nullable":true},"type":{"type":"string","nullable":true},"description":{"type":"string","nullable":true}},"additionalProperties":false,"title":"ServiceEntityQueryResultColumn"},"nullable":true}},"additionalProperties":false,"title":"ServiceEntityQueryEntry"},"nullable":true},"NewQuery":{"type":"array","items":{"required":["identifier","query"],"type":"object","properties":{"identifier":{"type":"string","nullable":true},"query":{"type":"string","nullable":true},"description":{"type":"string","nullable":true},"ai_enabled":{"type":"boolean","nullable":true},"parameters":{"type":"array","items":{"required":["name","type"],"type":"object","properties":{"name":{"type":"string","nullable":true},"type":{"type":"string","nullable":true},"description":{"type":"string","nullable":true}},"additionalProperties":false,"title":"ServiceEntityQueryParameter"},"nullable":true},"result_columns":{"type":"array","items":{"required":["name","type"],"type":"object","properties":{"name":{"type":"string","nullable":true},"type":{"type":"string","nullable":true},"description":{"type":"string","nullable":true}},"additionalProperties":false,"title":"ServiceEntityQueryResultColumn"},"nullable":true}},"additionalProperties":false,"title":"ServiceEntityQueryEntry"},"nullable":true},"ScalarValueQuery":{"type":"string","nullable":true},"StateColumn":{"type":"string","nullable":true},"SaveStatement":{"type":"array","items":{"required":["identifier","query"],"type":"object","properties":{"identifier":{"type":"string","nullable":true},"query":{"type":"string","nullable":true},"description":{"type":"string","nullable":true},"ai_enabled":{"type":"boolean","nullable":true},"parameters":{"type":"array","items":{"required":["name","type"],"type":"object","properties":{"name":{"type":"string","nullable":true},"type":{"type":"string","nullable":true},"description":{"type":"string","nullable":true}},"additionalProperties":false,"title":"ServiceEntityQueryParameter"},"nullable":true},"result_columns":{"type":"array","items":{"required":["name","type"],"type":"object","properties":{"name":{"type":"string","nullable":true},"type":{"type":"string","nullable":true},"description":{"type":"string","nullable":true}},"additionalProperties":false,"title":"ServiceEntityQueryResultColumn"},"nullable":true}},"additionalProperties":false,"title":"ServiceEntityQueryEntry"},"nullable":true},"RemoveStatement":{"type":"string","nullable":true},"RemovePreliminaryCheckScript":{"type":"string","nullable":true},"ListScript":{"type":"string","nullable":true},"RemoveScript":{"type":"string","nullable":true},"ByIdScript":{"type":"string","nullable":true},"BeforeSaveScript":{"type":"string","nullable":true},"SaveScript":{"type":"string","nullable":true},"StateAllowedScript":{"type":"string","nullable":true},"Indices":{"type":"string","nullable":true}},"additionalProperties":false,"title":"ServiceEntity"}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,69 @@
+---
+id: entity-right-all
+title: "Query all"
+description: "Query all"
+sidebar_label: "Query all"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVMFu2zAM/ZWApw1Q63Toybeg7YZgWNd16ynIgbGYWK0sqRKdLjP87wOtJE2aHuqLYfGRfnx8VAeMqwTlDG4cG97cm1XNMFfgA0Vk491UQ3kYnFgLCgJGbIgpSm4HDhuCEowmx2ZpKIIC46CE55biBhREem5NJA0lx5YUpKqmBqHsgDdBUhNH41bQ93MBp+BdoiTxL+OxvDSlKpogjKCEn99BQeUdk2OJYgjWVAPf4jEJpDv9BcaIwsUwNeng3C8eqWJpKkrXbPKPpfG39BQsfWyQoYS2NRp6tZXmPahrrcWFpdxzr2D6Ks9H4NcmBYub20HbD+CvvGM07kPVewWotRHB0N4d9L1Em0gBGxbskSt6eRRcji9OB/LgsOXaR/OPBlUux5enoFvPo6++dRqkznHslxhlhIO5GuLai+1WNIwFuYYSioYYCxoIRSFUZHSiqo3DCGYdeKMrcbMP5IzOtXASDMzFWDvob7FGnnJOePVCIDfVV965bImj74dooYSaOaSyKLLZeXO+QGtfMNK5piIS2iYVu6Pi/IWsPXty/sUVmdNZ5d3SrNq8XYMSxi39wGEr+i579IMYR5O7KShYU0xZqfWFCBx84gYHo2+X71DBI233zTH95SJYNE4qtNJNt1V3NggFCg70BQVSba6g9okF03ULTPQQbd/LcV5ukV2bJObSe/+8IbBfVfh0v70JPo9AvU/siTZv75I12laAIFNcYzTZyrN5r6Am1OL5WbfNnFQVBT7IOrkdpMreZN9u/kDf/wc3I7zb
+sidebar_class_name: "get api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query all"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/meta/entityright/all"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query all
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Entity":{"type":"string","nullable":true},"Identifier":{"type":"string","nullable":true},"DisplayName":{"type":"string","nullable":true},"Container":{"type":"string","nullable":true}},"additionalProperties":false,"title":"EntityRight"}}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

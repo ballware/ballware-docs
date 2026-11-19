@@ -1,0 +1,69 @@
+---
+id: generic-save-batch
+title: "Save list of items for entity by identifier"
+description: "Save list of items for entity by identifier"
+sidebar_label: "Save list of items for entity by identifier"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9U8Fu2zAM/RWDpw1w43ToSbduwIZgwFosyynIgbGZWKgsqRLtzDP87wNjO02aXQoUOxkWycfH98gOGPcR1Bq+kaWgc9ik4DwFZO3sogA1BZbY0GfkvIQUPAasiClIZQcWKwIF6L3R+bEQUtAWFHhkyQ/0XOtABSgONaUQ85IqBNUBt15KIwdt99D36QmNLGtu3wFIFwK10xQmsOeaQvsmtI0kR+9spCjxT/O5fAqKedD+OLGCh+/Qp3A3v70OrSzWXLqg/1AxJN1dJ/1wnHx1tS2E/quYqJ8YHTlxu0QzVTHZuZAMIiXbNrmYsiIunXjnXeSjX1yCgmw/WJl1Z1b1WTeg9FnEhrajxZHyOogBYrDTRS474jxZXUAKI9C917ARcabspSg4SDTUnKSU0kXxxVlLuVC6+F8FAwpKZh9Vlg2jcDvbojEHDDQrKAuEporZ9JTNDmTMzZN1B5sNtG5yZ3d6Xw+re9RQ2507ctBshMRUnYw7ndw/LiCFhkIcZG5uxR1RrUIrleMOvU3+C+tOCjD95swb1FZ61DJyNzqzngSFFNTlGanTHby4s0mhFGPVGrpui5FWwfS9PA+bLZYVOuLWyG7v0ES6IpU7y2QZFHz4OZ7BxwTSf5N9ovb1ITVoakkEsb/BoKXb+3ceH9G25z0nRudSycX/x9ajLf2mPzu3x4flL+j7v0Zy1QQ=
+sidebar_class_name: "post api-method"
+info_path: api/generic/ballware-generic-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Save list of items for entity by identifier"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/generic/{application}/{entity}/savebatch"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Save list of items for entity by identifier
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"application","in":"path","required":true,"schema":{"type":"string"}},{"name":"entity","in":"path","required":true,"schema":{"type":"string"}},{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK"},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

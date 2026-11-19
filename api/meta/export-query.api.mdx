@@ -1,0 +1,69 @@
+---
+id: export-query
+title: "Query items by query identifier and params"
+description: "Query items by query identifier and params"
+sidebar_label: "Query items by query identifier and params"
+hide_title: true
+hide_table_of_contents: true
+api: eJyVVE1v2zAM/SsGTxug1unQk2/B0A3F0K1b21OQA2MxsVpZUiU6bWb4vw+0kvQjxdblElh6JB8fn9gD4ypBNYOzx+Ajw1yBDxSRjXfnGqrt+c+O4gYUBIzYElOUmB4ctgQVGE2OzdJQBAXGQQX3W3yk+85E0lBx7EhBqhtqEaoeeBMkNHE0bgXDMBdwCt4lSnL/aTKRP02pjiYIHajgxzdQUHvH5FhuMQRr6pFseZsE0h+WwBhRuBimNj0794tbqlmaitIym1xYun5NT8HSxxYZKug6o2FQMH0q/RbeddbiwlJufFBw5tjw5l3QLPa7kj4Gk2d1xdiGvxLXyHTEpqW3El2QNng9hv6z7KAAtTZSFe3lM+2WaBMpYMOC3TlqkJ+C08nJ4TxvHHbc+Gh+0yjq6eT0EPTdc/HFd06D5Hl5N0pVjJMtFpviPn/u7Vig08Xo2QQKWuLGi6dXNI4duYEKypYYSxrJljvfJqq7OM5r1oM3upYn4gM5o3MinAYDc3HtDnolvssWygFPRgvkzvVn71z224vvm2ihgoY5pKosM3XeHC/Q2geMdKypjIS2TeXuqDx+IGuP7px/cGXmdFR7tzSrLnth1Mm4pR85bKexiy4uiLGYXp6DgjXFlHVcn4j8wSducfTz9mX/l74vRrPvnumRy2DROCnRSbv9VvvZqCQoyOqD2u6NuYLGJxZA3y8w0U20wyDH+V6Gok0ST+q97V5V328J+PBru4Q+FqDeZnVHm9drbI22EyDIjNcYTX4Bs/mgoCHUFEcaOXJa1xT4WdTBYpIse/99PbuGYfgD+3DmOw==
+sidebar_class_name: "get api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query items by query identifier and params"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/meta/export/query"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query items by query identifier and params
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Application":{"type":"string","nullable":true},"Entity":{"type":"string","nullable":true},"Query":{"type":"string","nullable":true},"ExpirationStamp":{"type":"string","format":"date-time","nullable":true},"MediaType":{"type":"string","nullable":true}},"additionalProperties":false,"title":"Export"}}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

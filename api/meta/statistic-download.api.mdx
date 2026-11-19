@@ -1,0 +1,69 @@
+---
+id: statistic-download
+title: "Download exported"
+description: "Download exported"
+sidebar_label: "Download exported"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9k8tu2zAQRX/FmFULMKZbZMVd0BeMog80zcrwYiyOLSIUyZAjO4agfy9GlhynybLoShLJO7pzeKcDxl0Bs4JbRnaFXQVrBTFRRnYxLC2Yp62P8RB8RAsKEmZsiCmLuIOADYEBpoCBl3LABTCQkGtQkOmhdZksGM4tKShVTQ2C6YCPSXSFsws7ULCNuUEGA23rLPS9Opd2/67oWsQlxVCoyPn3i4U8LJUquyRtg4EfX6FXcL24frn1PfLsc2zDYPCvvQnRjB5TzEziuiGuo4DcEQ/ouAYDuiFGXSa22o5K3U0Ue90524OCQlWbHR8H1NHZSi4sJgpuLI83ycFaGpuO3gqNU3snwRmL6Jb2QwyBKrHz7PsuezBQM6ditHaWAjs+zjfo/QEzzS3pTOiboqclPT+Q91f3IR6CPnm6qmLYul17itAAyYVtHDw49mJiUs++EePs5ucSFOwplxPE/Tthn2LhBoPIxgy8BvcZ/nOTTI+sk0cXpFIrXXUj+NUATKieE6/APiXbXITYOCvjUMfCIuy6DRa6y77vZfmhpSx3slawx+xwI62tOrCuyLsFs0Vf6IXHKgamIIF882sM8dsZqNe9j4sYjoIIfStfoOCejpcDJ5PyH/8rc7TuL6L95dNv6Ps/QCJ3+A==
+sidebar_class_name: "get api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Download exported"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/meta/statistic/download/{tenantId}/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Download exported
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenantId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}},{"name":"id","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

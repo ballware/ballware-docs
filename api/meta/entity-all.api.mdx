@@ -1,0 +1,69 @@
+---
+id: entity-all
+title: "Query all"
+description: "Query all"
+sidebar_label: "Query all"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNV1FPGzkQ/itonu6kLUt7PO1bLgUUFSgH9F4QD8N6kkzjtbf2bOhetP/9ZG8IgaR3XqRK5SXC/mb8+ZtZz8wKBGceijs4McLSwn0GtiaHwtZMFBTr9ZHWkEGNDisScsFiBQYrggJYkRGeMjnIgA0U8K0h10IGjr417EhBIa6hDHw5pwqhWIG0dTD14tjMoOvuA9jX1njyYf/D0VH4UeRLx3UgAwV8/gQZlNYIGQm7WNeay0g1/+oDZLV7BDqHgQsLVX5r3T58pVLCpVy4sHB/cLjza3oZTK2rUKCApmEFXQYXJNuHPFirCU3YOSMT5CN185rJFugTtWOrm8rsO8w0WuODpl61LoNLO4kSS7vf2+hZhyR/J699/Rj6kX2tsb2MkU7A/4mevjidhJ0IVRdY12xmNzHKyVbXtCTnabjxOXv5KyZn0mXaiUpHX9JjOvimRI3ub9QNDTDCJd0IClXrD+B/La6psm+zuXKkuWKDrh3PqVwMFHkAfM0x3SCEZQicptZR1C7daCD83NpFU/sk7BWXC81e0tDjxouteippFmeO1Tm2tkmjfqJYBsB7PqeNKcNzk8Yo5t+A9y7irwm9NQOsbqmqNQoN4DTS2j7SkGSaGMVl4hFXzi5ZkbuwivRHmrLh5Cc60ts+5ueUsQGVIDLaQrIRmsWSv/HKRv74ENwml4ubpizJe+vSFL2m0jp1yob9nLZvuFUMe8y5LRc/RoTMut70JruYLgNUKkYL9dWWsFPUnjIQlsAqRDjQDzUoqtPt48yzufxSkZw892s/owUYWyPIJsl7qtD97aKUe0UOb+oyFNNfSuhTJr3X6Q4yNgKJH9ctfU+sYdZJ2Epw++bAbIT/j9wf1D+EOQDVZ6PbN6VI6MsVCkIX/jI4Pnq/O0d8MdjI3Dr+h2JIj4+Od0GXVg5ObWNUfA5e7sWW7QDjTFSRzG0YlGYUcwplDgXkFQnmfdOe90BPZeNi6tytwLIqw9RlazKsejc4qhnuwyj0BI0jRJ+dvcFzDtdkJmpsjelT+cX/sQGHuUjtizzn9exw+IBaP6KjQ0W5I9SVz5+W8sNH0vrdwthHk/ec3pXWTHnW9KNgFIHN1EYOa8mfrA+C6gejqwlkEBrzXqTl+6Btbb1UGIveelzcFu+FrJvLCX2XvNbI8blu+nGiF/YuCgUZrOehDIKj+wzm1kvYXq0e+hGk68JyP4kGxRX7kGVqkzivzt7MlfDbU2n4/QCy/ZwW1L4efPuvoAAIAVyi4z6n7+67DOaEKryHd6u15agsqZYtq51RNnjZpNbZyS103b/t1HTD
+sidebar_class_name: "get api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query all"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/meta/entity/all"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query all
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Meta":{"type":"boolean"},"GeneratedSchema":{"type":"boolean"},"KeyColumn":{"type":"string","nullable":true},"NoIdentity":{"type":"boolean"},"Application":{"type":"string","nullable":true},"Entity":{"type":"string","nullable":true},"DisplayName":{"type":"string","nullable":true},"BaseUrl":{"type":"string","nullable":true},"ItemMappingScript":{"type":"string","nullable":true},"ItemReverseMappingScript":{"type":"string","nullable":true},"ListQuery":{"type":"string","nullable":true},"ByIdQuery":{"type":"string","nullable":true},"NewQuery":{"type":"string","nullable":true},"ScalarValueQuery":{"type":"string","nullable":true},"SaveStatement":{"type":"string","nullable":true},"RemoveStatement":{"type":"string","nullable":true},"RemovePreliminaryCheckScript":{"type":"string","nullable":true},"ListScript":{"type":"string","nullable":true},"RemoveScript":{"type":"string","nullable":true},"ByIdScript":{"type":"string","nullable":true},"BeforeSaveScript":{"type":"string","nullable":true},"SaveScript":{"type":"string","nullable":true},"Lookups":{"type":"string","nullable":true},"Picklists":{"type":"string","nullable":true},"CustomScripts":{"type":"string","nullable":true},"GridLayout":{"type":"string","nullable":true},"EditLayout":{"type":"string","nullable":true},"CustomFunctions":{"type":"string","nullable":true},"StateColumn":{"type":"string","nullable":true},"StateReasonColumn":{"type":"string","nullable":true},"Templates":{"type":"string","nullable":true},"StateAllowedScript":{"type":"string","nullable":true},"Indices":{"type":"string","nullable":true},"ProviderModelDefinition":{"type":"string","nullable":true},"States":{"type":"array","items":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Entity":{"type":"string","nullable":true},"State":{"type":"integer","format":"int32"},"Name":{"type":"string","nullable":true},"Successors":{"type":"string","nullable":true},"RecordFinished":{"type":"boolean"},"RecordLocked":{"type":"boolean"},"ReasonRequired":{"type":"boolean"}},"additionalProperties":false,"title":"ProcessingState"},"nullable":true},"Rights":{"type":"array","items":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Entity":{"type":"string","nullable":true},"Identifier":{"type":"string","nullable":true},"DisplayName":{"type":"string","nullable":true},"Container":{"type":"string","nullable":true}},"additionalProperties":false,"title":"EntityRight"},"nullable":true},"Pickvalues":{"type":"array","items":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Entity":{"type":"string","nullable":true},"Field":{"type":"string","nullable":true},"Value":{"type":"integer","format":"int32"},"Text":{"type":"string","nullable":true},"Sorting":{"type":"integer","format":"int32","nullable":true}},"additionalProperties":false,"title":"Pickvalue"},"nullable":true},"RightsCheckScript":{"type":"string","nullable":true,"readOnly":true}},"additionalProperties":false,"title":"EntityMetadata"}}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

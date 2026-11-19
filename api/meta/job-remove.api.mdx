@@ -1,0 +1,69 @@
+---
+id: job-remove
+title: "Query existing tenant"
+description: "Query existing tenant"
+sidebar_label: "Query existing tenant"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVE1v2zAM/SsBTxug1unQk2/FlgLZV7+WU5CDYjGxUllSJSppZvi/D5TTrGkyrCfb1KP5+PTIFkguI5RT+OrmMBPgPAZJ2tmxgpKD99i4NYIAL4NskDAwvAUrG4QStAIB2kIJXlINAgI+JR1QQUkhoYBY1dhIKFugreeMSEHbJQhYuNBIghJS0gq6bsbJ0TsbMTL+03DID4WxCtozJyjh5hsIqJwltMSn0nujq8y4WEWGtMcl3XyFFXEPgfsj3RfgFv9LS8BDVaNKBsMptE3GyLnBvt1OwFihJb3Q74TfbOxp5CGNU5lZkviuKvcYk6F3QR9IEjISbWrYGBP7aN3GgoC7hAmZy9jeBrcMGCMIuNZWxzrHRyG4wC56W4U0cQn2U/5/hK4TIJXS3IM0t6/uZSFNxIMU6DqGXw4vjv0wsTJR7YL+jfmyLoeXx6CfjgbXLlmVyx6e3SUM2wE+60jaLgeEVlq2SoNUO54BhQapHwCqoYSiQZLFys2LkEejaLXqQEDEKgVN2zwdTquKxXMebb4+TrryGmZs8xcoO6vpvdgn/HWsRztWn521vXEPvifBQAk1kY9lUehsONqez6UxGxnwXGERUJomFi+h4nyDxpzliyx6TmeVswu9TP20Z2G0XbjMYSf9S/bgB5IcXN2OQcAaQ+yFW1+w3t5FamQeu91G+JegB7LvGyV8psIbqS3/LXFn7U7paRYNBKzcPC+W3SIqtWKP1S4Sg9p2LiNOguk6Dj9xeSinMwFrGXTv7WkLSkd+V3uDveGz3ynw4X63wj4OQJzmuQtKu2VJpEn8BQIecdvvxG7WCahRKh7uabs7uKoq9PQq5Wh7sTv2zvsy+j76NYKu+wOpIe3A
+sidebar_class_name: "delete api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query existing tenant"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/meta/job/remove/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query existing tenant
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"id","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Scheduler":{"type":"string","nullable":true},"Identifier":{"type":"string","nullable":true},"Owner":{"type":"string","format":"uuid","nullable":true},"Options":{"type":"string","nullable":true},"Result":{"type":"string","nullable":true},"State":{"enum":["Unknown","Queued","InProgress","Finished","Error"],"type":"string","title":"JobStates"}},"additionalProperties":false,"title":"Job"}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,70 @@
+---
+id: pickvalue-save-batch
+title: "Save existing or new items in batch"
+description: "Save existing or new items in batch"
+sidebar_label: "Save existing or new items in batch"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNlFFv2kAMx79K5KdNCg0tlG5566ZNqqZt1Wj3gngwOQduvdxldw6UoXz3yTkgbelDeQF8ts9n//7eAeMyQD6DW108rNE0BPMUXE0eWTt7oyDvj6a4pk/IxQpSqNFjRUxeondgsSLIQSuyrEtNHlLQFnL425DfQgqe/jbak4KcfUMphGJFFUK+A97WEhrYa7uEtp1HZwr8yamteBTOMlmWn1jXRhddbdmf4KzYTlKh9yh3aqYqPLG7xR8qWIr38kLW1J3KI1+WkULpfIUMOTSNVtCm8MWy5u1rrrYxBheG4tvaFL5qMq8mPfH83bW899SWadl173i/tjy6kALu6JHflHTqPMvRG9KeRLcpoFJaGozm9kmfSjSBUmDN4vuEl7aVoOfz7QyhdjbEFl8Mh/KlKBRe15Iccvj5TV41Hp6fHt1bbHjlvP5HKjqNT51+OE6+usYqkAKenwmqCT3qII1InE8sbZKOh0TbZLGHuCJeOUG8dqHjAnkFOWQVMWb14YVZwDUdQgIVje84mO3AaVWIeFxNVquYEK9rDXOh+OA6FT5jH2JAD2RN9kZ9dtZGLp/9v/cGclgx1yHPsqgs3p4t0JgNejpTlHlCU4XsYMrONmTM4MG6jc1iTYPC2VIvmyjnrlEim1+9wL48YlXLSGdRCTAq8cNlORkPLq/Orwbjy8nFYDEqi8FF8XEyKicTLHECvRx6DvfU94Y93MMDuv3JkdChNErb0nVd2bN1eE/ynRiT69sbSGFNPsTRrs+FCJlYhZ3+97vnbSN/hslxEEyPnNUGtZXcjXR+t6dh1g1V4DgSn0JPxDyFlcCTz2C3W2Cge2/aVsxx80lblQ6iMHUU0YsijvsN3v3ay+h9AunrxT3Q9uWijVXlANLMNXod9TybtymsCBX5rowY+TleNriT5H3syWKVXEd93P6c3kEKi/1CrpySGI8b2ey4kbuFXonuOO9sOzBolw0uxTfmlM9/BaQzlQ==
+sidebar_class_name: "post api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Save existing or new items in batch"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/meta/pickvalue/savebatch"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Save existing or new items in batch
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Entity":{"type":"string","nullable":true},"Field":{"type":"string","nullable":true},"Value":{"type":"integer","format":"int32"},"Text":{"type":"string","nullable":true},"Sorting":{"type":"integer","format":"int32","nullable":true}},"additionalProperties":false,"title":"Pickvalue"}}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK"},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

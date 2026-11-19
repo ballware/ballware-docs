@@ -1,0 +1,70 @@
+---
+id: document-save
+title: "Save existing or new item"
+description: "Save existing or new item"
+sidebar_label: "Save existing or new item"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNlFtv2zoMx7+KwacdQKl7zTa/7XaA4gBb0a5PQR4Yi060yZIn0Ukzw999oJU4bVIcLC9JJJLi5fdnB4zLCMUMPvuyrckxzBX4hgKy8e5WQzHePOCaQEGDAWtiCuLWgcOaoACjybGpDAVQYBwU8KulsAUFgX61JpCGgkNLCmK5ohqh6IC3jbhGDsYtoe/nyZgif/R6Kxaldyw5FR1g01hTDlnlP6J3cnYSyi9+UMmSZJAa2FCUWynj+DkFlQ81MhTQtkZDr+CziY3F7deholN711qLC0upkF7BF8eGt39l+sDIz4Max7QcejVmYRxfXUoa99T4wB+Nw/Bq8NFjsWV67bEU4G4/p79IsFeAWhtpLtq7Z72r0EZSwIbF9gBJLy4vJzscxMa7mJp+eX4uX5piGUwjoaGAb/9JhdfnF6dXjw5bXvlgfpNORtenRl89Z//61mmQBF7eCZ8ZPZnIxi0zHzJHm8ww1aCgJl55gbnxceADeQUF5HpX0OFHTJRHKtswTHfWgTe6FI34hpzRoGBv/aExMBdu9+YPQmSqPzkd0GzI3epP3rlE6Iv/j8FCASvmJhZ5nrTE27MFWrvBQGea8kBo65jvj/KzDVk7+en8xuUpr0npXWWWbZLu0CARyv1BUl+esG4s7SUBVxW+u6mm15ObtxdvJ9c308vJ4qoqJ5fl++lVNZ1ihVM40sWBoT3+h5Md5efHDB8sTtAc1S9bo/JDw3aw7UvN9t3O2kgh+3B3CwrWFGIa+/pCnGWuNQ5bYbeR/g+HF+CMI2J64ryxaJxEbGUm3Y6U2TjyZ9MXTISWuYKVYFXMoOsWGOkx2L6X47QDBSFtouhNj5I6SmHcdPDmfierfzJQr6f2k7bHK3eNthVDEBrXGExS92zeK1gRaun1rNt5fkqPTb5L8IPvyYqVWKNy7r49fAcFi91qrr0Wn4Ab2fG4kbeFavEe+B/OOrDoli0uxTbFlM8fEmk4ig==
+sidebar_class_name: "post api-method"
+info_path: api/reporting/ballware-document-user-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Save existing or new item"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/document/document/save"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Save existing or new item
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"DisplayName":{"type":"string","nullable":true},"Entity":{"type":"string","nullable":true},"State":{"type":"integer","format":"int32"},"ReportBinary":{"type":"string","format":"byte","nullable":true},"ReportParameter":{"type":"string","nullable":true}},"additionalProperties":false,"title":"Document"}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK"},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -29,6 +29,7 @@ const config: Config = {
 
   onBrokenLinks: 'throw',
   markdown: {
+    mermaid: true,
     hooks: {
       onBrokenMarkdownLinks: 'warn',
     },
@@ -74,7 +75,7 @@ const config: Config = {
         id: 'administration',
         path: './administration',
         routeBasePath: '/administration',
-        sidebarPath: './sidebars.ts',
+        sidebarPath: './administration/sidebars.ts',
         editUrl,
       },
     ],
@@ -84,7 +85,7 @@ const config: Config = {
         id: 'guide',
         path: './guide',
         routeBasePath: '/guide',
-        sidebarPath: './sidebars.ts',
+        sidebarPath: './guide/sidebars.ts',
         editUrl,
       },
     ],
@@ -94,13 +95,79 @@ const config: Config = {
         id: 'api',
         path: './api',
         routeBasePath: '/api',
-        sidebarPath: './sidebars.ts',
+        sidebarPath: './api/sidebars.ts',
         editUrl,
+      },
+    ],
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: 'openapi',
+        docsPluginId: 'api',
+        config: {
+          metaUser: {
+            specPath: 'openapi/meta/meta.json',
+            outputDir: 'api/meta',
+            sidebarOptions: {groupPathsBy: 'tag', categoryLinkSource: 'tag'},
+          },
+          metaService: {
+            specPath: 'openapi/meta/service.json',
+            outputDir: 'api/meta-service',
+            sidebarOptions: {groupPathsBy: 'tag', categoryLinkSource: 'tag'},
+          },
+          genericUser: {
+            specPath: 'openapi/generic/generic.json',
+            outputDir: 'api/generic',
+            sidebarOptions: {groupPathsBy: 'tag', categoryLinkSource: 'tag'},
+          },
+          genericService: {
+            specPath: 'openapi/generic/service.json',
+            outputDir: 'api/generic-service',
+            sidebarOptions: {groupPathsBy: 'tag', categoryLinkSource: 'tag'},
+          },
+          genericSchema: {
+            specPath: 'openapi/generic/schema.json',
+            outputDir: 'api/generic-schema',
+            sidebarOptions: {groupPathsBy: 'tag', categoryLinkSource: 'tag'},
+          },
+          mlUser: {
+            specPath: 'openapi/ml/ml.json',
+            outputDir: 'api/ml',
+            sidebarOptions: {groupPathsBy: 'tag', categoryLinkSource: 'tag'},
+          },
+          mlService: {
+            specPath: 'openapi/ml/service.json',
+            outputDir: 'api/ml-service',
+            sidebarOptions: {groupPathsBy: 'tag', categoryLinkSource: 'tag'},
+          },
+          reportingDocument: {
+            specPath: 'openapi/reporting/document.json',
+            outputDir: 'api/reporting',
+            sidebarOptions: {groupPathsBy: 'tag', categoryLinkSource: 'tag'},
+          },
+          reportingService: {
+            specPath: 'openapi/reporting/service.json',
+            outputDir: 'api/reporting-service',
+            sidebarOptions: {groupPathsBy: 'tag', categoryLinkSource: 'tag'},
+          },
+          storageUser: {
+            specPath: 'openapi/storage/storage.json',
+            outputDir: 'api/storage',
+            sidebarOptions: {groupPathsBy: 'tag', categoryLinkSource: 'tag'},
+          },
+          storageService: {
+            specPath: 'openapi/storage/service.json',
+            outputDir: 'api/storage-service',
+            sidebarOptions: {groupPathsBy: 'tag', categoryLinkSource: 'tag'},
+          },
+        },
       },
     ],
   ],
 
   themes: [
+    '@docusaurus/theme-mermaid',
+    'docusaurus-theme-openapi-docs',
     [
       require.resolve('@easyops-cn/docusaurus-search-local'),
       {

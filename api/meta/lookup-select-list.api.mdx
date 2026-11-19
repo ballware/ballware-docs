@@ -1,0 +1,59 @@
+---
+id: lookup-select-list
+title: "Query list of all lookup"
+description: "Query list of all lookup"
+sidebar_label: "Query list of all lookup"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNU8Fu1DAU/JXVnN2mRZx8q1AFKwoUlZ5We3gbv924dWzXftkSovw7crIsW4oQuSRx5k3GM+MBQrsMvcJNCI9dxFohRE4kNvilgT6s37HjWm5sFigkzjH4zBl6wJuLi3IznOtkYxmDxpePUKiDF/ZSvlKMztYTafWQC2RArhtuqTxJHxkalBL1ULDC7USd+KmziU2RtzTsxW4tpyLxMBE2D1wXRTEV0WJnSUX3kTVLsn4HhW1ILQk0us4ajOqU8i9w3zlHG8fQkjoeFT5Ty/8F/ED5lhK1J+BNCI7JYxwVyBhbjCB3e6J6Sy6zglgpTK9cv/aSeozlUnh7cfna8ntPnTQh2R9spv+8/Py149QvnM2yCNsFObdwc+AKLUsTStQ7nrwkaaBRtSxUzaAqT0LcHH/muktWeujVgGBNXfIJkb01MxtdRYv1uP4NvStZz+HMA0dnytzSvAvez0m+eL9PDhqNSMy6quyUl/TnG3LumRKfG64Sk2tz9WupOn9m584efXj21azprA5+a3fd3OnJGuu3YdJwcPvX9OITCy2ubpdQ2HPKs3X7y9KWGLK0NDXXT034l6UvvD/uVfi7VNGR9YWwK5sbDnavJt+gcKQ4sXyt0IQsBTUMG8p8n9w4luWnIgF6tVbYU7JzDVfrUaFhMqXYqwGP3EPjqq45Fof35LrpuP15Jktgxy68v/6GcfwJEWluXg==
+sidebar_class_name: "get api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query list of all lookup"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/meta/lookup/selectlist"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query list of all lookup
+
+<ParamsDetails>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"array","items":{"required":["Identifier"],"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Identifier":{"type":"string","nullable":true},"Name":{"type":"string","nullable":true},"HasParam":{"type":"boolean"}},"additionalProperties":false,"title":"LookupSelectListEntry"}}}}},"401":{"description":"Unauthorized"}}}
+>
+  
+</StatusCodes>
+
+
+      

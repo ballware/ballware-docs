@@ -1,0 +1,69 @@
+---
+id: ml-model-consume-by-id
+title: "Consume model by id"
+description: "Consume model by id"
+sidebar_label: "Consume model by id"
+hide_title: true
+hide_table_of_contents: true
+api: eJxtk8Fu2zAQRH9FmFMLMFZS9MSbGxSFUQQt2vpk+ECLa4sNRTIklVQV+O/FSraT1DlJ4u6Qs4+jEVkdEuQGd/bOa7LYCvhAUWXj3UpDngq33qW+o0/DSkMgqKg6yhRZO8KpjiDRceNUNw4SQeUWApEeehNJQ+bYk0BqWuoU5Ig8BJalHI07QGDvY6cyJPreaJSyZXEK3iVK3P/h+pofmlITTWCHkPj2FQKNd5lc5qoKwZpm8l//TtwyPh9ZSikCH69vLvdZO9Xn1kfzl/hs8V/5OH81zVjthsrwnB3l1jOlA+UJS24hUXe27uzUWTezbjcYXY9HQAUCiZo+mjxM/LzRDV+CD+Tmfe0yGGyZwKnxJ88wc5jbz/xYtdK33jlq2MWr73W0kGhzDknWtdHkssnDYqesfVKRFprqSMp2qT4t1Ysnsvbq3vknV8+Orhrv9ubQz7GY6Bi395MHky2bOKmrO1v1iWK1/L6CwCPFNAN8vEERCD7lTk2XcgzN22BfwT9PmulProNVxvFePY82HqFv0NkJ3LTPHIkTeAjIUza3Aq1PmQXjuFOJ1tGWwssPPUW+jq3Ao4pG7XiuzQhtEr9ryL2yiS68nbOHdz+OUX9fQbzt+bio3MBwlO35CwL3NLz4gcq2CLSkNMXJwlxdNg2F/EJ3EXXOyzmSXz7/Qin/ANQkVN8=
+sidebar_class_name: "get api-method"
+info_path: api/ml/ballware-ml-user-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Consume model by id"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/ml/mlmodel/consumebyid/{modelId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Consume model by id
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"modelId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{}}}},"401":{"description":"Unauthorized"}}}
+>
+  
+</StatusCodes>
+
+
+      

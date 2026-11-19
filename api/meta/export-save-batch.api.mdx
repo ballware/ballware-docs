@@ -1,0 +1,70 @@
+---
+id: export-save-batch
+title: "Save existing or new items in batch"
+description: "Save existing or new items in batch"
+sidebar_label: "Save existing or new items in batch"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNlUtv4zgMx7+KwdMuYNdJmqQzvrVFFygGM9Pt47JBDoxFJ5qxJY0k5zGBv/uCUh5NWuw2lyQ0SVHk709vwePcQTGBu7XR1sM0BW3Iopda3QsodvYnXNIN+nIBKRi02JAny3FbUNgQFCAFKS8rSRZSkAoK+NWS3UAKln610pKAwtuWUnDlghqEYgt+YzjUeSvVHLpuGp3J+RstNuxRauVJef6JxtSyDIXlP5xWbHuTCq1FPlN6atwru579oNJz8Zav5yWFp3zD8zJSqLRt0EMBbSsFdClcH49+z1+1dY2zmuIFuxTulJd+8yHXv0OTPpR0bWScy5PHxvxn4QI9ZV429F6iryQkPofQ/z22SwGFkHwq1g+veldh7SgFLz377unpOo44HXgwOKOViz0f9Hr8JciVVprYU/j+hfs87PXfPnpR2PqFtvI3ieg0fOv0TfvkL90qAVzA6TNmN6G1dF6qeaJtomiVBEASqZLZjuqG/EIz8Ea7AAr6BRSQN+Qxp3C93OGS9v6OytaGKU+2oKUoWUTakJIiZsNrI2HKTO9dn5jW2IQYcMTTkLoXt1qpSOnJ/xdbQwEL740r8jzqzG8uZljXK7R0ISi3hHXj8r0pv1hRXWc/lV6pPNaUlVpVct5GgkKXWESPR7ndrbExPMxJ1AVcVvhpVI2H2eiqf5UNR+NBNrusymxQfh5fVuMxVjiGM3EcQdpr4GjZof7K5ZxoGPQGw6x3lQ0+P/dHxahfDD5d9K76/8AJtYeFMeVNU+nQyB2I+xYkX8ljcv1wDyksybpY3bLPBPGEGwxS3i2vjyFygtVhdp7WPjc1SsW5Wx7WdkfPJHAAKUR+mJoDQdMUFkxaMYHtdoaOXmzddWyOe5PHIKRjLYqD3M4qOGxH+ONxp7k/E0jfr+wnbc7X9BLrlh1DJ5doZVT+ZNqlsCAUZEMZMfI2HpaFGRxj36xlznUQ08P3p2dIYbZb540WHGNxxe8FXPHZTDtHB10E2xZqVPMW5+wbc/LnXzhtRvo=
+sidebar_class_name: "post api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Save existing or new items in batch"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/meta/export/savebatch"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Save existing or new items in batch
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Application":{"type":"string","nullable":true},"Entity":{"type":"string","nullable":true},"Query":{"type":"string","nullable":true},"ExpirationStamp":{"type":"string","format":"date-time","nullable":true},"MediaType":{"type":"string","nullable":true}},"additionalProperties":false,"title":"Export"}}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK"},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

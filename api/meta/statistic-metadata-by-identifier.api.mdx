@@ -1,0 +1,69 @@
+---
+id: statistic-metadata-by-identifier
+title: "Query metadata for statistic by identifier"
+description: "Query metadata for statistic by identifier"
+sidebar_label: "Query metadata for statistic by identifier"
+hide_title: true
+hide_table_of_contents: true
+api: eJyVVE1T2zAQ/SuePbUzAocOJ98oA51MC6WlnDI5bKxNIpAlIa2hrsf/vbN2PgmHcLIlvad92n27LTAuEhQTuGdkk9iUMFXgA0Vk491YQ7E9uiFGjYxfm7Emx2ZuKIKCgBErYopyUQsOK4ICzC7EOCggIC9BQaTn2kTSUHCsSUEql1QhFC1wE4SZOBq3gK6bCjgF7xIlOf8yGslHUyqjCaIPCvj5HRSU3jE5llMMwZqyV58/JoG0hyH87JFKFu1R3spmCCDPfStDwdzHChkKqGujoVNw5dhw8x7U1dbizNLwtk7BTqKOgd/2uTsCeIMhGLe47xNxFOOyTuyrgZCOYlwTl8v7Z/sB8PFyfmDj6+OgYrsd4Mx7S+ig6xSg1kYqjfZup5BztIkUsGG5ZcfaXSek89HZoY0eHNa89NH8o77G56PzQ9Ct5+za1073wffPftUUm6xatUg29zFL68DZrMn2+qEiXnrprQX1LpTOKCAXdr5h5evL5j5u2Xm7/e9AQaKyjr0dJy14o0vpZh/IGT0EwotgYCrNtIbeSzsMjh8I274I5Mb60js3tMfe+iFaKGDJHFKR54MKbk5naO0rRjrVlEdCW6V8vZWfvpK1J0/Ov7p80HRSejc3i3qYL30ejZv7XsOqXmt2JoXPLu7GoOCFYhry/HIm5Qk+cYV9c6/mzYfyv1e6zeuZ/nIeLBonIerYO3+ozaTPpKR7Y6YhuQf1AQXFzmqqYOkTyw1tO8NED9F2nWw/i2AoJlMFLxjNYPlJC9ok+dcbH78Ru5l18On3apR+zkC9/4jVJrpGkoi2lhUoeKJmf0Z3007BklDLpJq0K8BFWVLgHerBdBVfbdz87eoPdN1/4/I1dQ==
+sidebar_class_name: "get api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query metadata for statistic by identifier"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/meta/statistic/metadataforidentifier/{identifier}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query metadata for statistic by identifier
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"identifier","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Entity":{"type":"string","nullable":true},"Identifier":{"type":"string","nullable":true},"Name":{"type":"string","nullable":true},"MappingScript":{"type":"string","nullable":true},"CustomScripts":{"type":"string","nullable":true},"FetchSql":{"type":"string","nullable":true},"FetchScript":{"type":"string","nullable":true},"Layout":{"type":"string","nullable":true},"Meta":{"type":"boolean"}},"additionalProperties":false,"title":"Statistic"}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

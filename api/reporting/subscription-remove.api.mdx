@@ -1,0 +1,69 @@
+---
+id: subscription-remove
+title: "Query existing tenant"
+description: "Query existing tenant"
+sidebar_label: "Query existing tenant"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVMFy2jAQ/RVmT+2MEpM0J99oS2YyTdM0lBPDQVgL3kSWHGlNQhn/e2dtQyDQlpMt6a303u6+XQPrRYR0AqNqFrNAJZN3MFXgSwxaFjcG0r3TByz8EkFBqYMukDHIBWtwukBIgQwoIAcplJpzUBDwuaKABlIOFSqIWY6FhnQNvColInIgtwAFcx8KzZBCVZGBup5KcCy9ixgFf9nvy8fgG9MUfnwDBZl3jI7lVJelpayhnjxGgawPn/SzR8xYNAQRytQ+IFr/S0vBOGI4Efpdkz0GdJW1emaxTUqt4LM3q5OAA2ad5UWntoPPvLeoHeydX5PFu6YoJ1x755nmXd5O1HYtlUWX7fImx7jAsAsnx58uG2YZ0xKPs77VkUfozIh1Uf7zdaMZz5gKPKZCrhmG4MMJmmsF2hgSwdre7/TBXNuICphYsPvOqGuJu+pfHDbi2OmKcx/oNzbpuepfHYLuPPeufeWkvdW7s58VhlUPXykyuUWP0WknPVog515caNAit87jHFJIjM8qqXQSdzgmoTFosiZTg4KIWRWIV41HPZlM3O5LdI1RNzcMSoKpGG4DH4llWle0QW/eKdHdmC/eudZCe+txsJBCzlzGNEnIoGPi1flMW/uiA54bTAJqW8Rks5Wcv6C1Z0/Ov7ik5XWWeTenRdUOoCZT5Oa+4dAVZRPd2wjoVRFDb3B/AwqWGGKb0uWFVKL0kQvdTIJuSP0t1XsF2SpmfOWktJqaVq1C4+i2BpNtBiXVu50is6sblCkZGam5jywR6/VMRxwHW9ey/SxcIJ1MFSx1oLZDJ2swFOXfbBvyHbntzIMPD92I/dgDdZx0t6ndSvKjbSUrUPCEq3Zm19NaQY7aYGhebw8GWYYl74QcTFfpmW2Dfh3eDn8Noa7/AA1/MMo=
+sidebar_class_name: "delete api-method"
+info_path: api/reporting/ballware-document-user-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query existing tenant"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/document/subscription/remove/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query existing tenant
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"id","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"UserId":{"type":"string","format":"uuid"},"Mail":{"type":"string","nullable":true},"Body":{"type":"string","nullable":true},"Attachment":{"type":"boolean"},"AttachmentFileName":{"type":"string","nullable":true},"NotificationId":{"type":"string","format":"uuid"},"Frequency":{"type":"integer","format":"int32"},"Active":{"type":"boolean"},"LastSendStamp":{"type":"string","format":"date-time","nullable":true},"LastError":{"type":"string","nullable":true}},"additionalProperties":false,"title":"Subscription"}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

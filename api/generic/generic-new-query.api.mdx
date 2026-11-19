@@ -1,0 +1,69 @@
+---
+id: generic-new-query
+title: "Fetch new item template for entity by identifier with params"
+description: "Fetch new item template for entity by identifier with params"
+sidebar_label: "Fetch new item template for entity by identifier with params"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VE1v2zAM/SsCTxug1unQk2/FsBbFgO4zpyIHxWZirbKkSnQ8z9B/H+ivps0OA1bsFETkeyTfI90DqX2E/B5u0GLQBWwkOI9BkXb2toR8Dtxh+6XB0IEEr4KqkTAwsAeraoQclPdGFwMOJGgLOXhFFUgI+NjogCXkFBqUEIsKawV5D9R5hkYK2u4hJbmwoSVN3SsQ6ZKpdhrDTPY4jfH3bBtOjt7ZiJHj71Yr/ikxFkH7YeIcPn0ECYWzhJY4eqRH9iNySv9UIqWUJFyuLk551lY1VLmgf2EJQ9LladKdI3HtGlvyrC9i10hFJSy2QhPWgrD2RhGKnQtilFVsO/Gki2g1VWIwNYKEGqlybPweaTCbKsgh249rkPVHc6WsHwlTZrGddY1YNIHN4+Vwuix4vZxHq0uQMPFceQ0bFnbO/sbSjPKOmMUGht6W7521WHBHz/6vg4EcKiIf8ywbh6LufKuMaVXA8xKzgMrUMZufsvMWjTl7sK612djWWeHsTu+bcesHSbXduaEHTYabmNFiOgdx9fkWJBwwxFH1wwWb5V2kWg1eT/v3j248s3aRhPAnZd4obblowxr0k1P3s8IgIX9+k/lyVItbGwmVi8Swvt+qiOtgUuLnMc4WljqqreE72SkT8aSnZefhzdfppN4KkH/u9QG7l0d5UKbhROB1OKigudrrV54ele2Oa84dHSvFX4//WHpyJW2ShApViWEYfgxeFQV6OoKdfFZYteVmbz58h5R+AywqA6s=
+sidebar_class_name: "get api-method"
+info_path: api/generic/ballware-generic-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Fetch new item template for entity by identifier with params"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/generic/{application}/{entity}/newquery"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Fetch new item template for entity by identifier with params
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"application","in":"path","required":true,"schema":{"type":"string"}},{"name":"entity","in":"path","required":true,"schema":{"type":"string"}},{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

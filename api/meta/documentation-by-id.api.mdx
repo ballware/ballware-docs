@@ -1,0 +1,69 @@
+---
+id: documentation-by-id
+title: "Query existing item"
+description: "Query existing item"
+sidebar_label: "Query existing item"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1VMtu2zAQ/BVjTy3ARE7hk25pmhRG0TZ95GT4QItriwlFMuQqiSrw34ulbMcvIECBngSKs4+ZnWUPJFcRyhl8clXboCVJ2lmYC3AeQz5MFZT71x+7qQIBXgbZIGHgBD1Y2SCUoBVa0kuNAQRoCyU8thg6EBDwsdUBFZQUWhQQqxobCWUP1HkOjRS0XUFKYifbv2YRsHShkQQltK1WkNKcg6N3NmJk/IfxmD8KYxW0z7xL+P4FBFTOElriW+m90VWmXdxHhvTHJd3iHitiSQLLRnoowMq92ZaAa0uaulNQ2xojFwYHrknAjUZzMukR8uqVwhvYJEAqpZmhNLc7BJbSRBRAmhh74JCUOHAyvjiW8M7KlmoX9B/M/CbjyTHom6PRjWstD0Yc3P3gUY/wRUfSdjXShA0IaJBqx15cYZZaUg0lFA2SLNRub8Wiy7aJWLUhKzvrwWlVsc+dR5tvOe7Sa5izLzbQXzzZYXhDwOuIPdqpunLWDpPeO98FAyXURD6WRTFsAHXnC2nMswx4rrAIKE0Ti82v4vwZjTl7sO7ZFkNPZ5WzS71qw0ZgNv7S5R7WI9hEj74iydHl7RQEPGGIg2xPF6y2d5EamX263qHTcu5JvqVJ+EKFN1JbztUyr34t9SxLxpF7RhCQ5Z4LqF0khvX9Qka8CyYl/j0sLs9A6ci+U1trHfSwXTt493O95e9HIE739oDd4WvzJE3LQOAH5L8U2ysy50PQwyrN5klAjVJhyFyHiMuqQk87UUfPCWfZOvvz9W9I6S/1Kuvh
+sidebar_class_name: "get api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query existing item"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/meta/documentation/byid"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query existing item
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}},{"name":"id","in":"query","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Entity":{"type":"string","nullable":true},"Field":{"type":"string","nullable":true},"Content":{"type":"string","nullable":true}},"additionalProperties":false,"title":"Documentation"}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

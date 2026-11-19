@@ -1,0 +1,70 @@
+---
+id: attachment-upload-for-tenant-entity-and-owner-behalf-of-user
+title: "Upload attachment for tenant, entity and owner"
+description: "Upload attachment for tenant, entity and owner"
+sidebar_label: "Upload attachment for tenant, entity and owner"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VcFu3DYQ/RVhTilAW0mRE2+OkQA+Oai9p8UeZsWRxUYiFXK0zlbgvwdDarWb1iiaovVpJXHmzXDem7czMD5F0Fu4YcamG8gx7BT4kQKy9e7OgL4424y9R/PJh0dy6PijY8vHG2funx2FD9Rh3963m0gBFIwYcCCmIPgzOBwINHBOvDOgwDrQMCJ3oCDQ18kGMqA5TKQgNh0NCHoGPo6SFzlY9wQKWh8GZNAwTdZASmqFniKF/wWY8jX/JfAlkJcx/Yct7koyRf7gzVEyGu9YONQzDFPPdsTAtaRdGeSMeUY/191Ca3uKwvxS0u9/p4aFxSBaYEtRUkrYuTMMAfNgmIb4tx3vrcNwhJRSUkCu8UYCLiEjH3vJlZQcl+R2cfQuloBf376TH0OxCXYUdYKG20DIZCApeP/S+cbhxJ0P9g/KpP75OAu6wlXhVetDVUSqqkJ8hc5UmTpQMBB3XpZi9DHPRzjUUEf2AZ+oPiPVU8ZufShwBQydyVD7vCy+FdHW82krUj0XFad6LvGpnhfVJFAQqZmCaFE2ylvTCHdL6ZvRwk4kcQp6EKbL6EroSo8fyd2ZW+9cIfmH903oQUPHPEZd19aUPq732PfPGOjaUB0I+yHWp0/19TP1/dUX559dLVjWXDXetfZpKi6SB29d63MPljPPp+zqofRfPVA42Iaqm893oOBAIRaODu+EXZn3gE4Qlm36ae5+oH4dBtM3rscerZMyk9x+XmhdZwsKzmVAwT+mFhToC8vTq0fp1VT0yRV2CjoRld7CPO8x0ib0KcnnrxMF4Xyn4IDB4l4GuJ3B2CjPBnSLfaS/3HB1A3jz27Lsv1SgXr75aaWdNHXAfpI3UPCFjpe+LXb2inWXgb1y1YWcV656EkLaJQUdoaGQaS6nt6XQ1aNgnLNfsnlxgdWoPt8/PIKC/fIPMXhzctkcq86PertLKX0HbA/MrA==
+sidebar_class_name: "post api-method"
+info_path: api/storage-service/ballware-storage-service-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Upload attachment for tenant, entity and owner"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/storage/attachment/uploadfortenantentityandownerbehalfofuser/{tenantId}/{userId}/{entity}/{ownerId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Upload attachment for tenant, entity and owner
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenantId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}},{"name":"userId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}},{"name":"entity","in":"path","required":true,"schema":{"type":"string"}},{"name":"ownerId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"multipart/form-data":{"schema":{"required":["files"],"type":"object","properties":{"files":{"type":"array","items":{"type":"string","format":"binary"}}}},"encoding":{"files":{"style":"form"}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"201":{"description":"Created"},"401":{"description":"Unauthorized"}}}
+>
+  
+</StatusCodes>
+
+
+      

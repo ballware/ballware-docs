@@ -1,0 +1,70 @@
+---
+id: entity-right-save
+title: "Save existing or new item"
+description: "Save existing or new item"
+sidebar_label: "Save existing or new item"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNlEtv2zAMx79KwNMGKHUfabr51nUdEAxriz5OQQ6MRcdqZcmV5KSZ4e8+0MqzKYbmkoQiKZH8/dlAwJmHdAzXJqiwvFezIsBEgK3IYVDWjCSku4cPOCcQUKHDkgI5Dm7AYEmQgpJkgsoVORCgDKTwWpNbggBHr7VyJCENriYBPiuoREgbCMuKQ31wysygbSfRmXz4YeWSPTJrApnAP7GqtMq6hyXP3hq2HaSy02fKAj/ScRlBkedTruT9dQJy60oMkEJdKwmtWNX6kauptcapplhDK2C0Lfcz7j+VrzQub7pefcL/ypqAynwqeysApVTcGNR3O3XnqD0JCCqw796YW47aH0xn8JU1Pvbs9PiYvyT5zKmKs0MKt7+5T4Pjk8OjJ4N1KKxTf0lGp8Gh040NvV+2NhL4AftnjFeP3pQPysx61vUMLXoqUAkCSgqFZRwr67vxYigghaSkgAl1hTkuLPGRUU9Z7bpZjhuwSmbMua3IKBmz4WWlYMLErV0fmKVYegzYQlWRGckra0xka+//k9OQQhFC5dMkiSoIy6Mpar1AR0eSEkeoS5+sTcnRgrTuvxi7MEl8Uz+zJlezOuqu6w0jfr8Vw/UblpWmNcxwluO383w46J9fnFz0B+fD0/70LM/6p9n34Vk+HGKOQ9gSvYVnF9ytdY/PrXkHw41KWd257dqzAmtdWO8PBexd3o1AwJycj2Odn3AMz63ETrSrhfG/ce+BsZlDoLeQVBqV4Yw1N75ZkTDuZgoCdlhgDJiGiYCCqUnH0DRT9PTkdNuyOW4oRkQqz4qSG9G8e8FmD8GX+5VqvvZAfPyyF1q+X4hz1DU7AhM3R6eifseTVkBBKLnD42YVeRUv6z9y8m3swQLkXBth3N0+PIKA6WpxllZyjMMFb2Bc8N1MLkd3jHe2BjSaWY0z9o05+fMPybUZJQ==
+sidebar_class_name: "post api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Save existing or new item"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/meta/entityright/save"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Save existing or new item
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Entity":{"type":"string","nullable":true},"Identifier":{"type":"string","nullable":true},"DisplayName":{"type":"string","nullable":true},"Container":{"type":"string","nullable":true}},"additionalProperties":false,"title":"EntityRight"}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK"},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

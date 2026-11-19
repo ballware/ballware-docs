@@ -1,0 +1,70 @@
+---
+id: generic-import
+title: "Import from file"
+description: "Import from file"
+sidebar_label: "Import from file"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VLFu2zAQ/RXjphago6bIxC0N0MJLGzTJZHigxZPFRiIZ8uRUFfjvxYmS7SReCgSdLEvv3R3fu8cBSO0iyDV8Q4vBlLAR4DwGRcbZlQY5f1i13gUCAV4F1SJhYNoAVrUIEpT3jSlHFggwFiR4RTUICPjUmYAaJIUOBcSyxlaBHIB6z9RIwdgdpCQO1dCSof4dChnNpSqDYS721GHo/6naJoMx0hene0aUzhJa4se2a8h4FaioXGiXWtFY41jt2GcNlWkwssJTC7f9heWoaWDNyWBkSoYdJ1EhqFEMwja+nVAAt1YEErbGqtBDSikJQFs6zYDTkpH6hrlMGXGJTxe9szEDPn+65B+NsQzGj35KuAmoCDUkAVfnvj9Y1VHtgvkzg67egr47Wnx1ndXs0KtvebsWVXDtgmcFAS1S7XgBvYt576gGCcUu72MxnKxcKoa8Mqkw855GLLvAW8Rb6owu2QHn0RoNAqYq197Ahh2e0XdsXFYicw5qM3Wlb5y12bMX/x9CAxJqIh9lUeSto/5iq5rmWQW80FgEVE0bi/lVcfGMTbN8tO7ZFnmsZelsZXZdDt+okrGVG2cwNNo2sxdTKhfXtysQsMcQs5D7S9afJWuVZeYUhDMCv3DgcEzC31T4RhnLhTo+1zBpv55VAwHyZeDlMbFZ/42Amn2TaxiGrYr4EJqU+HUOIJuiTVTbhqNRqSbim4kOMYMPP6cUfVyAOD/pI/av875XTcdAYIP3Khju9v6d55Ta/rTnPNGpTnwx/cfWkydpkwTUqDSG8fD5403us7znEkfyufuM5Tuk8fbH3T0I2E5XYev0fJ2MWHF8lOtNSukvqnMxoQ==
+sidebar_class_name: "post api-method"
+info_path: api/generic/ballware-generic-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Import from file"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/generic/{application}/{entity}/import"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Import from file
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"application","in":"path","required":true,"schema":{"type":"string"}},{"name":"entity","in":"path","required":true,"schema":{"type":"string"}},{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"multipart/form-data":{"schema":{"required":["files"],"type":"object","properties":{"files":{"type":"array","items":{"type":"string","format":"binary"}}}},"encoding":{"files":{"style":"form"}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"201":{"description":"Created"},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,69 @@
+---
+id: attachment-download-for-tenant-entity-and-owner-by-id
+title: "Download attachment for entity and owner by ID"
+description: "Download attachment for entity and owner by ID"
+sidebar_label: "Download attachment for entity and owner by ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VE1v2zAM/SsGTxug1t3Qk27Z2g7BgHVY21ORA2MxsVBbciU6WWDovw+0HSddN+wDW0+2RPGRfI9kB4zrCPoeZsxYlDU5hoUC31BAtt7NDegj24XfusqjufLhlhw6vnRseTdz5nrrKLzbzQ0oaDBgTUxBkDtwWBNo4N6hf2AdaGiQS1AQ6LG1gQxoDi0piEVJNYLugHeN+EUO1q1BwcqHGhk0tK01kJKaoKnP4i+Bj4G8VPFfUrT/DnQhzrHxLlKU92/PzuRjKBbBNqIaaLj+CAoK71gU1R1g01S26DXNfcHEJ5EDYS223wi9tA7DDlJKScH52fnzgJ88Z1e+dX3Z39n2bZPh1EnZyods0C1DZ7Ke+Wy5y+YXoKAmLr203pq4byguQUMe2QdcU36Ayc0IvfJhaLABE53pEZc7a/Ju33op7wZzyrtR6pR31iRQEKlog3SRtKy3ppCpGAPOGgsL4X3/6EYYG9gfnk7U+Ybc3Lz3zlEhqT8534UKNJTMTdR5bs2QzOkSq2qLgU4N5YGwqmO+v8pPt1RVJw/Ob10uWNacFN6t7LodBrRn27qV73OwXEkSe+/sZsg/u6GwsQVls89zULChEAdhNm8gKWh85BqdIIzd+seCPdF7IoPpK+dNhdZJmFaq70YxJ25BwSGIIP1aUFCgj7aJnsZfH+ZXWyOLrPSRJVjXLTHSXahSkuvHloIovVCwwWBxKbTdd2BslH8DeoVVpGd1TQMFr76M8/s6A/XjesdLdJLaBqtWTqDggXbH61CWxAvGHcl64ah7YV44rOzLRVJQEhoKvcSDYVYU1PCRy0/3o4z9tI4+XN5CSt8Amv58YQ==
+sidebar_class_name: "get api-method"
+info_path: api/storage-service/ballware-storage-service-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Download attachment for entity and owner by ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/storage/attachment/downloadfortenantentityandownerbyid/{tenantId}/{entity}/{ownerId}/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Download attachment for entity and owner by ID
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenantId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}},{"name":"entity","in":"path","required":true,"schema":{"type":"string"}},{"name":"ownerId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}},{"name":"id","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/octet-stream":{"schema":{"type":"string","format":"binary"}}}},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

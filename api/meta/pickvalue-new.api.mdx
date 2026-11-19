@@ -1,0 +1,69 @@
+---
+id: pickvalue-new
+title: "Query new item template"
+description: "Query new item template"
+sidebar_label: "Query new item template"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVE1PGzEQ/SvRnFrJsIFy2huqoEJVKS3QS5SDs55kB7y2sWcT0tX+92rW+QBCJU6r9bwZv3nzxh2wXiQoJ3BD1eNS2xZhqsAHjJrJuysD5T50jStQEHTUDTJGyevA6QahBDLomOaEERSQgxKeWoxrUBDxqaWIBkqOLSpIVY2NhrIDXgdJTRzJLaDvpwJOwbuESeKn47F8DKYqUhA+UMLP76Cg8o7RsUR1CJaqgW3xkATSHV7hZw9YsZCP0htTvkDae0tDwdzHRjOU0LZkoFdw4Zh4/R7UtdbqmcXcW6/gktC+W/QA+WcQe48kx7gY1NvdT46/nAqBO3zmDxW99ZEl9IGyB9m9Am0MiZDa3rzQaa5tQgVMLNgXTul7STobnxxO6d7plmsf6S8OEp6Nzw5B155Hl751BqTO69gvcc/I4WpEjM2IsQlWM4KCBrn24ssFDhPVXEMJRYOsi7DlVrjBqwmrNg6zm3TgyVRidR/QkcmV9HkgmIrzttBb8U62R07YmyiguzJfvXPZS6/+76OFEmrmkMqiyNvA6+OZtnalIx4bLCJq26Rie1Qcr9Dao0fnV67InI4q7+a0aPPyDaqQm/uBw0b9bfboB7Iend9cgYIlxpRVW56I2MEnbvSwCZvt/L+ar1Tftcr4zEWwmpzUa6W3bqP0ZJBNhN/5QIGoPVVQ+8SC6LqZTngfbd/LcX4JZASGkjjO7Ez15vrdXsOn35tn4/MI1Pu0HnH99uHJfEoAmehSR8r+nkx7BTVqg3GgkTPPqwoDv8g6eEqkys5u3y7uoO//Af/RyRQ=
+sidebar_class_name: "get api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query new item template"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/meta/pickvalue/new"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query new item template
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Entity":{"type":"string","nullable":true},"Field":{"type":"string","nullable":true},"Value":{"type":"integer","format":"int32"},"Text":{"type":"string","nullable":true},"Sorting":{"type":"integer","format":"int32","nullable":true}},"additionalProperties":false,"title":"Pickvalue"}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

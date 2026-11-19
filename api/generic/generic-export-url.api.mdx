@@ -1,0 +1,70 @@
+---
+id: generic-export-url
+title: "Export to file by query"
+description: "Export to file by query"
+sidebar_label: "Export to file by query"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VU1v2zAM/SsGTxug1OnQk29dsQ1BgTXoxy5FDorFJGplyZXkpJ7h/z5Qsl2nabAOKHZJbEl8JN8TnxvwfO0gu4cfqNHKHBYMTImWe2n0TEDWb3x7Lo31d1YBg5JbXqBHS5ENaF4gZMDLUsk8BAIDqSGDkvsNMLD4VEmLAjJvK2Tg8g0WHLIGfF1SqPNW6jW0LRvQUHvp6w8AkoKgVhJtD/ZUoa3/CW0RD6PzX42o6URutEft6XHUd/o82e12k5WxxaSyCnVuBOE3h9jcWh7a81i40bpZPmDuiWRLOniJYfcS68PCGOhKKb5UGFtoGfziqsJ3pBlaaxlwISRVz9V8lHPFlUMGXnqCh5sQEH9DEneJdXiYc2kJqH3NaFhwpdEu9vBlOqU/gS63sgz3JIOrS2DH2HxwdOQN8o6QdIuaaz8TbzFFmnAPGVSVFNAyeNex97IzTMc1ukr5jo6z6elhw3eaV35jrPyNoY6z6dnhoZ/GJ99NpWMJ+3sxV+JNspIKk2Wd9Be6QL8xNLOlcYEdmpoM0nUc4bQZkdumTRyxNsUAWIXRdphXlgaPBttIkZM3mBK1FMCgAzovJSxoKPrTNyRQ1CDGvChVop6JC6N1FGzvndwkg433pcvSNA6qr0+WXKkdt3giMLXIVeHSfik92aFSk0dtdjqNZU1yo1dyXUXLCnxJvTKhhk6dPjrpvCw5n8+AwRati5RuT0kJYq3g4cZ13nGc6j1Jhm49Pvu0VFxqwiNGs6ZT4b4nDxhk+1aZDV73osSCwYZEzO6haZbc4Z1VbUvLsQKSR0hHsy+G2/iqqGGq4NN1N5ifE2BvF/tIBrNvltvoJQAk9ZZbGZ3mozP3TqXrcc6+ojFV5Or/MXUnS7toGWyQC7Sh+bh5EfNMbgniJfjvHwNqIkKc5zmW/khw8D4ifhjq+dXNLTBYdl+gwgiKGSGz8Ut2v2jb9g/dbrrQ
+sidebar_class_name: "post api-method"
+info_path: api/generic/ballware-generic-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Export to file by query"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/generic/{application}/{entity}/exporturl"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Export to file by query
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"application","in":"path","required":true,"schema":{"type":"string"}},{"name":"entity","in":"path","required":true,"schema":{"type":"string"}},{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/x-www-form-urlencoded":{"schema":{"type":"array","items":{"type":"object","properties":{"Key":{"type":"string","nullable":true},"Value":{"type":"array","items":{"type":"string"}}},"additionalProperties":false,"title":"StringStringValuesKeyValuePair"}}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"TenantId":{"type":"string","format":"uuid"},"Id":{"type":"string","format":"uuid"}},"additionalProperties":false,"title":"ExportUrlResult"}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

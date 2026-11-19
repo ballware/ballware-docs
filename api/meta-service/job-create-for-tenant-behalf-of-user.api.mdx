@@ -1,0 +1,70 @@
+---
+id: job-create-for-tenant-behalf-of-user
+title: "Create new background job for tenant behalf of user"
+description: "Create new background job for tenant behalf of user"
+sidebar_label: "Create new background job for tenant behalf of user"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9Vk1v4zgM/SsGT7uAWncWe/KtU8wA2T002zanIAfapmOlsuTRRzNZw/99QcmJ007R6exXLolpkqIeHx8zgMetg2INv5kSNgJMTxa9NHpRQ8HGG0vo6bOxD6RR+4/Uompum5UjCwJ6tNiRJ8s5BtDYERTgo+uiBgFSQwE9+hYEWPoSpKUaCm8DCXBVSx1CMYA/9BznvJV6CwIaYzv0UEAIsoZxFKfUwZH9FxNvUjA5/9HUB46ojPakPf/EvleyimjkO2c02+bU86FrWNSkvWxkxOS25wgHAu6rluqgyDKyUymm3FHlGTrLWHtJjrPNrq9UrYNSWCpK9xvF+XnvcT9W9H3fUQDWtWR3VMuzChtUjgR46dl3JsYSD8ogQzm+7EM0uN5ol674y9UVf9XkKitjRVDA7e8g3o/52xgyZb/bcvEfQ73Xr3s+L+MfNUnAHbmg/Ltc7z16Yk/SoWOurvSjNnsNAv4IFIhrWeilNVtLjkn7WWrp2mj/ZK055+7plDMaxPwOfoQ5TJZRwK9XH77lw0pj8K2x8k+Kg//idSJdpmmflVg9bq0Jus52pswaY7OkO1kZNSozTRaSSnXkW8N61hsXacOyUUDekcd8Z8q8iml3pmyMTUlSDtNwhnw4CtqYD0mARhDgqApW+kNUPiPritE1PenYX8593UvYsMYcXZl6XSJrCpgp3ZNe1DdG68TsZ88rq6CA1vveFXkuIyP94bJEpfZo6bKm3BKqzuVHU365J6UuYqfzVNNFZXQjtyHJe8SWB+xulr9PX7HrFb2Qo7nr56MwW0+8PZpGFufGxMtNTT+Wld2TfZIVZdfLBQh4IutSX58+cBi3p8M485Pc/71+P+PMCWJPX33eK5SazwqM6TBRYR3bBQJ2pmQ9epMOIKA423DFtJI2AlqmV7GGYSjR0cqqcWTzl0CWWbIR8IRWpvFcD1BLx7/r04y8qPski/DT3aSsP2cgXr/PZER9YGBRBX4CAY90ON/IvEr/x3MnbMbNKKAlrJk662F6eZPOuXjgFHPwNyuAa04R11VFvX/Td3M27svb+wcQUE6rvTM1x1jc838G3KdCzay70TaAQr0NuGXflJM/fwFJYCvL
+sidebar_class_name: "post api-method"
+info_path: api/meta-service/ballware-service-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create new background job for tenant behalf of user"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/meta/job/createjobfortenantbehalfofuser/{tenantId}/{userId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Create new background job for tenant behalf of user
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenantId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}},{"name":"userId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"required":["Identifier","Options","Scheduler"],"type":"object","properties":{"Scheduler":{"type":"string","nullable":true},"Identifier":{"type":"string","nullable":true},"Options":{"type":"string","nullable":true}},"additionalProperties":false,"title":"JobCreatePayload"}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Scheduler":{"type":"string","nullable":true},"Identifier":{"type":"string","nullable":true},"Owner":{"type":"string","format":"uuid","nullable":true},"Options":{"type":"string","nullable":true},"Result":{"type":"string","nullable":true},"State":{"enum":["Unknown","Queued","InProgress","Finished","Error"],"type":"string","title":"JobStates"}},"additionalProperties":false,"title":"Job"}}}},"401":{"description":"Unauthorized"}}}
+>
+  
+</StatusCodes>
+
+
+      

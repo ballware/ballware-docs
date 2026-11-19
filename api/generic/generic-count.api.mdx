@@ -1,0 +1,69 @@
+---
+id: generic-count
+title: "Count items of generic entity by query identifier and params"
+description: "Count items of generic entity by query identifier and params"
+sidebar_label: "Count items of generic entity by query identifier and params"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VE1P3DAQ/SvRnFrJEKhQD7kh1CJUqUW0nNAevPHsxuDYxp4sTaP892rsZD/YXqqinqLYM/Nm3nvjAUiuI1QPcI0Wg65hIcB5DJK0szcKqvniynWWQICXQbZIGDhrACtbhAqk90bXKQkEaAsVeEkNCAj43OmACioKHQqIdYOthGoA6j2nRgrarmEcxbYaWtLUv0EhrbjUSmOYiz13GPq/qrbg4OidjRj5/sPZGX8Uxjponyau4NsXEFA7S2iJb/f4KB8jhwzHEG75iHXiNDDlpDNAnZjehWlLuE4TrFxoJeWjjxc8KUilNKNIc7tXZCVNRAGkyXCFpN0dxs4QjCOnXZydHw9xb2VHjQv6FypIQRfHQV8dFZ9dZ1WCP7xLOIUmbGPhVsU6O6fIchbLvkjsFztVCmlVkRwVQUCL1Di23Bqz06iBCsqpTDnskTqWQ646lvVkzIh1F9g2bEunVc2udh6tViBgKnLpNSxY0jn6O4uSec85O3U82ht15azNIh383wcDFTREPlZlmQei/nQpjXmRAU8VlgGlaWM5H5WnL2jMyZN1L7bMbZ3Uzq70usvLlvjUduVSD5Nyc3YxbWFxeXsDAjYYYqZ8c85KeReplcllk/P/UYoDXbeUEP6k0hupLYN2zMEwyfQwMwwCqsPXoNquc5ZqIaBxkThnGJYy4n0w48jHeTlZP6WjXBpez8nKrxrarhq8u5s2+X0B4s+NPmH/+i3YSNNxILAXNjJoRnt75OlQ2n4fc+5onyZ+tP4j9CTJuBgFNCgVhjR8vrysa/S0l3b0mjFr2229/vQDxvE3Rl0riA==
+sidebar_class_name: "get api-method"
+info_path: api/generic/ballware-generic-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Count items of generic entity by query identifier and params"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/generic/{application}/{entity}/count"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Count items of generic entity by query identifier and params
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"application","in":"path","required":true,"schema":{"type":"string"}},{"name":"entity","in":"path","required":true,"schema":{"type":"string"}},{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"count":{"type":"integer","format":"int64"}},"additionalProperties":false,"title":"CountResult"}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

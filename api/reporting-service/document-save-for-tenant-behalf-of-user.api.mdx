@@ -1,0 +1,70 @@
+---
+id: document-save-for-tenant-behalf-of-user
+title: "Save document behalf of user"
+description: "Save document behalf of user"
+sidebar_label: "Save document behalf of user"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9lUtv2zAMx79KwNMGKHWf6ebbugdQDFiLPk5BDoxNJ9pkSZPkZJnh7z7Q8iNtOmyHYbnEosi/JOpHqoaAKw/pHD6YrCpJB1gIMJYcBmn0dQ7pMHOPG/pk3ANp1OGK1qiKm+LRkwMBFh2WFMixVg0aS4IUQut6nYMAqSEFi2ENAhx9r6SjHNLgKhLgszWVCGkNYWc5zgcn9QoEFMaVGCCFqpI5NI0YpCtP7h8KL2Iw+XBl8h1HZEYHTkdaA1qrZNYmJPnqjWbbgbRZfqUscCocpy9I8jzLGfzj8gI+SG8V7r60hzv015VSuFQUD9YI+KiDDLu/cr0PGPZFpQ60ai9t2IXU4eyUt3FH1rhwJTW6F8WHiOUu0EuLRYHbnoa/2GAjAPNccnJR3e7lrkDlSUCQgX1HPhsOeXrTrcFbo31M+unxMf/l5DMnLUtDCjef+YTnxyeHU48aq7A2Tv6klrJn0wz+JO/Wnyxb8iemmFSR/ZLC2nChWONbABjGFJI+YvzwuKF+EGVMwSJJ3VdKk9SR7AYEeMoq117zvAYj84zr1FjSksHvhd5ZCQsGuHe/ZzRjImLQyKglfZ2/N1pHVJ+MH52CFNYhWJ8micypRexoiUpt0dFRTokjVKVPelNytCWlpt+02eok7muaGV3IVRXbR5tLrpi7sbY+/sDSKuprA84KfHNRzM6nF5cnl9Pzi9npdHlWZNPT7O3srJjNsMAZPCuQEaa+DkZLh/vxc5hHjwNG+6mGu0lh2oR11PVHHa/fk9vIjCbvbq9BwIacj5BsTjieESix7RBdo/oDPE9IGy4q0I+QWIVSs2jFN1N3XM2Hi99jgGH5DVsgIN3rw2nXOBcC1oxrOoe6XqKnR6eahs3fK+J8zRcCNuhkLNV5Dbn0/J0Plfls60PDhFd3XXW+noB4+UidEfWOk4iq4hEI+Ea7/XeDG/5/XLfLTbNoBKwJc4ZjXneT7+M60weWGIMPHgcuxaEl3N7cP4CAZfeolCbnGIdbfq1wGxc37Vnagm1tNSjUqwpX7Bs1+fcLJ6+j8Q==
+sidebar_class_name: "post api-method"
+info_path: api/reporting-service/ballware-document-service-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Save document behalf of user"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/document/document/savedocumentbehalfofuser/{tenantId}/{userId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Save document behalf of user
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenantId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}},{"name":"userId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"DisplayName":{"type":"string","nullable":true},"Entity":{"type":"string","nullable":true},"State":{"type":"integer","format":"int32"},"ReportBinary":{"type":"string","format":"byte","nullable":true},"ReportParameter":{"type":"string","nullable":true}},"additionalProperties":false,"title":"Document"}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK"},"401":{"description":"Unauthorized"}}}
+>
+  
+</StatusCodes>
+
+
+      

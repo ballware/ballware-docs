@@ -1,0 +1,70 @@
+---
+id: ml-model-consume-by-id-behalf-of-user
+title: "Consume model by id behalf of user"
+description: "Consume model by id behalf of user"
+sidebar_label: "Consume model by id behalf of user"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VE1P3DAQ/SvRnFrJEKh68g1QD6sKgYA9rfbgxJONwbGN7ew2jfLfq7GzfC2qOLTkkmQ88zx+73lGiGITgK/gUl9aiRrWDKxDL6KyZiGB7xcurAl9h+fDQp5jK3Rz1SwDemDghBcdRvSEM4IRHQKHiEaYuJDAQBng4ERsgYHHx155lMCj75FBqFvsBPAR4uCoLkSvzAYYNNZ3IgKHvlcSpok9QfcB/X8B7uig/xB5nYsxxHMrB6qorYloIn0K57SqE8/lfbCGYgfQtrrHOgIDIaWiVKGvPekTFQbg4zRN09sOUyA4a0JKgW8nJ/SSGGqvHIEAh6ufwD7cTd7l+8npIc7SiD621qvfmLh8szy7pkjMFtVQKFlUyT6FbYo+G6jD2FqymrMhJkPFFjiUnS47nSrLOuNUg5K53DZUXI57m03lmG0xleMs4wQMAta9V3FIzrRK1mR169AoUrnTZ07BmnTaJ97SmTNvOf1ZCodmIS+sMVmRV/9Lr4FDG6MLvCyVRBNVHI4rofVOeDyWWHoUugvlPlQe71Drowdjd6bMHR3V1jRq0+fLl9gkKW6eLfTjl+icRpKEPNrY1J+KFII9cnGpi4B+q2oszq4XwGCLPmQ9tqcwscRzJ5LGs/M/pNMraZ94ifgrlk4LZQi6JyLGWcIVdDrRnGCz4d6TERjwF/OCP11wvr+RawYtmYOvYBwrEXDp9TRR+LFHT/KuGWyFV6IiLlYjSBXoWwJvhA540P2T9+HLzXx9vhbA3j/VHBRmIDaF7ukPGDzg8HLU0Sj5xH1nmj55170k03pi0KKQ6BPhefUib3R0RxjP1QfjhZrOFWd1jS7+NXf9YkZcX93eAYNqHqjUDXDwYkeTWuxypzYdPN3iFBtBC7PpxYZyMyY9fwAdyGdZ
+sidebar_class_name: "post api-method"
+info_path: api/ml-service/ballware-ml-service-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Consume model by id behalf of user"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/ml/mlmodel/consumebyidbehalfofuser/{tenantId}/{userId}/{modelId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Consume model by id behalf of user
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenantId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}},{"name":"userId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}},{"name":"modelId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","additionalProperties":{}}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{}}}},"401":{"description":"Unauthorized"}}}
+>
+  
+</StatusCodes>
+
+
+      

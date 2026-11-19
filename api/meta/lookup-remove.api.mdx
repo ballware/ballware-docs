@@ -1,0 +1,69 @@
+---
+id: lookup-remove
+title: "Query existing tenant"
+description: "Query existing tenant"
+sidebar_label: "Query existing tenant"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVMFS2zAQ/ZXMntoZgQPl5Btt6TRTSimFUyYHxdokC7IkpDWQevzvnZWdNBA65WR796319unttsB6maCcwrn3d02AmQIfMGom7yYGyiF+hbV/QFAQdNQ1MkYpasHpGqEEMqCAHJQQNK9AQcT7hiIaKDk2qCBVK6w1lC3wOkhF4khuCQoWPtaaoYSmIQNdN5PiFLxLmAR/PB7Lw2CqIgWhBSX8+AYKKu8YHUtWh2CpyqSL2ySQdv9IP7/FiqWHKC0y9QdIl/+lpeA78u7P5t5b1E4yX3W6FFVez17nyDZDjnGJcfcEcvzhWKATg45pQRhfY+Qaa/XcYi9pp+Aia/8G4Dkl/tlgXL8J/XE9MW9Fdwq0MSS6a3u5I+tC24QKmFiwG3N1nVScjI/2b/TG6YZXPtJvzHKfjE/2QReeR19848Qn6kUuUx7hEyUmtxwxOu3ksmvklRcjG7TIvYV5BSUUNbIubGZWxOzvoiXTgYKEVROJ19ninkwlA+IDuuxzqTsNBDPx6gb6S9zWG6ov+Gu7gG5iPnnnevc9+76JFkpYMYdUFgVlA/D6cK6tfdQRDw0WEbWtU7EJFYePaO3BnfOPrug5HVTeLWjZ9FObtSG38JnDcAGb6pHYeHR6OQEFDxhTr93DkUgefOJa59kZxvpfmj5Tftso4xMXwWrKvm+ks3YQe5pFAwW93HlBDAulJCNLZ+UTC65t5zrhTbRdJ+H73ojTmYIHHam33rQFQ0nezdZpLyhtdwO8uxpW0fsRqNepDkHt1qKKto18gYI7XPe7rZt1ClaojUzmtB0Sp1WFgXdK9raQGGTrv89n52fXZ9B1fwA91t3/
+sidebar_class_name: "delete api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query existing tenant"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/meta/lookup/remove/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query existing tenant
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"id","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Meta":{"type":"boolean"},"HasParam":{"type":"boolean"},"Type":{"type":"integer","format":"int32"},"Identifier":{"type":"string","nullable":true},"Name":{"type":"string","nullable":true},"ListQuery":{"type":"string","nullable":true},"ByIdQuery":{"type":"string","nullable":true}},"additionalProperties":false,"title":"Lookup"}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

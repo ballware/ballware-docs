@@ -1,0 +1,69 @@
+---
+id: documentation-select-by-id
+title: "Query select item by id"
+description: "Query select item by id"
+sidebar_label: "Query select item by id"
+hide_title: true
+hide_table_of_contents: true
+api: eJyFVMtu2zAQ/BVhTy3ARE6Rk25pmhRGX2nTnAwfaHFtb0KRDLlKqgr692Ip241jFz3Z5D44OzOrHlivElQz+ODrtkHHmsk7mCvwAWM+TA1U++FbtFjz+25qQEHQUTfIGKVND043CBWQhMhBBUHzGhREfGwpooGKY4sKUr3GRkPVA3dBKhJHcitQsPSx0QwVtC0ZGIa5FKfgXcIk+e8mE/kxmOpIIcOt4NsnUFB7x+hYojoES3VGW94nSekPn/SLe6xZZogyLdP4gAz8X1gKrhwTd8dSXWutXlgcZx0UXBPao01fZQ4KtDEkqLW9eQFqqW1CBUwsucfU+EyJrxzHDoZB+pxPzg5ZunO65bWP9BvzCOeT88Okr56La9864V69in1vMXZFyi8WxNgUi67IWjfIay9OWWFmVFSvoGyQdWlewi3H6kVHpuzJDKAgYd3GzOWsB0+mFkP6gG7bWV8Egrk4YZt6K1qOco0Ff0UN6Kbm0js3art3vosWKlgzh1SVJRnMGp4utLXPOuKpwTKitk0qt1fl6TNae/Lg/LMrR0wntXdLWrXjemSWyC19xrARaFtdfEHWxcXNFBQ8YUwji09nQn7wiRudnblZmn+zu6fCblTGX1wGq8lJv1Zm6zfMzzJtUrm310Lgln1QUJGRVV/7xFLS9wud8C7aYZDrR4ED1Wyu4ElHGn0668FQkv9mZ8tX6HZrCG9+bLb+bQHqOOrNpXadUKRtKydQ8IDd+BkZ5oOCNWqDMb8+Bi7qGgO/KDlYeHHLzpQfr37CMPwBCSSzfQ==
+sidebar_class_name: "get api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query select item by id"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/meta/documentation/selectbyid/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query select item by id
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"id","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Entity":{"type":"string","nullable":true},"Field":{"type":"string","nullable":true}},"additionalProperties":false,"title":"DocumentationSelectListEntry"}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

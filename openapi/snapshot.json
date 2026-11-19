@@ -1,0 +1,115 @@
+{
+  "fetchedAt": "2026-11-19T07:21:44.008Z",
+  "entries": [
+    {
+      "service": "meta",
+      "doc": "meta",
+      "sourceUrl": "http://localhost:5001/swagger/meta/swagger.json",
+      "openapi": "3.0.4",
+      "title": "ballware Meta API",
+      "specVersion": "v1",
+      "pathCount": 150,
+      "serviceImage": "ballware-docker-compose-meta"
+    },
+    {
+      "service": "meta",
+      "doc": "service",
+      "sourceUrl": "http://localhost:5001/swagger/service/swagger.json",
+      "openapi": "3.0.4",
+      "title": "ballware Service API",
+      "specVersion": "v1",
+      "pathCount": 17,
+      "serviceImage": "ballware-docker-compose-meta"
+    },
+    {
+      "service": "generic",
+      "doc": "generic",
+      "sourceUrl": "http://localhost:5002/swagger/generic/swagger.json",
+      "openapi": "3.0.1",
+      "title": "ballware Generic API",
+      "specVersion": "v1",
+      "pathCount": 13,
+      "serviceImage": "ballware-docker-compose-generic"
+    },
+    {
+      "service": "generic",
+      "doc": "service",
+      "sourceUrl": "http://localhost:5002/swagger/service/swagger.json",
+      "openapi": "3.0.1",
+      "title": "ballware Service API",
+      "specVersion": "v1",
+      "pathCount": 3,
+      "serviceImage": "ballware-docker-compose-generic"
+    },
+    {
+      "service": "generic",
+      "doc": "schema",
+      "sourceUrl": "http://localhost:5002/swagger/schema/swagger.json",
+      "openapi": "3.0.1",
+      "title": "ballware Schema API",
+      "specVersion": "v1",
+      "pathCount": 4,
+      "serviceImage": "ballware-docker-compose-generic"
+    },
+    {
+      "service": "ml",
+      "doc": "ml",
+      "sourceUrl": "http://localhost:5003/swagger/ml/swagger.json",
+      "openapi": "3.0.1",
+      "title": "ballware Ml user API",
+      "specVersion": "v1",
+      "pathCount": 4,
+      "serviceImage": "ballware-docker-compose-ml"
+    },
+    {
+      "service": "ml",
+      "doc": "service",
+      "sourceUrl": "http://localhost:5003/swagger/service/swagger.json",
+      "openapi": "3.0.1",
+      "title": "ballware Ml service API",
+      "specVersion": "v1",
+      "pathCount": 3,
+      "serviceImage": "ballware-docker-compose-ml"
+    },
+    {
+      "service": "reporting",
+      "doc": "document",
+      "sourceUrl": "http://localhost:5004/swagger/document/swagger.json",
+      "openapi": "3.0.1",
+      "title": "ballware document user API",
+      "specVersion": "v1",
+      "pathCount": 38,
+      "serviceImage": "ballware-docker-compose-reporting"
+    },
+    {
+      "service": "reporting",
+      "doc": "service",
+      "sourceUrl": "http://localhost:5004/swagger/service/swagger.json",
+      "openapi": "3.0.1",
+      "title": "ballware document service API",
+      "specVersion": "v1",
+      "pathCount": 9,
+      "serviceImage": "ballware-docker-compose-reporting"
+    },
+    {
+      "service": "storage",
+      "doc": "storage",
+      "sourceUrl": "http://localhost:5005/swagger/storage/swagger.json",
+      "openapi": "3.0.1",
+      "title": "ballware Storage User API",
+      "specVersion": "v1",
+      "pathCount": 6,
+      "serviceImage": "ballware-docker-compose-storage"
+    },
+    {
+      "service": "storage",
+      "doc": "service",
+      "sourceUrl": "http://localhost:5005/swagger/service/swagger.json",
+      "openapi": "3.0.1",
+      "title": "ballware Storage Service API",
+      "specVersion": "v1",
+      "pathCount": 12,
+      "serviceImage": "ballware-docker-compose-storage"
+    }
+  ]
+}

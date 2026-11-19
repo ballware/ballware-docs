@@ -1,0 +1,69 @@
+---
+id: tenant-select-by-id
+title: "Query select item by id"
+description: "Query select item by id"
+sidebar_label: "Query select item by id"
+hide_title: true
+hide_table_of_contents: true
+api: eJyFk01v2zAMhv+KwdMGqHU77ORbNxRDsK9uXU9BDozFxGxlSZXodp7h/z7QTrK22bCTLYmU3vchOYDgNkO1hB/k0QusDIRICYWDX1iodvvX5KiWd/3CgoGICVsSSpo4gMeWoALWI/ZQQURpwECi+44TWagkdWQg1w21CNUA0kfNyJLYb8HAJqQWBSroOrYwjitNzjH4TFnj35yd6cdSrhNHlQYVfP0IBurghbzoKcbouJ6El7dZQ4bjJ8P6lmpRD0ltCs8PqNP/yjLwZXJ6HOg753DtaHY6jgbQWlYl6K6ePLRBl8mAsGjsM7SfOMull9TDOOoFb8/Ojy3feOykCYl/kWIyL46/dZT6Ik/3FSzUFuu+mMrSkjRBq7mlybwWqIKyJcFSJhXlnLbu2ZYD2xEMZKq7xNJPRQ5sa22TEMnvr8SLyLDSau1Dr5X3jHRO+AM+kl/Y98H7mf+z9U1yUEEjEnNVlmzJC0t/ukbnHjHRqaUyEbo2l/ut8vSRnDu58+HRl7Omkzr4DW+7uXcnPOw3YdKwA77PLj6TYHFxtQADD5TyjO/hXGscQ5YWp+7ZNfa/sT7Df7Aq9FPK6JC93tept2GHfDlhAwMz9AnyHjsYqNjqADYhi8YOwxoz3SQ3jrp9rzqgWq4MPGDiueGWA1jO+m8P/fVC1mFG4NX33Ui+LlTD3+TuNtH3ygZdpyswcEf9POPjajTQEFpK0+vzwUVdU5QnKUfTqG1yaMMPlz9gHH8DFuaKig==
+sidebar_class_name: "get api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query select item by id"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/meta/tenant/selectbyid/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query select item by id
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"id","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Name":{"type":"string","nullable":true}},"additionalProperties":false,"title":"TenantSelectListEntry"}}}},"401":{"description":"Unauthorized"}}}
+>
+  
+</StatusCodes>
+
+
+      

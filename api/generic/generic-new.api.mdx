@@ -1,0 +1,69 @@
+---
+id: generic-new
+title: "Fetch new item template for entity by identifier"
+description: "Fetch new item template for entity by identifier"
+sidebar_label: "Fetch new item template for entity by identifier"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VE1v2zAM/SsGTxug1unQk2/BsBbBgG7YllORgyIzsVZZUiU6mWfovw/015Jmlw3FTkFEvkfyPdIdkNxHKB7hHi0GrWAjwHkMkrSzqxKKKfCARxDgZZA1EgbGdGBljVCA9N5o1UNAgLZQgJdUgYCAz40OWEJBoUEBUVVYSyg6oNYzNFLQdg8piZkNLWlqX4FIl0y10xgmsucGQ/tXbBtOjt7ZiJHj7xYL/ikxqqB9P3EBnz6CAOUsoSWOnuiRf4+c0v0ukVJKAm4XN5c8aysbqlzQP7GEPun2MunBUXbnGlvyrC9id0iqyiweM01YZ4S1N5Iw27mQDbJm2zY706VGqhz7vEfqDaYKCsj3g+t5dzJLyruBJOW234aIqgnsFe+C06XiRXIerS5BwEix9Bo2rOOU/ZWVGNQcMLPqDF2V7521qLiZs//rYKCAisjHIs+HGai93kpjjjLgdYl5QGnqmE9P+fURjbl6su5o86GtK+XsTu+bYb97BbXdub4HTYabmNDZuPjZ8vMKBBwwxEHkww17412kWvbWjuv2D+KfuTfLQPiDcm+ktlyo4bm70ZjHSVUQUJyfXTHfDZuzEVC5SIzouq2MuA4mJX4eboAdK3WUW8NXsJMm4kU780bDmy/jwbzNQPy5zSdsX57cQZqGE4HdP8igudrrVx4fpW1Pa04dnYrE34b/WHo0JG2SgApliaEffggulUJPJ7CLjwarNl/n/YdvkNIvobP0Gg==
+sidebar_class_name: "get api-method"
+info_path: api/generic/ballware-generic-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Fetch new item template for entity by identifier"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/generic/{application}/{entity}/new"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Fetch new item template for entity by identifier
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"application","in":"path","required":true,"schema":{"type":"string"}},{"name":"entity","in":"path","required":true,"schema":{"type":"string"}},{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

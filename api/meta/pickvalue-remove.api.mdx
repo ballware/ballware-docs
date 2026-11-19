@@ -1,0 +1,69 @@
+---
+id: pickvalue-remove
+title: "Query existing tenant"
+description: "Query existing tenant"
+sidebar_label: "Query existing tenant"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVE1v2zAM/SsBTxug1mnXk2/FlgLFvrJ+7BLkoFhMzEaWVIlOmxn+7wPtfLXpsJ7iiHzS4+MjG2C9SJBPYEzFcqVtjTBV4ANGzeTdtYF8H7rByq8QFAQddYWMUaANOF0h5EAGFJCDHILmEhREfKwpooGcY40KUlFipSFvgNdBEIkjuQUomPtYaYYc6poMtO1UwCl4lzBJ/vlwKD8GUxEpCDPI4edXUFB4x+hYojoES0XHO3tIktIcP+lnD1iw1BClSqb+ASn0v7QUjBwTr99KdbW1emaxr7VVcEVo37z0KPN3J/s+kxzjAuPh++T407kQuMNnfteltz6yhN5x7RG6VaCNIRFS2/GBTnNtEypgYsk98EzbCuhieHbcpXunay59pD/YSXgxvDhO+uF5cOVrJ71Xr2K/aozrAT5TkoIGjE47aWCFXHrxp0GL3NuSS8ghq5B1FrbkstjZNmvItKAgYVHHromTBjyZQtzvA7rOvgK9DARTseA29VZM1PukB+zdFNBdm8/eud5UL/7fRws5lMwh5VlGBjvznM60tU864qkRatpWKdseZadPaO3J0vknl/WcTgrv5rSo+3ns5CE39x2HTRu26MF3ZD24HF+DghXG1Mu3OhPVg09c6W4kNtP6L1lfiL8rlPGZs2A1Obmtlsqajd6TTjSRf2cHmd7NqsjJyEYpfWJJbZqZTngfbdvK8aOQgHwyVbDSkXoPThowlOTb7Cz3itVu6uHDzWbJfByAepvt5lC7tQjTDxuAgiWu+63VTlsFJWqDsXu9D1wWBQY+gBztF/HIzoVfRt9GdyNo27/bftNC
+sidebar_class_name: "delete api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query existing tenant"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/meta/pickvalue/remove/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query existing tenant
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"id","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Entity":{"type":"string","nullable":true},"Field":{"type":"string","nullable":true},"Value":{"type":"integer","format":"int32"},"Text":{"type":"string","nullable":true},"Sorting":{"type":"integer","format":"int32","nullable":true}},"additionalProperties":false,"title":"Pickvalue"}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

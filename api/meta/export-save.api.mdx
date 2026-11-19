@@ -1,0 +1,70 @@
+---
+id: export-save
+title: "Save existing or new item"
+description: "Save existing or new item"
+sidebar_label: "Save existing or new item"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNlFtvGjsQx78KmqceyZsFAqTdt5wqR4qOepo2yUsRD8N6Ftx6bdf2cina717NmkshUU95AcZz8/j3nx1EXAQopnC3cdZHmAmwjjxGZc29hGJvf8QVgQCHHmuK5DlkBwZrggKUJBNVpciDAGWggO8N+S0I8PS9UZ4kFNE3JCCUS6oRih3ErePQEL0yC2jbWXKmEP+2cssepTWRTOSf6JxWZddT/jVYw7YXqez8K5WRm/R8g6go8Clf4rKcgMr6GiMU0DRKQivg9lTiNX/TaI1zTekirYA7E1Xc/pHrp24Yf5R041Qa/WPE2v22cYmRsqhqei3RB5IKn7rQ/y3bCkApFVdF/fDL7CrUgQREFdn3AEjLAefv2hmCsyakkQ/7ff6SFEqvXBopfPyXxzzqD14ePRts4tJ69YNkchq9dPrPxt4/tjESuIHzM6azRxsVojKLnvU9Q+ueilSDgJri0jLIzoaODoxLKCCvKWJO3Z3ykOgOVDa+e9XpDqySJevCOjJKpkR46xTMmNWD6yNTmG6dAk44OjL38r01JlF59v/ZayhgGaMLRZ4n/cTt1Ry1XqOnK0m5J9R1yA+m/GpNWmffjF2bPPWUldZUatEkYrqxsDg+n2R0t8HaaTrIAK4rfDuuJqNsfDO4yUbjyTCbX1dlNizfTa6ryQQrnMCFFk7cHJA/WfZk/+JyCTAM+8NR1r/Jhu+eBuNiPCiGb6/6N4MvcAbpcQ/w/qhsN8Y9docB9D5QxN7twz0IWJEPqbnVgGP4aWvshLtfSb8j4oyd43tF2sTcaVSGMzb8QLs9LNPu7UFAwoVJYWBmApbMVDGF3W6OgZ69bls2p/XHFEkVWGryqKaL4sclB28+7zX1Vw/E6019o+3ltl2hbtgRGMoVepWEPZ21ApaEknzXRop8n4pl3cxPsS+2K+c6yubh4+MTCJjvt3JtJcd4XPN6xzXXZrg5upNBZ9uBRrNocMG+KSd/fgKh4jDd
+sidebar_class_name: "post api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Save existing or new item"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/meta/export/save"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Save existing or new item
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Application":{"type":"string","nullable":true},"Entity":{"type":"string","nullable":true},"Query":{"type":"string","nullable":true},"ExpirationStamp":{"type":"string","format":"date-time","nullable":true},"MediaType":{"type":"string","nullable":true}},"additionalProperties":false,"title":"Export"}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK"},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,69 @@
+---
+id: notification-query
+title: "Query items by query identifier and params"
+description: "Query items by query identifier and params"
+sidebar_label: "Query items by query identifier and params"
+hide_title: true
+hide_table_of_contents: true
+api: eJyVVE1v2zAM/SsGTxug1mnXk2/FvhAM6LqPnoIcFIuJ1cqSKlHpMsP/faC/6jQ9dLkEEh/NR74nNkByF6FYwY0jvdWlJO0srAU4j6E7LBUUR9EfCcMBBHgZZI2EgfMbsLJGKEArtIzFAAK0hQIeB3zAx6QDKigoJBQQywprCUUDdPCcGilou4O2XTM4emcjRo5fLhb8pzCWQfuOYQHfv4GA0llCSxyV3puBYX4fGdKclpAhSOaiCes4u3ebeyyJmwrcOOm+MPf+kp6ArQu1JCggJa2gFbB87vkVuE3GyI3Bvu9WwE03qTcAP7ky1WjpLTReSf9FkuaFtCXcdbpMqdrSh0uYlbplUeMb2LUCpFKaxy3N7WxqW2kiCiBNjD32Vcs/AVeLi1M976xMVLmg/2I31KvF1SnoxlH2xSWrgL9zHOt8mXXKZptD9tgfJ2kyaVXm+/YE1EiVY2fvsJNdUgUF5GoYQ25ntPPRwRHLFDQdOr87rUp+OM6j7eY/5l57DWv28Aj/xS7sDdUnPdvOo12qj87a3n1H57tgoICKyMciz/tG6HC+kcY8yYDnCvOA0tQxH6/y8yc05uzBuieb97zOSme3epfCKAA/yq3rOAwKjdnZ2ECWIobs+nYJAvYYYj/e/QWr4l2kWnaPa3jw/zX2I8WmMRD+odwbqS2XSNx3M0iymsbKFpx7SQyLZS2gcpEY2jQbGfEumLbl6z7OWikd2bpqcucLHtMagXc/hy31PgPxOr8HPLzcc3tpEgOBZd/LoPuHslq3AiqUihfDqhkyr8sSPc2yTjYXf2Uy6NfPv6Ft/wGl5fd4
+sidebar_class_name: "get api-method"
+info_path: api/reporting/ballware-document-user-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query items by query identifier and params"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/document/notification/query"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query items by query identifier and params
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Identifier":{"type":"string","nullable":true},"Name":{"type":"string","nullable":true},"DocumentId":{"type":"string","format":"uuid","nullable":true},"State":{"type":"integer","format":"int32"},"DocumentParams":{"type":"string","nullable":true}},"additionalProperties":false,"title":"Notification"}}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

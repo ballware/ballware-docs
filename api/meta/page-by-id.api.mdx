@@ -1,0 +1,69 @@
+---
+id: page-by-id
+title: "Query existing item"
+description: "Query existing item"
+sidebar_label: "Query existing item"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1VU1vGzcQ/SvEnFKA8TqFT3tzgrRQkzpuHZ8MHajlrJYxl6TJoR1V2P9eDCnZkiWgapGeFsv5eDOPnDdrILVM0N7BtVoizCX4gFGR8W6moS2n71czDRKCimpEwsjua3BqRGjBaHRkeoMRJBgHLTxkjCuQEPEhm4gaWooZJaRuwFFBuwZaBQ5NFI1bwjTJnWz/NYuE3sdREbSQs9EwTXMOTsG7hIn9fz4/54/G1EUTuENo4csnkNB5R+iIrSoEa7rSf/Mtscv6ENIvvmFHTElktshUACbssKx9vK8DiuzMQ0bxwpzofRQ0mCQInXJ02IyE2QvPJ4HsZPd9TR7UEkVOqAtexB4jus645Y7ZOEEDih0aQILL1qqFxXoHk4SrclunlMH3ul8AeZEG/3Qi0me18pn+GevjuECtUYvfbr5cCY29cYZNFRuFLXn2KjkK5/19DukH4NVElW7jtq17u1DxGPC16e6tSfQDoMM21cngH3IiP94UjH9VgHpUNepIGV1JKmrgqbVMEpTWJY+y1zvT1SubUAIZYt8qVtPE/hfn7w7H+tapTIOP5i8s03NxfnHodOVJ/OKzY7F43eMfLD8Cv5tEPCCGcAQJI9LgWRaXWMZf0QAtNCOSarixZrEqCpawy9HQqgilN7pjgfUBXbGy+2UwMGeJ2rresMhUHakBL2oT0M30B+9cFZ29/9tooYWBKKS2aerQ0+psoax9UhHPNDYRlR1Tsz1qzp7Q2rf3zj+5ptb0tvOuN8tcdb+wYVzvSw0bwrfR4nckJS6vZyDhEWOqbD2+Y5KDTzSqIpkbOT/O4h7Tz20SfqcmWGUc58rc13rD8F2hrBBexrawPJcw+ERsXa8XKuFttNPEx3V1MPXaJH5c+vn9vIJ+Fn548+dmz/wkQB4v6R5Xr/fdo7KZHYFX2P8Ctgcy559o6rzczScJAyrNG+FuvYm47DoMtBN1sNA4y/M7/vXjV5imvwF5Icd5
+sidebar_class_name: "get api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query existing item"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/meta/page/byid"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query existing item
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}},{"name":"id","in":"query","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"Id":{"type":"string","description":"The unique identifier for this tenant","format":"uuid"},"Identifier":{"type":"string","description":"The identifier of this page used for referencing this page in the application","nullable":true},"Name":{"type":"string","description":"The name of this page to show in the application","nullable":true},"Layout":{"type":"string","description":"Embedded JSON definition of the layout of this page","nullable":true},"Lookups":{"type":"string","description":"Embedded JSON definition of the lookups used in page toolbar","nullable":true},"Picklists":{"type":"string","description":"Embedded JSON definition of the picklists used in page toolbar","nullable":true},"CustomScripts":{"type":"string","description":"Embedded JavaScript definition of the custom scripts used in page toolbar","nullable":true}},"additionalProperties":false,"title":"Page"}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

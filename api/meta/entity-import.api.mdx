@@ -1,0 +1,70 @@
+---
+id: entity-import
+title: "Import from file"
+description: "Import from file"
+sidebar_label: "Import from file"
+hide_title: true
+hide_table_of_contents: true
+api: eJxtU01v2zAM/SsBTxug1OvQk29dsQE5bCvW9hTkwFh0rVWWXIpO5wX+7wMtJ2nXnCxL7/HjPXIPgo8JyjV8DeJkgI2B2BGjuBhWFsr5ftV2kQUMdMjYkhAraQ8BW4ISnKUgrnbEYMAFKOG5Jx7AANNz75gslMI9GUhVQy1CuQcZOqUmYRceYRw3GUxJvkQ7KKKKQSiIHtvei+uQpagjt0uLMsU4RTvlWUPtPCXtZE4Rt7+pmopn7U0cJaVk2KkSZEYt2Qm16X2FBjQ1CpSwdQF5gHEcRwMUqmgV8DpkksErVykTbtTuUhdDyoDPny71YylV7DpVG0q4YUIhC6OBq3PvDwF7aSK7vwfQ1XvQjyiLb7EPFjTp27ds46Lm2C60VjDQkjRRje5iygZLAyUULQkWNJlfuIP7iaqedUzU++hspXLHjoKzORRedw426uUBeqcW5Z4z4air8lb2JoaQ3Xnz/8AeSmhEulQWRZ4vGS626P0LMl1YKpjQt6k4XBUXL+T98inEl1DkmpZVDLV77PM4T3q4UMepBieTQQf24jsJLq5vV2BgR5yyXrtLlVmVaTEobZ73Mzq+EfrYo9AfKTqPLmigXpvazxKvJ71AB2jaPAOzzBsDjXpRrmG/32KiB/bjqNd5qVR76xJuvY57jT7Ru/TH1YEPv+bN+LgAc76sJxr+3+Ed+l6BoFbukJ1mg3K9GQ00hJZ4KiMzb3Ky5b0GP3HP7ayGO07c7c+7ezCwnde9jfawMhPWnI6aeBz/AZJJnN0=
+sidebar_class_name: "post api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Import from file"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/meta/entity/import"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Import from file
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"multipart/form-data":{"schema":{"required":["files"],"type":"object","properties":{"files":{"type":"array","items":{"type":"string","format":"binary"}}}},"encoding":{"files":{"style":"form"}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"201":{"description":"Created"},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

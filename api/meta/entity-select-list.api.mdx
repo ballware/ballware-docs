@@ -1,0 +1,59 @@
+---
+id: entity-select-list
+title: "Query list of all entities"
+description: "Query list of all entities"
+sidebar_label: "Query list of all entities"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNU8tu2zAQ/BVjz4yVFD3pZhRGYfSVIvXJ8GEtri0mFMmQK7uqoH8vlnKUOCmK6CKJnF3Ozgx7YDwkKDewdGy4g60CHygiG+9WGsrz+h1ZqvirSQwKIqXgXaIEZQ8frq/lpSlV0QQpgxJ+fAEFlXdMjmUXQ7Cmyk2L+ySQHlJVU4PyxV0gKAFjxA4UGKYmt4702JpIWugtnjuAekH2XOt391QJtxCFPpuRnEww9U8cjTuAgr2PDTKU0LZGw6Aumv8D71prcWcJSo4tDdPx74F+x4beARwUoNZGGKC9fTHDHm0iBWxYsG/cWDqOHQzyKPh4ffPWirXDlmsfzR/SIKjL7Z8txW5mTeKZ38/Q2hnJEXK2goa49hKCA2VtkWsooWiIsciwrkiZih2DkahqY1Zm04M3uhLnfCBn9NgNF8HAdtg+Q+8kBaNZY8EkldSt9Cfv3Ojsxf86WiihZg6pLAqjRzbzHVp7wkhzTUUktE0qnpaK+YmsvXpw/uSKkdNV5d3eHNox7Vkc4/Y+czjr/VQ9+0aMs8XtChQcKaZRvOONpCf4xA3m5Ljs9v9FvdB/mpbpNxfBonHSspXx+rPgm6wcKBiHzDpPom8V1D6xoPp+h4nW0Q6DLD8KCSg3WwVHjGYM22Y7KKgJNcVs0gN1UMKiqiiIxke0bb6Kr++rWDal4fPyFwzDX//JeLI=
+sidebar_class_name: "get api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query list of all entities"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/meta/entity/selectlist"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query list of all entities
+
+<ParamsDetails>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"array","items":{"required":["Application","Entity"],"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Application":{"type":"string","nullable":true},"Entity":{"type":"string","nullable":true},"Name":{"type":"string","nullable":true}},"additionalProperties":false,"title":"EntitySelectListEntry"}}}}},"401":{"description":"Unauthorized"}}}
+>
+  
+</StatusCodes>
+
+
+      

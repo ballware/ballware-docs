@@ -1,0 +1,59 @@
+---
+id: statistic-select-list
+title: "Query list of all pages"
+description: "Query list of all pages"
+sidebar_label: "Query list of all pages"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNk09v2zAMxb9KwLNat8NOuhVDMQT71yHrKciBsZiYrSypEp3MM/zdB9pt2m7FMF9sS4/E0+9RAwjuC9g1rASFi3ANGwMxUUbhGJYO7PPWijzV8pmLgIFMJcVQqIAd4N3Fhb4clTpz0kqw8O0TGKhjEAqiu5iS53rqW90VlQxQ6oZa1C/pE4EFzBl7MMBC7dQ600PHmZyaXDoKwjumrC4fK+L2jmp1lLL6Fp4tqfVT1yKZwx4M7GJuUcBC17GD0bxs+YY8dN7j1hNYyR2NBr5iS/8hHA2gc6xHRX/zwtcOfSEDwqLat9BeB8k9jPoYeH9x+TfX24CdNDHzL3Kgqtfb3zvK/cJzkUXcLdD7RcI9FTDQkjRRE93TxAulAQtVS4JVeXJSlcmKn1MuVHeZpQe7HiCyqzWGmCiwmxviVWLYjJtn6UojnTOYC060tG7pPsQQ5sBe/d9mDxYakVRsVfEUi/TnW/T+iJnOHVWZ0Lelelqqzo/k/dl9iMdQzZ7O6hh2vO/m6Z3gcNjFycMj8qfqxRcSXFzdLMHAgXKZ4R0udShSLNLiNKBhCvwfUF/BPx1V6KdUySMH7dfp2YZH4OsJm7I9XTmFd4K+MdDEIiochi0Wus1+HHX5QU2AXW8MHDDzPG/rzWigIXQ6wesB7qkHC1d1TUkZH9B307368/JpZKeB+Hj9A8bxNxiLaW0=
+sidebar_class_name: "get api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query list of all pages"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/meta/statistic/selectlist"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query list of all pages
+
+<ParamsDetails>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"array","items":{"required":["Identifier"],"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Identifier":{"type":"string","nullable":true},"Name":{"type":"string","nullable":true}},"additionalProperties":false,"title":"StatisticSelectListEntry"}}}}},"401":{"description":"Unauthorized"}}}
+>
+  
+</StatusCodes>
+
+
+      

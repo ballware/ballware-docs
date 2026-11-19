@@ -1,0 +1,70 @@
+---
+id: job-save-batch
+title: "Save existing or new items in batch"
+description: "Save existing or new items in batch"
+sidebar_label: "Save existing or new items in batch"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVUtv2zgQ/ivCnLYAHeXp7urWFi3gLnaTTZqT4cNIHFlMKVLlw45r6L8vhpLtOMnBvtgefvPgzPcNtxBw6aGYw3dbwkKA7chhUNbMJBRsfMAVfcZQNSCgQ4ctBXLssQWDLUEBSpIJqlbkQIAyUMCvSG4DAhz9isqRhCK4SAJ81VCLUGwhbDp29cEps4S+Xwxg8uGzlRtGVNYEMoF/YtdpVaWq8idvDdvehELnkHOqQK1/YbflE1WBi3d8t6AonfL1XpchoLauxQAFxKgk9AIeqoZk1OTeQ5uoNZaahuv1AmaHTpwCv12b95HHZbzn2XEz/ElZ7slHHU6CPgQMxEgysWVSPJqfxq4NCPgvUiSuZWbunF068h4EfFNG+SbZvzpnHTPodZagAqdIXOL4HvpeAEqp+A6o717MpUbt6cgF+p7hx0xKBt9Z44dhXp6f85ckXzmVWgMF3P7NA7w+v3h79GgwhsY69ZvkALp+C/rXhuybjUameo/PWBQZPSsflFlm1mWG1lliXqZMVo5yaSk0lmXUWZ8YiKGBAvKWAuZPtsw9rmgH9lRFp8ImKcsqWXH/bUcmMYBdPnUKFqyUHZTJ2Q4dGBwOpO/IzOQXa8zA/aP/j05DAU0InS/yfFBv2JyVqPUaHZ1Jyh2hbn2+M+Vna9J6kriQDzVNKmtqtYzDskgtYmneH0T89Rnbjsc4H9QGVzX+eVNPryc3Hy8+Tq5vppeT8qquJpfVX9OrejrFGqdwJLkDiV4q62AdBXRq5L1qDhF24jhYRg3sqc8NV6a2qbsjL3d9yf6hgNmnuxkIWJHzAzlWF8wpnnmLaVeNe/I00hwRbT/QQM8h7zQqw7EjT3A78mmeyAECnmzJPNpzaiGgYeIVc9huS/T06HTfs3nYzzwYqTxvALmX3qv0+y0Mf9yPEvyQgXi/rJ+0ef0crFBHBqY2rtCpYd/MF72AhlDy+Obb0fPLkGzyg4MffN+sf46119bd7cMPEFCOz0ZrJfs4XPP7g2vOzfzf78tk24JGs4y4ZOwQkz//Aws2ZDU=
+sidebar_class_name: "post api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Save existing or new items in batch"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/meta/job/savebatch"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Save existing or new items in batch
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Scheduler":{"type":"string","nullable":true},"Identifier":{"type":"string","nullable":true},"Owner":{"type":"string","format":"uuid","nullable":true},"Options":{"type":"string","nullable":true},"Result":{"type":"string","nullable":true},"State":{"enum":["Unknown","Queued","InProgress","Finished","Error"],"type":"string","title":"JobStates"}},"additionalProperties":false,"title":"Job"}}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK"},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

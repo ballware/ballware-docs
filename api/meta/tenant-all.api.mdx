@@ -1,0 +1,69 @@
+---
+id: tenant-all
+title: "Query all"
+description: "Query all"
+sidebar_label: "Query all"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1V01vGzcQ/SsDXtQCG8kpctLNSNLCLZK4iX0yfBiRs7uMueSaMytFFfTfC5JrSZHl1glgXQQt5+PN08zw7UYJNqzmN+qKPHpRt5UKPUUUG/yFUfPx+blzqlI9RuxIKCaPjfLYkZora8iLrS1FVSnr1VzdDxTXqlKR7gcbyai5xIEqxbqlDtV8o2TdJ1eWaH2jttvbZMx98Eyczn87O0tfhlhH2ycwaq4+/aUqpYMX8pJOse+d1Rnq7Csnk83jFBgjJixWqOOD52HxlbSkomIqWGxJnGo+hlcd4bhqCQZv7weCfe1QhwjSWgYpTFaqDrFDUXM1DNaobaU+ZsKeEz5RC6E+CugH53DhqPCZAy5tg8Xv/8K+7xZkDBn488unj1B4AkO19TZZjPhpzDZh8LvgwBIHLUOkUyA+26YVftuSvvuS8/0IFlxiOQDb9Y468lJS5uIP0MScBXRKY30DLjRWn4JzRV3vUIhfgJJucGKhH2IfmICMFXC4DoOA7LKegPSF4pJiIefdLvxLAOScCdgagpHXvTlXsGqtbkGjhwXBwGRAwp550ANL6MCgIKDWxFx4BvQmeUSqKZLXZKCOocu5n+TkJBUf0GND5h0KLpAPp2ERgiP0jzi48CYNOTGsWpKWjio2YySwDF0JDot1tuE1C3UQItgadPCedGbNkKB1DBgJ+hiW1ux9SlywwuTqNLOXxSA+b253aMa4MfE7MB1vhwpo2kxh0jHfu0kFkz6wNJF4Mn26gX4QwtgLaExMf+QTCFzQ6NrAMklETcxiSt8wNcRUh+40mrco6ELzg3DySjsCcbrYJ26J/y62zMajIm0N4zWxcHQy3TU/l9mBKR5UcaoJ9112MtclMq9CfOYd04/WP5/vM/UhSiF0v3heYO/EnCjj4jBETc/eNcXz5K54GL0PwZB7UfiHe283uV1K+1QdORodOpY27Enb2moo8oLB2TuCpaUVp/HqY9BkhvjUNUHmJxfiruOB2zC4vKyZKHGwaskD4zJdmrpF3xCnAuRgeqZqu60UGpPpQXd5IIlqdEyVEisJ6YNM3KZPpd6cvX4s0649DtKGaP+hrHrenL15bPQxCPweBm9y6u/P/k7yETBLzo6kDUmHNpTFGkqr5mrWkeCsVDwrhkx6iFbWWZkGa3QStaEnb00Jg+e9VbdJaT6Y5rkoOqE47MVhT/7CvC3Dparvf19Hp+aqFel5PpsVBSjr6QKdW2GkqaFZJHQdzx4ezaYrcu7VnQ8rPyuYXunga9sMRWlnEqyvQ8YwUv3gDR9IEM4vL1SllhS5kLR8nbhN10aHeSRGNX5I3ne07ooT+iaz3qH1KcKQqtmMxN5kolSldpIzBbqtVLog0vFmk/rlOrrtNj0uQj8xbiynXja7hjnKvZPt6pfP41vBr5ASncJ0R+vj94oluiEZqvQHLjHaMjk3t9tKtYT5gr7ZjJ7nWlMvB16P3hRSlF1r/fH+Sm23/wIdfpkf
+sidebar_class_name: "get api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query all"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/meta/tenant/all"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query all
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"Id":{"type":"string","description":"The unique identifier for this tenant","format":"uuid"},"Name":{"type":"string","description":"The name of this tenant","nullable":true},"Navigation":{"type":"string","description":"Embedded JSON schema definition for the tenant's navigation structure","nullable":true},"RightsCheckScript":{"type":"string","description":"Embedded Javascript implementation of the tenant's rights checking logic","nullable":true},"Templates":{"type":"string","description":"Embedded JSON schema definition for the tenant's multi purpose edit layout templates","nullable":true},"ServerScriptDefinitions":{"type":"string","description":"Embedded JSON schema definition for the tenant's server side script definitions, which can be used to implement custom data access logic and be referenced from the multi purpose edit layouts","nullable":true},"ManagedDatabase":{"type":"boolean","description":"Indicates whether the tenant's database is managed by the system or if connection details are provided by the tenant itself"},"Provider":{"type":"string","description":"The database provider to use for this tenant, e.g. 'mssql', 'postgres'.","nullable":true},"Server":{"type":"string","description":"The database server address for this tenant, e.g. 'localhost' or 'db.example.com'.","nullable":true},"Catalog":{"type":"string","description":"The database name for this tenant.","nullable":true},"Schema":{"type":"string","description":"The database schema for this tenant, if applicable.","nullable":true},"User":{"type":"string","description":"The username for the tenant's database connection.","nullable":true},"Password":{"type":"string","description":"The password for the tenant's database connection.","nullable":true},"ReportSchemaDefinition":{"type":"string","description":"Embedded JSON schema definition for the tenant's report datasources, which can be used to implement custom reports","nullable":true},"ProviderModelDefinition":{"type":"string","description":"Embedded JSON schema definition for the tenant's custom data provider models, which can be used to define custom database specific objects like views or procedures","nullable":true},"Seed":{"type":"boolean","description":"Indicates whether this tenant should be seeded when saving changes to the database."}},"additionalProperties":false,"title":"Tenant"}}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

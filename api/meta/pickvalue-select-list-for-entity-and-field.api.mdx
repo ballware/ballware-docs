@@ -1,0 +1,69 @@
+---
+id: pickvalue-select-list-for-entity-and-field
+title: "Query list of pickvalues for entity and field"
+description: "Query list of pickvalues for entity and field"
+sidebar_label: "Query list of pickvalues for entity and field"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VE1v2zAM/SsGTxug1m23k27B0A7FvrqP7hLkoFh0rFaWVIlOlxn+7wOtxEmb7bAdlosjiXwk3yPZA6lVAjmHG1Pdr5XtEBYCfMCoyHh3rUHun76ixYrem0RXPl46MrSZOX1l0GoQEFRULRJGxuvBqRZBAo5mIMA4kBAUNSAg4kNnImqQFDsUkKoGWwWyB9oE9koUjVvBMIgJqN6G+TecBRun4F3CxO8XZ2f80ZiqaAKXChI+vQMBlXeEjvhVhWBNNRJR3iU26Y9DqBjVWB9hmw7u/fIOK2JeItNJJgdmRp+nJ6D2sVUEErrOaBgEfByLPjZ0nbVqaTFXPAj4Pmq2tzSOcIXxENM4enXBXILS2nA1yt4cJFUrm1AAGWLc53JfOoobGPgn4PXZ+TFtt0511PhofqIewzx9/txh3BTWJCp8XYQdeipqH4vcHoVyutgJ3CI1nvtuhSN9LLWEskVS5eRdpjE5Rq19zCjK6RGj7PN5KPvxPICAhFUXuRG5Nb3RFfe8D+jMNqSaBQML7pOd6VdWOouWHfbSBnTX+o13Liv85HwbLUhoiEKSZWl0zuV0qax9VBFPNZYRlW1TubsqTx/R2pN75x9dmXM6qbyrzarLUziSalztxxy2Mu28iw9IqpjdXIOANcaUSV+fcxcFn6hVY99up+hvxXgi5UQA4Q8qg1XGcZSOK+63Qs1HMlm3aaEwpX8UCwTIaUfIfLUQ0PhEDNb3S5XwNtph4OsHTh/kfCFgraLJkzDvQZvE//XUzM/ynoYaXnzZ7oyXBYjf17MbbMcp5RIkgIB73OwXGm+m/xg1EzMsBgENKo1xLDu/zaoKAx14He0tbutprN5efoNh+AUiBBI0
+sidebar_class_name: "get api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query list of pickvalues for entity and field"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/meta/pickvalue/selectlistforentityandfield/{entity}/{field}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query list of pickvalues for entity and field
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"entity","in":"path","required":true,"schema":{"type":"string"}},{"name":"field","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Name":{"type":"string","nullable":true},"Value":{"type":"integer","format":"int32"}},"additionalProperties":false,"title":"PickvalueSelectEntry"}}}}},"401":{"description":"Unauthorized"}}}
+>
+  
+</StatusCodes>
+
+
+      

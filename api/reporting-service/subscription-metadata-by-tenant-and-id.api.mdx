@@ -1,0 +1,69 @@
+---
+id: subscription-metadata-by-tenant-and-id
+title: "Query subscription metadata by tenant and id"
+description: "Query subscription metadata by tenant and id"
+sidebar_label: "Query subscription metadata by tenant and id"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VU1v2zAM/SsGTxug1u3Wk2/psA7Ftu6j7anIgbGYRK0seRKdzjP83wfKSeosxZYBw06JpcevRz6qA8ZFhOIOrptZLIOp2XgHUwW+poDycamh2Ln9SIwaGc/bG3LoeOL0pQYFNQasiCmIvw4cVgQFcMIkgHFQQI28BAWBvjUmkIaCQ0MKYrmkCqHogNta7CIH4xagYO5DhQwFNI3R0Pdq69r8O6dTMY61d5Gi4F+dnMiPpidOCvj0HhSU3jE5llusa2vKRFJ+HwXS7Yf0s3sqWegJQimbIYCw+se0FNxGCgdCP6KxzwFdYy3OLA2k9ArOvW4PAk6YsVxW62rX8Jn3ltDBzv2FsXSVmnKA2yvPZr7m7cDaLqSz5Mpx3sYxLSiM4cbx61cps5LNip7P+gNGvianrxmr+rfRNTIdsanouSrEzdsQfDig5l4Bam2kYLSfR3MwRxtJARsW7K4G+17szk5O9wfx1mHDSx/MD0r0nJ2c7YOuPGcXvnFJM7/cfWkotFkchcuqtaqzWZsNms3Q6SxprCJeelkDC0qTLGorINe+bKT7+dhRvnE0awc36LTRebfZA33eGd2DgkhlEwy3aVl4o0vZQr4ml0JufE9qA1OR5wZ+LQIbNDQYPSmtJnep33jnBsHtfN8GCwUsmetY5LnR5NhwezxDax8x0LGmPBDaKuabo/z4kaw9enD+0eVDXkeld3OzaIbFmHg1bu5TDusWbqyzTQFZpLAyJWWTz5egYEUhDj1YnUrrah+5wrQ61lvtL3uz09gtF0zfOa8tmjTyTUibYejb3ZZbacJ44lKj93sHCorRFi+Mlvdh6SOLs66bYaTbYPtejr9J9lDcTRWsMJhBBHcdaBPlv97O/C95b9cqvPi63uIvM1DP17M+RNcKo2gb+QIFD9SOXxx5Kv5jXFlV017BklBTSFUPF5OypJpHJnsPhwz4VmTv3t5A3/8E7Q2gww==
+sidebar_class_name: "get api-method"
+info_path: api/reporting-service/ballware-document-service-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query subscription metadata by tenant and id"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/document/subscription/metadatabytenantandid/{tenantId}/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query subscription metadata by tenant and id
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenantId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}},{"name":"id","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"UserId":{"type":"string","format":"uuid"},"Mail":{"type":"string","nullable":true},"Body":{"type":"string","nullable":true},"Attachment":{"type":"boolean"},"AttachmentFileName":{"type":"string","nullable":true},"NotificationId":{"type":"string","format":"uuid"},"Frequency":{"type":"integer","format":"int32"},"Active":{"type":"boolean"},"LastSendStamp":{"type":"string","format":"date-time","nullable":true},"LastError":{"type":"string","nullable":true}},"additionalProperties":false,"title":"Subscription"}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

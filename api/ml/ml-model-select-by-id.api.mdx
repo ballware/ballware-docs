@@ -1,0 +1,69 @@
+---
+id: ml-model-select-by-id
+title: "Query select item by id"
+description: "Query select item by id"
+sidebar_label: "Query select item by id"
+hide_title: true
+hide_table_of_contents: true
+api: eJyFlMFu2zAMhl/F4GkD1DodcvKtG7oh2LJ163oKclAsJmYrS6pEt/MMv/tA28mStsNOtkVS+vXxpztgvUtQrGBpl96ghbUCHzBqJu8WBop94AYtlvy+XRhQEHTUNTJGKe3A6RqhAJIQOSggaK5AQcSHhiIaKDg2qCCVFdYaig64DVKROJLbgYKtj7VmKKBpyEDfr6U4Be8SJsl/N5vJw2AqIwXRBgV8+wwKSu8YHUtUh2CpHJTnd0lSuqMj/4pZwcKgY9oSRrnvJMZv7rBkuV0UAkzj0QLhv4LV8ZavpLvGWr2xOJLoewXaGBKl2l4fHbfVNqECJpbcU/ZfKPGV49hC38sO89nFSya3Tjdc+Ui/cZA1n81fJn31nH30jRPS6lnse4OxzdJwYkaMdbZps6GzNXLlxRE7HChJjwvIa5vXthaZ+Vi1acnkHZkeFCQsm0jcDjbxZEqh7wO6cUd7GQjW0u194o30awQ/ph9YStXCfPDOjV06+b6NFgqomEMq8pyGXnB7vtHWPumI5wbziNrWKd8v5edPaO3ZvfNPLh8VnZXebWnXjOYf2JDb+kHD1JB9dba0WZMwZpfXC1DwiDGN+B4vhHrwiWs9GHCajX9jPcF/uC3jL86D1eRkv0au103IV1DbAd4AfYC8xw4KCjLi6conltSu2+iEt9H2vSw/iAwoVmsFjzrSaMlVB4aSvJuDA5+pOkwZvPkxzdHbDNTraqdF7VpBo20jX6DgHtvxL9GvewUVaiPDsuqmwGVZYuCjkhfzLEY5uPDT1U/o+z8g0aEq
+sidebar_class_name: "get api-method"
+info_path: api/ml/ballware-ml-user-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query select item by id"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/ml/mlmodel/selectbyid/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query select item by id
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"id","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"required":["Identifier"],"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Identifier":{"type":"string","nullable":true}},"additionalProperties":false,"title":"MlModelSelectListEntry"}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

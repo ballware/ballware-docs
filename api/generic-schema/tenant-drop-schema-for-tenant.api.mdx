@@ -1,0 +1,69 @@
+---
+id: tenant-drop-schema-for-tenant
+title: "Drop schema in tenant database"
+description: "Drop schema in tenant database"
+sidebar_label: "Drop schema in tenant database"
+hide_title: true
+hide_table_of_contents: true
+api: eJyVU0tv2zAM/isGTxug1umwk27FmgHBBmzYmlORA2MxsVBZUiU6mWf4vw+0nSx9AMNOhiiS+l7ugXGfQT/APXn0DBsFIVJCtsGvDOi5fpdC/FnV1ODnkOZWBRETNsSUZEMPHhsCDTxerwwosB40ROQaFCR6am0iA5pTSwryuA50D9xFmcucrN+Dgl1IDTJoaFtrYBjUeXWbKf1d/NRS6uB/Nm0ERo7BZ8rS/2GxkI+hXCUbhTNo+PYFBgUfFzevr9YeW65Dsr9pBPbiWlQqJjSF9cUkRGGQcYuZQEFDXAdR1ZAjplFCrkFDidGWU39pUojTkl1Ic60/iToIX6raZLkbRQ/WVOJfiOStSLMnT8lWt9HCRgifukf7JtrTzFkuGV2ZT8F7qsTWZ+d1cqChZo5Zl6U15Nlyd71F546Y6NpQmQhdk8tTqbw+knNXjz4cfTnBuqqC39l9O+VqVM76XRgxWHYC4jRdTDErbr+vQMGBUp60PdyIKzFkbtDL4ByJf2r+zKIzZ6ZfXEaH1svaVkj2sxkPgNGCmnMsG14bAgr0OecbBXXILJN9L6+ukxsGKU8JFZuMzbh1kv4dukwKHqm7DPQBXSu4QCw7YLLS/fbkC0JV8ExeQv7ux/yLvS8E/ltE5yL67vLNE5ozo2EzXIT1bvl1eb+EYfgDmKhvzQ==
+sidebar_class_name: "delete api-method"
+info_path: api/generic-schema/ballware-schema-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Drop schema in tenant database"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/api/tenant/dropschemafortenant/{tenantId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Drop schema in tenant database
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenantId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}},{"name":"userId","in":"query","schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK"},"401":{"description":"Unauthorized"}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,69 @@
+---
+id: processingstate-by-id
+title: "Query existing item"
+description: "Query existing item"
+sidebar_label: "Query existing item"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1VMFOGzEQ/ZVoTq1k2EA57Y1WUKG2lEI5RTk460l2wGsbexZIV/vv1XhJSAhVUaWeVl6/Gc+8eW86YL1IUE7gIvoKUyK3SKwZYarAB4yaybszA+VLwMflmQEFQUfdIGOUJB043SCUQAYd05wwggJyUMJdi3EJCiLetRTRQMmxRQWpqrHRUHbAyyChiSO5BfS92sj2r1kUzH1sNEMJbUsG+n4qwSl4lzAJ/nA8lo/BVEUK0iyU8P0LKKi8Y3QstzoES1WmorhJAul2n/SzG6xYKIlCHNPwgHD317IUnDgmXr4Gda21emZx6LVXcJXn84wkx7jITK+zkuMPh5L2PDP4lqRtJdP1Mb0JfomVj+aUHKUaNzuceW9RO1hjvvrq9s8Inby7XA9zF9Mr0MaQMK/txQaxc20TKmBiqWpDnAM7fS+hR+OD3eFeO91y7SP9wsz80fhoF3TueXTqW2dyCdt3P0SEI3ykxOQWI2JsQEGDXHvxyQKzCDTXUELRIOsibFunmC2zpBNWbcxTn3TgyVTiQx/Q5VuJPA4EU9HsCnolqhuENQQ8yy+gOzOfvHODCrfO19FCCTVzSGVRDO7k5f5MW/ugI+4bLCJq26Ri9avYf0Br926df3DFUNNe5d2cFu2wEzIx5OY+1/A0hlX06BuyHh1fnIGCe4xpIO7+QPgOPnGjs4ee/P06oVukr9tkfOQiWE1ZQK301T2RPcmUDQbcWmUKMuFTBbVPLMCum+mE19H2vfwe1opMwVASnZu1wF5UsV4K8G4l2/cjUK9Xd4vLl7vwXttWgCDr7b88tvXIVA6RButOpr2CGrXBmHsdIo6rCgNvRO0sO8myVvfnk5/Q978Bzz0kZA==
+sidebar_class_name: "get api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query existing item"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/meta/processingstate/byid"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query existing item
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}},{"name":"id","in":"query","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Entity":{"type":"string","nullable":true},"State":{"type":"integer","format":"int32"},"Name":{"type":"string","nullable":true},"Successors":{"type":"string","nullable":true},"RecordFinished":{"type":"boolean"},"RecordLocked":{"type":"boolean"},"ReasonRequired":{"type":"boolean"}},"additionalProperties":false,"title":"ProcessingState"}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

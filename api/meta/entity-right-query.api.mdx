@@ -1,0 +1,69 @@
+---
+id: entity-right-query
+title: "Query items by query identifier and params"
+description: "Query items by query identifier and params"
+sidebar_label: "Query items by query identifier and params"
+hide_title: true
+hide_table_of_contents: true
+api: eJyVVMtu2zAQ/BVhTy3ARE6Rk25BmhZG0TRNm5Phw1pcW0wokiFXTl1B/16sJDt+5JD6YoicJWdnZtkC4ypBMYMbx4Y392ZVMcwV+EAR2Xg31VDsb/5sKG5AQcCINTFFqW7BYU1QgNHk2CwNRVBgHBTwPOIjPTcmkoaCY0MKUllRjVC0wJsgpYmjcSvourmAU/AuUZL9T5OJ/GlKZTRBOEEBP76BgtI7JseyiyFYU/aM88ckkPb0CowRhYthqtPeul88UsnSVJS+2QwXS+vH9BQsfayRoYCmMRo6NYrzFtQ11uLC0tBzp2D6Ks974J9NChY3t72278Bfe8do3LtO7xSg1kYEQ3u31/cSbSIFbFiwB7no5KfgcnJxasiDw4YrH81f6lW5nFyegm49Z1984zTIOYd7fbCy3ppsscmeh8+dYBk6nfWhS6CgJq68JHNFvW/IFRSQ18SYU884CuN8m75EZRN7l2YteKNLibwP5IweTsOrYGAu2dtCf0l6hiAMBa9xCeSm+to7N6Tm4PshWiigYg6pyPOBP2/OF2jtC0Y615RHQlunfLuUn7+QtWdPzr+4fOB0Vnq3NKtmGMFeLOOWvucw+rKtzr4TY3Z1NwUFa4ppEHN9IR4En7jGfhbG+fwvkQ/82XXP9IfzYNE4uaKRdtvRgFmvJCjYswDU+ATMFVQ+saDadoGJHqLtOlke9sUZbZJEVO9SeERhN/Dw4X58Tz5moN6m9kSb4xdpjbYRIIjRa4xmGIjZvFNQEWqZnFk7Vl6VJQXeqzp5Y+SUXRK/3vyGrvsHEZjYug==
+sidebar_class_name: "get api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query items by query identifier and params"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/meta/entityright/query"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query items by query identifier and params
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Entity":{"type":"string","nullable":true},"Identifier":{"type":"string","nullable":true},"DisplayName":{"type":"string","nullable":true},"Container":{"type":"string","nullable":true}},"additionalProperties":false,"title":"EntityRight"}}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

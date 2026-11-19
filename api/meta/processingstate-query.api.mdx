@@ -1,0 +1,69 @@
+---
+id: processingstate-query
+title: "Query items by query identifier and params"
+description: "Query items by query identifier and params"
+sidebar_label: "Query items by query identifier and params"
+hide_title: true
+hide_table_of_contents: true
+api: eJyVVE1P3DAQ/SvRnFrJEKCcckMVVKgtpVBOqz3MxrMbg2Mbe7J0G+W/V7Z3w35QieYSxX4zeTPvzfTAuAhQTeDW25pCUGYRGJlgKsA68sjKmmsJ1T7gZ0d+BQIcemyJyccsPRhsCSpQkgyruSIPApSBCp7XeE/PnfIkoWLfkYBQN9QiVD3wysXQwF6ZBQzDNIKDsyZQiPdnJyfxJSnUXrnICyr48RUE1NYwGY636JxWdWJdPoYI6Q9/gd5j5KKY2rB1bmePVHMsysfaWeUfx/L36QmYW98iQwVdpyQMAi4NK169BTWd1jjTlGseBNynFr8ilWFapF6NWZXhT2cx7U3q6HuSdnUUyPrwLvgd1dbLK2VUaGi7wpm1mtDAiPlm66d/IzBYczeKeogZBKCUKiqC+narsXPUgQSw4shqy1+5O0N8BJyfnB6q/mCw48Z69YdS689Pzg9BN5aLK9sZmTjs3iX3Fkn/YrYqnvPnaNoCjSySswMIaIkbG0dgQckcyA1UULbEWLrdqSg3Ng9Udz7ZYdKDVbKOM2YdGSVzRrxwCqbR5BvofbRpdlwOePWlI3MtP1tjsj13vh+8hgoaZheqssw18Op4hlq/oKdjSaUn1G0oN0fl8QtpffRk7IspM6ej2pq5WnR53lPDlJnbxGGtzya6+E6MxcXtNQhYkg+5ocvTqIOzgVtMQ7deBP/V6B2NxuqZfnPpNKpkuC6W269FmKRO5oHd2V5ivW+mAhobOCL7foaBHrwehnic76M6UoU4GHJ05B6NcbvAh43PPxYg3qb3RKv99bdE3UUgRLGX6FUew8l0ENAQSvKJRo68qGtyvBV1sNBiltGRXy5/wTD8BZcvAaQ=
+sidebar_class_name: "get api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query items by query identifier and params"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/meta/processingstate/query"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query items by query identifier and params
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Entity":{"type":"string","nullable":true},"State":{"type":"integer","format":"int32"},"Name":{"type":"string","nullable":true},"Successors":{"type":"string","nullable":true},"RecordFinished":{"type":"boolean"},"RecordLocked":{"type":"boolean"},"ReasonRequired":{"type":"boolean"}},"additionalProperties":false,"title":"ProcessingState"}}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

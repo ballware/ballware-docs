@@ -1,0 +1,70 @@
+---
+id: page-export-url
+title: "Export to file by query"
+description: "Export to file by query"
+sidebar_label: "Export to file by query"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVE1v2zAM/SsGTxug1GnRk29dsQFBsTXoxy5BgCkWk6iVJVWik2aB//tAKUmTpsF6sk3z4/GRj2sgOYtQjWAoZwhjAc5jkKSdHSiokvX7q3eBHoMBAV4G2SBh4Jg1WNkgVKAVWtJTjQEEaAsVvLQYViAg4EurAyqoKLQoINZzbCRUa6CV59BIQdsZdN04O2Okb06t2KN2ltASv0rvja4TrPK1t1wue1MXml4bDNraKc6/Ps4tQ5AMQhM2cc/uJk9YE3cTuFvSmP7e4OoYmADbGiMnBnMLnYDf0rT4iTK71joBUinN6KUZ7tWcShNRAGni9Awg5R5KHf5ccGD3nsFkiN7ZmDFf9Pv8UBjroD1XgApub0CcYu8psssHZJ0g5QGttDRQHzHDM5AEFbStVtAJ+JTbZ9nYrd0dxtbQho7L/vlxw49WtjR3Qf/FhOOyf3ns9MtR8cO1NkM4/JdrFeSKqTZYTFbFdoEbpLljJXgXEzuS5lBB2SDJ0ssZlphi2ySPiHUbNK2SOJxWNSvLebRa5VzyymsY87JvXe95EJnrHPA2EY92oK6dtXkwB98sxwrmRD5WZZkFSKuziTRmKQOeKSwDStPEcmsqz5ZoTO/ZuqUtM6Ze7exUz9os+MSLtlOXMGymsI0ufiLJ4mo4AAELDDHztjhnupmaRqa12hyE03we8L5rlfCVSm+ktpyPuazWG6pHibbE/AxBwBvdYwFzHko1gvV6IiM+BtN1bM7FeAZKR9au2m3Xu/o7lcCXu43QvhYgPsb1zAfi8Ngt8i0A4JEuZND5UozGnYA5SoUhwciR17lY74GTv8X+/7h1Ypviqq7R04ngpG0Gslva4e39AwiYbC5q4xTH7GUW+x8Mu+v+AcmkG08=
+sidebar_class_name: "post api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Export to file by query"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/meta/page/exporturl"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Export to file by query
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/x-www-form-urlencoded":{"schema":{"type":"array","items":{"type":"object","properties":{"Key":{"type":"string","nullable":true},"Value":{"type":"array","items":{"type":"string"}}},"additionalProperties":false,"title":"KeyValuePair`2"}}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"TenantId":{"type":"string","format":"uuid"},"Id":{"type":"string","format":"uuid"}},"additionalProperties":false,"title":"ExportUrlResult"}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

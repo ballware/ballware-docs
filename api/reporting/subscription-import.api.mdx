@@ -1,0 +1,70 @@
+---
+id: subscription-import
+title: "Import from file"
+description: "Import from file"
+sidebar_label: "Import from file"
+hide_title: true
+hide_table_of_contents: true
+api: eJxtVE1v2zAM/SsGTxug1OvQk25dgQG5bMXanoIcZIuutcqSS9HpvMD/faAVJ82ak23pPX68R3oPbJ4T6A08DFWqyfXsYoCtgtgjGflYW9Bnt+uuj8SgoDdkOmQkCbCHYDoEDc5iYNc4JFDgAmh4HZBGUED4OjhCC5ppQAWpbrEzoPfAYy/UxOTCM0zTNoMx8bdoR0HUMTAGltdu8Ox6Q1w2kbqVNTzHOEU75dlA4zwm6eeQIla/sZ6LJ+mQHSahZNipEkNkpGTH2KWPFSqQ1IZBQ+WCoRGmaZoUYKijFcD7kIlHL1yhzLhJukt9DCkDvn65lofFkwEa7ggNo4VJwc2l+6dgBm4jub8L6OYj6Efk4nscggVJen6XbSwail0htYKCDrmNYncfUzaYW9BQ2lgPHQYu07sxKN0yBwnrgRyP8xREZ2sRPvYYnAUFC/m2d7AVZxf4gxiWFciko8rCXdu7GEL26uz7iTxoaJn7pMsyTxuPV5Xx/s0QXlksCY3vUrkclVdv6P3qJcS3UOa6VnUMjXse8ojP6rjQxLkGx7NdC7tYGiiGhFTc3q9BwQ4pZRl316K+CNaZIPzDGlyQ90z/Y7OMf7jsvXFBAg3S3f6g/OYonqj8fkEVHNTfKmjFLL2B/b4yCZ/IT5Mc560TS6xLpvKyD43xCT8Uctwt+PTrsDqfC1CXC3zB8f8l3xk/CBDE3Z0hJ9lAb7aTghaNRZrLyMy7nGz1KMFP3EtLLeGOI3n/8+ERFFSH/0EX7bJTM1adXiXxNP0DB/mv3A==
+sidebar_class_name: "post api-method"
+info_path: api/reporting/ballware-document-user-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Import from file"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/document/subscription/import"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Import from file
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"multipart/form-data":{"schema":{"required":["files"],"type":"object","properties":{"files":{"type":"array","items":{"type":"string","format":"binary"}}}},"encoding":{"files":{"style":"form"}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"201":{"description":"Created"},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

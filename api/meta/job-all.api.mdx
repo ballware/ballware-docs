@@ -1,0 +1,69 @@
+---
+id: job-all
+title: "Query all"
+description: "Query all"
+sidebar_label: "Query all"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVEtvGjEQ/itoTq3kZEmV095QlVS0avNoOSEOZj2wJl7bscdQutr/Xo2XEF6HcFkx/ub1zTfTAsllhHIK390cZgKcxyBJOztWULJxZAwI8DLIBgkDY1uwskEoQSu0pBcaAwjQFkp4TRi2ICDga9IBFZQUEgqIVY2NhLIF2np2jRS0XULXzRgcvbMRI79/GQ75ozBWQXuuBEp4+AECKmcJLfGr9N7oKtdZrCJD2vMUMgTJtWjCJh7Y3XyFFXFTgbsl3Sfmhk/LE7BwoZEEJaSkFXQCflc1qmQwXELbZIycG+zb7gSM3xn6CPxhYy8jj8u45Jmpih/K8owxGfoQ9DdJQkaiTQ3LZGJfrNtYEPCUMCHXMraPwS0DxggC7rXVsc72uxBcYE2dZiFNnILVleNH6DoBUinNPUjzeDCXhTQRj1yg45+A2+HNuVAmViaqXdD/ME/rdnh7DvrlaHDvklU57/HbEwt4ILPoG6Ta8RosMctFUg0lFA2SLFZuXvSoiFUKmrZ5MZxWFdPkPNo8KAaPvIYZC/0NyhpqetX1Du/a9GjH6quztpfo0f9JMFBCTeRjWRT98tH2ei6N2ciA1wqLgNI0sXgzFdcbNOYqj6zoa7qqnF3oZeq3PDOg7cLlGnYkv3kPfiLJwehxDALWGGLP0PqGifUuUiPz4u2OwSFzR5zumyP8S4U3UluOkLibdsfqNBMFAlZuDgI4ykxA7SLxW9vOZcRJMF3H5v7IMN1KR5ar2uvkJPH+ZMCn591F+jwAcbmgF9ye3rS1NImBwNNby6D75ZjOOgE1SsXLOm13nqOqQk8HXmdXiqPsRfXt7g903X8wCuEO
+sidebar_class_name: "get api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query all"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/meta/job/all"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query all
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"Id":{"type":"string","format":"uuid"},"Scheduler":{"type":"string","nullable":true},"Identifier":{"type":"string","nullable":true},"Owner":{"type":"string","format":"uuid","nullable":true},"Options":{"type":"string","nullable":true},"Result":{"type":"string","nullable":true},"State":{"enum":["Unknown","Queued","InProgress","Finished","Error"],"type":"string","title":"JobStates"}},"additionalProperties":false,"title":"Job"}}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

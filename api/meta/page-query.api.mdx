@@ -1,0 +1,69 @@
+---
+id: page-query
+title: "Query items by query identifier and params"
+description: "Query items by query identifier and params"
+sidebar_label: "Query items by query identifier and params"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVU1vEzEQ/SvWnEAy3YJ62luFAJWPUig9VTlM1rNZU6/t2uOUEO1/R7aTNmkrESRyidbz8d7MeJ7XwLiI0F7DBS4IZhKcp4CsnT1T0JbTb4nCCiR4DDgSU8j+a7A4ErSgFVnWvaYAErSFFm43/oFukw6koOWQSELsBhoR2jXwyufQyEHbBUzTLDtH72ykmO1vjo/zn6LYBe0zGWjh6yeQ0DnLZDlb0Xuju0K1+Rmzy/opBIaAmYtmGuPOuZv/pI5zUSEXzLoC55of05OPePwYSCSrbxOJh9pF74LgQUfBZNHmzL0LIzK0kJJWMEk4e+jUQSA72V1fk3tckEiRVMEL1FMg22m72DFrK3ggsdMekGCTMTg3VGcxSTgv0zuERp7zPgF2Ig7u7kCkz7hyif+O9W6ck1KkxMfLr+dCUa+tzqaKTcKUPHtMnoVz7ib5+B/waqLabm23pTszx/Ac8IXuboyO/B+g/TbVweBvU2Q3XhaMfyKAS6xRz9DoSlJRAw/lMklApUoeNBc729WjiSSBNWffqjdT/kk4OX79dN+vLCYeXNC/qazPyfHJU6dzx+K9S1ZBzrNvK7olyuaL+Urc1s+HpUKrRNG0CBJG4sFlxVtQkQXkAVpoRmJscsHNVtUidSloXhUNdFp1WTydJ6tVTYOnXsMsa9rW9TKrUhWYGvAgQ57smXrrrK1qtPd9FQy0MDD72DZNJc6rozkac4eBjhQ1gdCMsdkeNUd3ZMyrG+vubFM5veqc7fUiVU0vXdK2d4XDZhLbaPGFGMXpxRlIWFKItYvL17n53kUesWjsRvf/qbt7g7mvnukXN96gthki5XLXm85fl06WQZQ1r92fSRhc5Gxer+cY6SqYacrH1Z5HonTMt1HdX7hH2PcvCLz4vnmgXgqQz3O6odXjJ26JJmVHyBNeYtD17l/PJgkDocrqfr3eRJ52HXneiXryaOUs93fvw7sfME1/AP+jpLk=
+sidebar_class_name: "get api-method"
+info_path: api/meta/ballware-meta-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query items by query identifier and params"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/meta/page/query"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query items by query identifier and params
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"identifier","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"Id":{"type":"string","description":"The unique identifier for this tenant","format":"uuid"},"Identifier":{"type":"string","description":"The identifier of this page used for referencing this page in the application","nullable":true},"Name":{"type":"string","description":"The name of this page to show in the application","nullable":true},"Layout":{"type":"string","description":"Embedded JSON definition of the layout of this page","nullable":true},"Lookups":{"type":"string","description":"Embedded JSON definition of the lookups used in page toolbar","nullable":true},"Picklists":{"type":"string","description":"Embedded JSON definition of the picklists used in page toolbar","nullable":true},"CustomScripts":{"type":"string","description":"Embedded JavaScript definition of the custom scripts used in page toolbar","nullable":true}},"additionalProperties":false,"title":"Page"}}}}},"401":{"description":"Unauthorized"},"404":{"description":"Not Found"}}}
+>
+  
+</StatusCodes>
+
+
+      

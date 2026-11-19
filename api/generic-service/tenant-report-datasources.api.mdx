@@ -1,0 +1,69 @@
+---
+id: tenant-report-datasources
+title: "Query report datasources for tenant"
+description: "Query report datasources for tenant"
+sidebar_label: "Query report datasources for tenant"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVU1v2zAM/SvBO22AVrfDTr4VbTEUw7auH6cgB8VmErWy5FJyuszwfx/or6ZNh/lQX2xJJPUeST/WiHodkM5xS067iIWCL4l1NN5d5kj7/WsqPcdzHXXwFWcUoFBq1gVFYvGv4XRBSBFb+8scCsYhRanjBgpMj5VhypFGrkghZBsqNNIacVeKX4hs3BoKK8+FjkhRVSZH0yzEOZTeBQpi//n4WF45hYxNKTiR4uc3KGTeRXJRTnVZWpO1LJL7ICb14ZWaWe8EZ6SiDf0Mco4z7xxlEuBmQPZDGCpcsd+anBgKt3ppKUjS+pB+eU9ZlOSwpDGaDvPo8gZfV1krYbrMNP01UwwPIE5x6iFPzEJP+VdFvPs/zcnIL1w0cTfJtLt6iuU12bbgk8mdbYzNz7ytCgfVrdrsQOG7DpF4PGuJvR/9vaummL8AMzn+ZPtGQee5kdRpe7XHaKVtIIVootjitQYM+UbzbiG7nLxfvHNaGWc6kPIofDk+OVSPO6eruPFs/pAojnp13LbgjNvYs/xZA2crz7NO76BQUNx4Ucw1ta0hupci6c6HVxdkL8bKc39UD8rZQCFQVnH7i8xreJNn0q++JGdEWNfkiE12WhosRB8H6xtRuK4XO5+x9uJ6mfeCAfVyfccWKTYxliFNEpNT+3ceLbW1T5rpKKeESdsiJMNWcvRE1n56cP7JJR2sT5l3K7OuuO+JRvR/5VsMfXUG79kN8dZkNDu9uoTCljh0id6eSO1LH2Kh287tZ8q0Arwo2sg80u+YlFabtk8roVr3xZlj9B0//l0gKKTjcFsobHyIEqOulzrQHdumke3HTq/mC4WtZtM18bxGboJ852PPvoI7Di98uO416uMM6m0ag7o50battpWsoPBAu/0R3CwahQ3pdvLM6/74NMuojHuOB8NSemps568Xt2iavwL824w=
+sidebar_class_name: "get api-method"
+info_path: api/generic-service/ballware-service-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query report datasources for tenant"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/tenant/tenant/reportdatasourcesfortenant/{tenantId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query report datasources for tenant
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenantId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"array","items":{"required":["ConnectionString","Name","Provider","Tables"],"type":"object","properties":{"Provider":{"type":"string","nullable":true},"Name":{"type":"string","nullable":true},"ConnectionString":{"type":"string","nullable":true},"Tables":{"type":"array","items":{"required":["Name","Query"],"type":"object","properties":{"Name":{"type":"string","nullable":true},"Entity":{"type":"string","nullable":true},"Query":{"type":"string","nullable":true},"Relations":{"type":"array","items":{"required":["ChildColumn","ChildTable","MasterColumn","Name"],"type":"object","properties":{"Name":{"type":"string","nullable":true},"ChildTable":{"type":"string","nullable":true},"MasterColumn":{"type":"string","nullable":true},"ChildColumn":{"type":"string","nullable":true}},"additionalProperties":false,"title":"ReportDatasourceRelation"},"nullable":true}},"additionalProperties":false,"title":"ReportDatasourceTable"},"nullable":true}},"additionalProperties":false,"title":"ReportDatasourceDefinition"}}}}},"401":{"description":"Unauthorized"}}}
+>
+  
+</StatusCodes>
+
+
+      

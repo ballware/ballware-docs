@@ -15,7 +15,9 @@ its own realm role grants in Keycloak.[^1][^2]
 Requests are routed to a tenant's data by a fixed chain:
 
 1. The access token carries the `tenant` claim (see [Identity and access](/docs/identity-and-access)).
-2. Shared endpoint bindings resolve `UserTenantId` from that claim.[^3]
+2. The services' endpoint bindings resolve the caller's tenant from that
+   claim — the `UserTenantId` binding in the meta API, the shared
+   `GetUserTenandId` utility consumed by meta, generic, ml, and document.[^3]
 3. The generic service looks up the stored `TenantConnection` for that tenant
    id and opens its dedicated database connection (user `tenant_<guid>`,
    tenant schema).[^1]
@@ -71,8 +73,8 @@ surveyed repositories.
 
 [^1]: `ballware-generic-service/README.md`, `ballware-generic-service/src/Ballware.Generic.Tenant.Data.Postgres/Internal/PostgresSchemaProvider.cs`, `.../Ballware.Generic.Tenant.Data.SqlServer/Internal/SqlServerSchemaProvider.cs`
 [^2]: `ballware-keycloak/import/ballware-realm.json` (realm roles with `tenant` attribute)
-[^3]: `ballware-shared-dotnet/src/Ballware.Shared.Api.Endpoints/Bindings/UserTenantId.cs`, `ballware-shared-dotnet/src/Ballware.Shared.Authorization/Internal/DefaultPrincipalUtils.cs`
-[^4]: `ballware-generic-service/src/Ballware.Generic.Api/Endpoints/TenantDataEndpoint.cs`
+[^3]: `ballware-meta-service/src/Ballware.Meta.Api/Bindings/UserTenantId.cs`; shared `Ballware.Shared.*` authorization packages (out-of-scope library) consumed by `ballware-generic-service/src/Ballware.Generic.Service/Startup.cs`, `ballware-ml-service/src/Ballware.Ml.Api/Endpoints/MlModelEndpoint.cs`, `ballware-document-service/src/Ballware.Document.Api/Endpoints/SubscriptionMetaEndpoint.cs`
+[^4]: `ballware-generic-service/src/Ballware.Generic.Api/Endpoints/GenericDataEndpoint.cs`
 [^5]: `ballware-generic-service/src/Ballware.Generic.Tenant.Data.Postgres/Internal/PostgresDbConnectionExtensions.cs`
 [^6]: `ballware-meta-service/src/Ballware.Meta.Service/Extensions/GenericSchemaTenantRepositoryHook.cs`
 [^7]: `ballware-meta-service/src/Ballware.Meta.Data.Ef/seed/admin-tenant.json`, `.../seed/customer-tenant.json`, `.../Configuration/StorageOptions.cs`

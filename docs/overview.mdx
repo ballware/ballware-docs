@@ -11,48 +11,53 @@ entities, lookups, page layouts, and rights are described as **metadata** and
 rendered at runtime by a shared Angular web client against a set of
 independent .NET services.[^1][^2]
 
+:::info Documentation scope
+These docs cover exactly eight repositories — `ballware-angular`,
+`ballware-meta-service`, `ballware-generic-service`, `ballware-document-service`,
+`ballware-storage-service`, `ballware-ml-service`, `ballware-keycloak`, and
+`ballware-docker-compose`. Every statement is sourced from the **`main` branch**
+of these repos (state of 2026-11-19); the main branch carries the current
+stable versions. See [Repositories](/docs/repositories) for the version markers.
+:::
+
 ## Capabilities
 
 | Capability | Component | Notes |
 | --- | --- | --- |
 | Metadata-driven UI | **ballware-angular** (webclient + `dx-renderer`) | Renders grids and forms from `GridLayout`/`EditLayout` metadata using DevExtreme[^1] |
-| Tenant business data | **ballware-generic-service** | Generic CRUD/query/import engine executing metadata against per-tenant schemas; exposes an MCP endpoint for AI agents[^2] |
+| Tenant business data | **ballware-generic-service** | Generic CRUD/query engine executing metadata against per-tenant schemas; exposes an MCP endpoint for AI agents[^2] |
 | Metadata management | **ballware-meta-service** | Stores entities, pages, lookups, pick values, documentation, exports, jobs, statistics[^3] |
-| Documents & reporting | **ballware-document-service** | DevExpress XtraReports definitions, Blazor report designer/viewer (`reporting.ballware.de`), PDF and e-mail jobs[^4] |
-| Attachments & object storage | **ballware-storage-service** | Binary attachments and temporary files; blobs in Azure Blob Storage or MinIO[^5] |
-| Machine learning | **ballware-ml-service** | AutoML training and prediction API[^6] |
-| LLM features & knowledge RAG | **ballware-llm-service** | OpenAI-compatible chat with RAG over a pgvector knowledge base; SignalR chat hub[^7] |
-| Identity & access | **ballware-keycloak** | OAuth2/OIDC identity provider, realm `ballware`[^8] |
-| Single public API entry | **ballware-apigateway** | Deny-by-default reverse proxy fronting all services behind `api.ballware.de`[^9] |
-| Shared .NET building blocks | **ballware-shared-dotnet** | Tenant persistence, claim/script authorization, CRUD endpoint mapping, jobs, MCP server plumbing[^10] |
+| Documents & reporting | **ballware-document-service** | DevExpress XtraReports definitions, Blazor report designer/viewer (public base URL `reporting.ballware.de` in the app config), PDF and e-mail jobs[^4] |
+| Attachments & object storage | **ballware-storage-service** | Binary attachments and temporary files; blob providers for Azure Blob Storage and MinIO[^5] |
+| Machine learning | **ballware-ml-service** | AutoML training and prediction API (purpose reconstructed from the code; the README is content-free)[^6] |
+| Identity & access | **ballware-keycloak** | OAuth2/OIDC identity provider (Keycloak 26.8.2 with ballware SPI extensions), realm `ballware`[^7] |
+| Evaluation stack | **ballware-docker-compose** | Single-machine stack that builds every component above straight from its `main` branch[^8] |
 
 ## Application model
 
 A *tenant* (Mandant) is an isolated customer deployment unit of the same
-platform: its data lives in its own database schema, and its application
-behavior is shaped by tenant metadata (navigation, entity definitions,
-templates, scripts). See [Tenancy](/docs/tenancy) and the
-[metadata model](/docs/metadata-model).
+platform: its business data lives in its own database schema (provisioned and
+held by the generic service), and its application behavior is shaped by tenant
+metadata (navigation, entity definitions, templates, scripts). See
+[Tenancy](/docs/tenancy) and the [metadata model](/docs/metadata-model).
 
 Application behavior that goes beyond CRUD is expressed in **scripts**
-(Jint/JavaScript) at several extension points: server-side entity lifecycle
-scripts in the generic service, rights-check scripts, and client-side
-layout/rights hooks in the web client.[^2][^1]
+(JavaScript, executed with Jint on the server): lifecycle and rights-check
+scripts in the generic service's scripting layer, plus client-side layout and
+rights hooks in the web client.[^2][^1]
 
 ## Where to go next
 
-- [Architecture](/docs/architecture) — services, gateway routes, identity flow
+- [Architecture](/docs/architecture) — services, ports, route prefixes, identity flow
 - [API reference](/api/) — OpenAPI-derived reference
-- [Administration](/administration/) — environments and operations
+- [Administration](/administration/) — the documented evaluation environment and operations
 - [User guide](/guide/) — end users and metadata authoring
 
-[^1]: `ballware-angular/README.md`
-[^2]: `ballware-generic-service/README.md`
+[^1]: `ballware-angular/README.md`, `ballware-angular/libs/` (`meta-model`, `dx-renderer`, `meta-scripting`, …)
+[^2]: purpose reconstructed from `ballware-generic-service/src/` (`Ballware.Generic.Api/Endpoints/GenericDataEndpoint.cs`, `Ballware.Generic.Tenant.Data.*`, `Ballware.Generic.Scripting.Jint/`); the service README is content-free
 [^3]: `ballware-meta-service/README.md`
-[^4]: `ballware-document-service/README.md`
-[^5]: `ballware-storage-service/README.md`
-[^6]: purpose reconstructed from `ballware-ml-service/src/` (AutoML engine, jobs, service client); the service README is empty of content
-[^7]: `ballware-llm-service/README.md`
-[^8]: `ballware-keycloak/README.md`
-[^9]: `ballware-apigateway/README.md`
-[^10]: `ballware-shared-dotnet/README.md`
+[^4]: `ballware-document-service/src/Ballware.Document.App/appsettings.json` (`Authorization:PublicBaseUrl`), `ballware-document-service/src/Ballware.Document.Engine.Dx/Components/Designer.razor`, `Viewer.razor`
+[^5]: `ballware-storage-service/src/Ballware.Storage.Provider.Azure/`, `src/Ballware.Storage.Provider.Minio/`
+[^6]: purpose reconstructed from `ballware-ml-service/src/` (`Ballware.Ml.Engine.AutoMl/`, jobs, service client); the service README is content-free
+[^7]: `ballware-keycloak/README.md`, `ballware-keycloak/Dockerfile`
+[^8]: `ballware-docker-compose/docker-compose.yml` (service `build` contexts point at the `main` branches of each component repo)

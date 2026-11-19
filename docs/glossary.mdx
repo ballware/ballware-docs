@@ -29,20 +29,14 @@ primary docs language; German translations use these pairs consistently.
 
 Do not invent these: there is no platform domain term *catalog* (Katalog), no
 generic *requirement* (Anforderung) concept — `requirement` exists only as an
-application-specific entity name in `ballware-fwpro`. `unit` and `person` are
-claim types, not domain entities.
+application-specific entity name in a particular tenant deployment. `unit` and
+`person` are claim types, not domain entities.
 
 ## Name collisions to watch
 
-- `ModelAlias` exists **independently** in `ballware-llm-gateway`
-  (`Ballware.Llm.Gateway.Data`, a record aliasing a model to an LLM app) and
-  in `ballware-ai-assistant` (pipeline registration mapping a model alias to
-  a pipeline name). Do not treat them as one concept.[^1]
-- `ballware-knowledge-service` introduces its own terms — `silo`, `source`,
-  `chunk`, `ACL entry` — which are not platform-wide metadata concepts.[^2]
-- `ExportResult` is a shared-dotnet repository struct; `GenericExport` is the
-  generic-service equivalent with identical members.[^3]
+- Export records: `ExportResult` (repository-layer result carried through the
+  meta service) and `GenericExport` (the generic service's tenant-level
+  equivalent) describe the same payload — `FileName`, `MediaType`, `Data`.
+  Treat them as one concept on the wire.[^1]
 
-[^1]: `ballware-llm-gateway/src/Ballware.Llm.Gateway.Data/Public/ModelAlias.cs`, `ballware-ai-assistant/src/Ballware.Ai.Assistant.Pipeline/Registration/ModelAliasRegistration.cs`
-[^2]: `ballware-knowledge-service/docs/` — reconstructed purpose; service README is minimal
-[^3]: `ballware-shared-dotnet/src/Ballware.Shared.Data/Repository/ExportResult.cs`, `ballware-generic-service/src/Ballware.Generic.Tenant.Data/GenericExport.cs`
+[^1]: `ballware-generic-service/src/Ballware.Generic.Tenant.Data/GenericExport.cs`, `ballware-meta-service/src/Ballware.Meta.Data/Public/Export.cs`

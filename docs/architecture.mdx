@@ -5,122 +5,122 @@ sidebar_position: 2
 
 # Architecture
 
+The reference topology documented here is the **Docker Compose evaluation
+stack** (`ballware-docker-compose`), because it is fully evidenced in the
+documented repositories. Every component is built from its `main` branch, so
+the stack reflects current stable code.[^1]
+
+:::caution Status: production topology out of scope
+Production hosting (public reverse proxy behind `api.ballware.de`, k3s
+clusters, Coolify deployments) lives in repositories that are **out of scope**
+for these docs (see [Repositories](/docs/repositories)). Statements below that
+hold only for production are therefore not made.
+:::
+
 ## Big picture
 
 ```mermaid
 graph LR
   browser[Browser]
-  web[ballware-angular webclient]
-  gw[ballware-apigateway api.ballware.de]
-  meta[meta-service]
-  generic[generic-service]
-  doc[document-service]
-  storage[storage-service]
-  ml[ml-service]
-  litellm[LiteLLM proxy]
-  llm[llm-service]
-  kc[Keycloak identity.ballware.de]
+  web[webclient 3000 ballware-angular]
+  meta[meta 5001]
+  generic[generic 5002]
+  ml[ml 5003]
+  doc[document 5004]
+  storage[storage 5005]
+  kc[Keycloak 3001/3002]
+  pg[(PostgreSQL 5432)]
+  mssql[(SQL Server 1433)]
+  minio[(MinIO 9000)]
+  mail[Mailpit 1025]
   browser --> web
-  web --> gw
-  gw --> meta
-  gw --> generic
-  gw --> doc
-  gw --> storage
-  gw --> ml
-  gw --> litellm
-  litellm --> llm
+  web --> meta
+  web --> generic
+  web --> ml
+  web --> doc
+  web --> storage
   web -- "OIDC login" --> kc
-  gw -- "token validation" --> kc
+  meta -- "token validation" --> kc
+  generic -- "token validation" --> kc
+  meta --> pg
+  generic --> pg
+  generic --> mssql
+  ml --> pg
+  doc --> pg
+  doc --> mail
+  storage --> pg
+  storage --> minio
+  kc --> pg
 ```
 
-All client traffic goes through the **API gateway**; it is the only public
-entry point (`api.ballware.de`).[^1] Individual services are reached directly
-only inside a deployment (e.g. `http://localhost:5001` in Docker Compose, or
-`<service>.ballware.svc.cluster.local` in the k3s production cluster).[^2]
+There is **no in-repo API gateway**: the web client is wired directly to each
+service's published port through the `BALLWARE_*URL` environment variables
+(`BALLWARE_METAURL`, `BALLWARE_STORAGEURL`, `BALLWARE_DOCUMENT*_URL`, …), and
+each service validates bearer tokens itself against the Keycloak authority —
+internally `http://keycloak:8080/realms/ballware`, browser-facing
+`https://localhost:3002/realms/ballware`.[^1]
 
-**Keycloak** issues OAuth2/OIDC tokens (realm `ballware`, audience
-`ballwareweb`). The gateway validates bearer tokens against the OIDC authority
-and forwards authenticated requests to the backend services.[^1]
+## Published ports (compose)
 
-## API gateway routes
+| Port | Service |
+| --- | --- |
+| 3000 | web client (`ballware-angular`, built from `main`) |
+| 3001 / 3002 | Keycloak HTTP / HTTPS (built from `ballware-keycloak` `main`) |
+| 5001 | meta service |
+| 5002 | generic service |
+| 5003 | ml service |
+| 5004 | document/reporting service |
+| 5005 | storage service |
+| 5432 | PostgreSQL |
+| 1433 | SQL Server (tenant business data, optional provider) |
+| 9000 / 9001 | MinIO API / console |
+| 1025 / 8025 | Mailpit SMTP / web UI |[^1]
 
-The gateway is a YARP reverse proxy configured purely declaratively
-(routes/clusters/transforms in JSON).[^1] Deny-by-default: a fallback
-authorization policy applies; only routes explicitly marked `Anonymous` (or
-without a policy) skip authorization.[^1]
+## Route prefixes per service
 
-| Route | Path match | Cluster / target | Auth |
-| --- | --- | --- | --- |
-| `meta-api` | `/meta/**` | meta service | required |
-| `meta-mcp` | `/meta/mcp/**` | meta service | required (`metaApi`) |
-| `meta-anonymous-download` | `GET /meta/{entity}/download/**` | meta service | anonymous |
-| `tenant-api` | `/tenant/**` | generic service (tenant API) | required |
-| `generic-api` | `/generic/**` | generic service | required |
-| `generic-mcp` | `/generic/mcp/**` | generic service | required (`genericApi`) |
-| `generic-anonymous-download` | `GET /generic/{application}/{entity}/download/**` | generic service | anonymous |
-| `reporting-api` | `/document/**` | document/reporting service | required |
-| `reporting-anonymous-download` | `GET /document/{entity}/download/**` | reporting service | anonymous |
-| `reporting-app` | `/**` on host `reporting.ballware.de` | Blazor reporting app | anonymous (session-based) |
-| `storage-api` | `/storage/**` | storage service | required |
-| `storage-anonymous-download` | `GET /storage/attachment/downloadforentityandownerbyid/**` | storage service | anonymous |
-| `ml-api` | `/ml/**` | ml service | required |
-| `ml-anonymous-download` | `GET /ml/mlmodel/download/**` | ml service | anonymous |
-| `ai-signalr` | `GET /ai/hubs/**` (WebSocket upgrade) | llm service | required |
-| `ai-chat` | `/ai/v1/responses/**` | LiteLLM proxy | required, claim→key transform |
-| `ai-api` | `/ai/{entity}/**` | llm service | required |
+Each service maps its own routes (verified in its `Startup.cs`):
 
-Source: `ballware-apigateway/src/Ballware.ApiGateway.Service/appsettings.json`
-(routes/clusters) and `ballware-apigateway/README.md` (route map, ranking
-behavior).[^1]
+| Service | Route prefixes | Swagger documents |
+| --- | --- | --- |
+| meta | `/meta/**` (entity, lookup, page, pickvalue, entityright, processingstate, statistic, export, job, documentation, tenant, statistic), MCP at `/meta/mcp` | `meta`, `service` |
+| generic | `/generic/**`, `/tenant/**` (lookup, processingstate, statistic, tenant, mlmodel — committed as `tenent/mlmodel`), schema provisioning API `/api/tenant/**`, MCP at `/generic/mcp` | `generic`, `service`, `schema` |
+| ml | `/ml/**` (mlmodel, tenant) | `ml`, `service` |
+| document | `/document/**` (document, notification, subscription, processingstate); Blazor reporting app hosts designer/viewer and a sign-on endpoint; public base URL `reporting.ballware.de` in the app config | `document`, `service` |
+| storage | `/storage/attachment/**`, `/storage/temporary/**` | `storage`, `service` |
+| Keycloak | standard OIDC endpoints plus custom realm resources `/realms/ballware/ballware-user-api` and `/realms/ballware/ballware-role-api` | — |
 
-### Gateway specifics
+Details: [Route map](/api/route-map), [MCP endpoints](/api/mcp).[^2]
 
-- **Tenant/rights claims:** the gateway maps configurable claim names
-  (`tenant`, `sub`, `right`) and enforces scopes per surface (`metaApi`,
-  `serviceApi`, `genericApi`, …).[^1]
-- **`CustomHeaderFromClaim` transform:** copies a JWT claim (e.g. `ai_key`)
-  into an outbound header (`x-litellm-api-key`) — used for the LiteLLM chat
-  route; 403 if the claim is missing.[^1]
-- **`JsonBodyProperty` transform:** injects MCP tool definitions
-  (`ballware_meta_mcp`, `ballware_generic_mcp`) into the chat request body for
-  the `ai-chat` route.[^1]
-- **`AuthorizationTokenHeaderMiddleware`:** for clients that cannot send an
-  `Authorization` header (notably MCP clients), a route-specific token header
-  is copied into `Authorization: Bearer`.[^1]
-- **Access tokens via `access_token` query string** are accepted for
-  WebSockets/SSE only.[^1]
-- **MCP OAuth metadata (RFC 9728):** the gateway serves
-  `/.well-known/oauth-protected-resource` (incl. `/meta/mcp` and
-  `/generic/mcp` variants with scopes `metaApi` / `genericApi`).[^1]
-- **Anonymous download routes** exist for direct file links (report output,
-  attachments, ml models, exports).[^1]
+## Data stores
 
-## Internal service addressing
-
-In the production k3s platform the gateway clusters point at in-cluster DNS
-names following `<service>.ballware.svc.cluster.local` (e.g.
-`ballware-storage-service.ballware.svc.cluster.local`).[^2] In the local
-Docker Compose evaluation stack, services are addressed by container name and
-port: web 3000, Keycloak 3001/3002, meta 5001, generic 5002, ml 5003,
-reporting 5004, storage 5005.[^3]
+- **PostgreSQL** holds seven databases — `keycloak`, `quartz`, `storage`,
+  `meta`, `tenant`, `ml`, `reporting` — each with its own owner role, plus the
+  shared Quartz scheduler tables.[^3]
+- **SQL Server** hosts the `tenant` database (login/user `tenant`,
+  `db_owner`); the generic service can use PostgreSQL **or** SQL Server as
+  per-tenant storage provider side by side.[^3]
+- **MinIO** receives the uploaded blobs (bucket bootstrap runs once via
+  `minio-init`); the storage service addresses objects per
+  `{tenantId}/{entity}/{ownerId}/{fileName}`.[^3][^4]
+- **Mailpit** is the SMTP target for report subscriptions and Keycloak e-mail.[^1]
 
 ## Service-to-service calls
 
 Backend services call each other with OAuth2 **client credentials** flows
-(the generic service calls meta, storage, and ml; the document service calls
-meta, storage, generic, and ml). Service APIs (`/swagger/service`) are the
-internal-facing API surfaces.[^2][^4]
+(config sections `StorageClient__*`, `MetaClient__*`, `MlClient__*`,
+`GenericClient__*`, `SchemaClient__*`), using the services' `service` APIs;
+the generic service also serves as the **schema service** for meta (tenant and
+entity schema provisioning via `/api/tenant/**`).[^1][^5]
 
 ## Shared building blocks
 
-`ballware-shared-dotnet` provides the recurring patterns: `Guid tenantId`
-on every data call, claim/script-based authorization (`ITenantRightsChecker`,
-`IEntityRightsChecker`), a uniform 11-route CRUD API mapping
-(`MapTenantableEditingApi` with rights `view|add|edit|delete`), Quartz import
-jobs, and MCP server support (`Ballware.Shared.Mcp*`, per-user dynamic
-tools).[^4]
+The services consume a common set of `Ballware.Shared.*` NuGet packages
+(endpoint mapping, rights checking, Quartz helpers, MCP plumbing). The library
+repository itself is out of scope for these docs, so statements here rely only
+on how the documented services use those packages.[^5]
 
-[^1]: `ballware-apigateway/README.md`, `ballware-apigateway/src/Ballware.ApiGateway.Service/appsettings.json`
-[^2]: `ballware-ansible/playbooks/group_vars/all.yml`, `ballware-ansible/playbooks/roles/ballware-api-gateway/tasks/service.yml`
-[^3]: `ballware-docker-compose/README.md`
-[^4]: `ballware-shared-dotnet/README.md`, `ballware-generic-service/README.md`, `ballware-document-service/README.md`
+[^1]: `ballware-docker-compose/docker-compose.yml` (services, ports, `build` git contexts, env wiring)
+[^2]: `ballware-meta-service/src/Ballware.Meta.Service/Startup.cs`, `ballware-generic-service/src/Ballware.Generic.Service/Startup.cs`, `ballware-ml-service/src/Ballware.Ml.Service/Startup.cs`, `ballware-document-service/src/Ballware.Document.Service/Startup.cs` + `src/Ballware.Document.App/Startup.cs`, `ballware-storage-service/src/Ballware.Storage.Service/Startup.cs`, `ballware-keycloak/user-role-api/` (registered realm resources)
+[^3]: `ballware-docker-compose/initdb/postgres/00-create-databases-and-owners.sh`, `initdb/postgres/10-quartz-schema.sql`, `initdb/mssql/01-create-tenant-database.sql`, `initdb/mssql/02-setup-tenant-login-and-user.sql`
+[^4]: `ballware-storage-service/src/Ballware.Storage.Provider.Minio/Internal/MinioAttachmentStorageProvider.cs`
+[^5]: `ballware-meta-service/src/Ballware.Meta.Service/Startup.cs` (`StorageClient`/`SchemaClient` wiring, schema hooks), `ballware-generic-service/src/Ballware.Generic.Api/Endpoints/TenantSchemaEndpoint.cs`

@@ -45,8 +45,7 @@ const FeatureList: FeatureItem[] = [
     description: (
       <>
         Independent .NET services for metadata, generic data, documents,
-        storage, machine learning, and LLM features are fronted by a single
-        API gateway and secured by Keycloak.
+        storage, and machine learning, secured by Keycloak.
       </>
     ),
   },

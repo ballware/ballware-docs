@@ -92,7 +92,7 @@ State-visibility rights use the pattern `visiblestate.<state>`.[^1]
   `Unknown|Queued|InProgress|Finished|Error`.[^1][^4]
 - The generic service runs the import job (`JobKey("import","generic")`) and
   reports progress via meta.[^2]
-- Repository-level exports produce `ExportResult` (`FileName`, `MediaType`,
+- Repository-level exports produce the export record (`FileName`, `MediaType`,
   `Data`); the generic service's tenant-level equivalent is `GenericExport`
   with the same members.[^4][^2]
 
@@ -110,7 +110,8 @@ Rights are per-entity (`entityright`): `Id`, `Entity`, `Identifier`,
 `delete`; custom-function rights (`exportjson`, `importjson`, `print`, …) and
 state-visibility rights appear as additional identifiers.[^1] Rights checks
 are two-stage: tenant-level `RightsCheckScript`, then entity-level
-`RightsCheckScript` / `StateAllowedScript` evaluated with Jint.[^4]
+`RightsCheckScript` / `StateAllowedScript` evaluated with Jint in the generic
+service's scripting layer.[^2]
 
 ## Layouts
 
@@ -124,6 +125,6 @@ crudcontainer|grid|map` with toolbar items (lookup/number/text/button …).[^3]
 Details on authoring: [Guide — metadata authoring](/guide/).
 
 [^1]: `ballware-meta-service/src/Ballware.Meta.Data/Public/` (EntityMetadata.cs, ProcessingState.cs, Pickvalue.cs, Lookup.cs, Page.cs, Statistic.cs, Export.cs, Job.cs, EntityRight.cs, Documentation.cs, Tenant.cs), `ballware-meta-service/src/Ballware.Meta.Data.Ef/seed/`
-[^2]: `ballware-generic-service/src/Ballware.Generic.Metadata/` (Entity.cs, Lookup.cs, Statistic.cs, ProcessingState.cs, Export.cs, Job.cs, Tenant.cs), `ballware-generic-service/README.md`
+[^2]: `ballware-generic-service/src/Ballware.Generic.Metadata/` (Entity.cs, Lookup.cs, Statistic.cs, ProcessingState.cs, Export.cs, Job.cs, Tenant.cs), `ballware-generic-service/src/Ballware.Generic.Scripting.Jint/`
 [^3]: `ballware-angular/libs/meta-model/src/lib/` (entity.ts, page.ts, statistic.ts, tenant.ts)
-[^4]: `ballware-shared-dotnet/src/Ballware.Shared.Api/Public/Job.cs`, `ballware-shared-dotnet/src/Ballware.Shared.Data/Repository/ExportResult.cs`, `ballware-shared-dotnet/README.md`
+[^4]: `ballware-generic-service/src/Ballware.Generic.Tenant.Data/GenericExport.cs`, `ballware-meta-service/src/Ballware.Meta.Data/Public/Job.cs`, `ballware-meta-service/src/Ballware.Meta.Data/Public/Export.cs`

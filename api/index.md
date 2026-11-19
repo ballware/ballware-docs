@@ -4,14 +4,13 @@ title: API overview
 
 # API overview
 
-The ballware platform exposes HTTP APIs fronted by `ballware-apigateway`
-(public entry point `api.ballware.de`). Each service publishes OpenAPI
-documents (user API and internal `service`/`schema` APIs).
+Each ballware service exposes its HTTP API directly on its own port and
+publishes OpenAPI documents (user API and internal `service`/`schema` APIs).
 
 Start here:
 
 - [Authentication](/api/authentication) — OAuth2/OIDC flows, scopes, audiences
-- [Route map](/api/route-map) — gateway routes to the internal services
+- [Route map](/api/route-map) — route prefixes and ports per service
 - [MCP endpoints](/api/mcp) — `/meta/mcp` and `/generic/mcp` tool surfaces
 - [API versions](/api/versions) — pinned service versions and snapshot policy
 

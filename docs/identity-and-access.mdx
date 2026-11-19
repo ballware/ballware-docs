@@ -5,117 +5,121 @@ sidebar_position: 3
 
 # Identity and access
 
-ballware uses **Keycloak** as its OAuth2/OIDC identity provider. Production
-runs Keycloak 26.8.2 with an Azure PostgreSQL database at
-`identity.ballware.de`, realm **`ballware`**.[^1] All backend services and the
-API gateway validate Keycloak access tokens; authorization inside services is
-**scope policies plus a `right` claim** derived from realm role attributes.[^2]
+ballware uses **Keycloak** as its OAuth2/OIDC identity provider. The
+`ballware-keycloak` repo builds on Keycloak **26.8.2** and adds ballware
+extensions (custom token mapper, user/role REST APIs, Keycloakify
+theme).[^1] Backend services validate Keycloak access tokens; authorization
+inside services is **scope policies plus a `right` claim** derived from realm
+role attributes.[^2]
 
 ## Clients
 
-| Client | Type | Purpose |
-| --- | --- | --- |
-| `ballwareweb` | public (PKCE, redirect `/signin-oidc`) | Angular web client login[^3] |
-| `meta`, `generic`, `storage`, `ml`, `reporting` | confidential, client-credentials | service-to-service calls[^4][^5] |
-| `account`, `account-console`, `admin-cli`, `broker`, `realm-management`, `security-admin-console` | Keycloak built-ins | Keycloak administration[^3] |
+Two realm configurations are evidenced on `main`, and they are not identical:
 
-:::caution Status: partially verified
-The production realm export contains only `ballwareweb` plus Keycloak built-in
-clients; the confidential service clients are provisioned outside that export
-file (confirmed by deployment docs and the local realm template), so exact
-production client lists can differ from the template.[^5][^6]
+| Client | Where defined | Type | Purpose |
+| --- | --- | --- | --- |
+| `ballwareweb` | keycloak repo export **and** compose realm template | public (PKCE; redirects `https://localhost:3000/signin-oidc`, `https://app.ballware.de/signin-oidc`) | Angular web client login[^3][^4] |
+| `storage`, `meta`, `generic`, `ml`, `reporting` | compose realm template only | confidential, service accounts | service-to-service calls (client credentials)[^4] |
+| `account`, `account-console`, `admin-cli`, `security-admin-console`, `broker`, `realm-management` | both | Keycloak built-ins | Keycloak administration (`admin-cli`/`security-admin-console` carry the `kc-admin-api` scope in the 26.8.2 export)[^3] |
+
+:::caution Status: not consistent across environments
+The committed **production-oriented export** (`ballware-keycloak/import/ballware-realm.json`)
+contains **only** `ballwareweb` plus Keycloak built-ins — no confidential
+service clients, and `serviceAccountsEnabled` is false for every client. The
+**evaluation realm template** (`ballware-docker-compose/realms/ballware-realm.tpl`)
+adds the confidential service clients with `${*_CLIENT_SECRET}` placeholders.
+How production provisions its service clients is not documented in the
+in-scope repositories.[^3][^4]
 :::
-
-In production the ml/document services do not have dedicated clients: the ml
-client reuses the `meta` client credentials.[^5]
 
 ## Scopes and audience
 
-Client scopes defined in the realm: `metaApi`, `serviceApi`, `storageApi`,
-`documentApi`, `mlApi`, `identityApi`, `messagingApi`, `kc-admin-api`.[^3] An
-audience mapper stamps `metaApi` into the `aud` claim of every issued
-token.[^3]
-
-:::caution Status: not consistent across environments
-`genericApi` and `schemaApi` client scopes exist only in the local/dev realm
-template, not in the 26.8.2 production export; production service-to-service
-calls are documented with `serviceApi`/`schemaApi` grants. Service config
-varies in the validated audience (`metaApi` vs `ballwareweb`).[^6][^5]
-:::
+- Exported realm scopes: `metaApi`, `serviceApi`, `storageApi`, `documentApi`,
+  `mlApi`, `identityApi`, `messagingApi`, `kc-admin-api` (plus Keycloak
+  built-ins).[^3]
+- The evaluation template adds `genericApi` and `schemaApi` (the latter
+  described as "Access to generic schema API").[^4]
+- Audience mappers on `ballwareweb` **and** on every service client stamp the
+  custom audience **`metaApi`** into access tokens; all services in the compose
+  stack validate exactly this audience (`Authorization__Audience`).[^3][^4][^2]
 
 ## Claims
 
-Tokens carry, among standard claims:
+Tokens carry, among standard claims:[^3]
 
 - `sub` — Keycloak user id
-- `tenant` — from user attribute `tenant`
-- `allowed_tenant` — multivalued, from user attribute `allowed_tenant`
-- `person` — from user attribute `person`
-- `right` — multivalued rights (see below)[^3]
+- `tenant`, `person`, `allowed_tenant` — from the same-named user attributes
+  (standard usermodel-attribute mappers; `allowed_tenant` multivalued)
+- `right` — multivalued rights, produced by the custom mapper (below)
 
-There is **no `unit` claim** in any current realm configuration or service
-configuration; treat it as legacy if encountered in older material.[^6]
+There is **no `unit` claim** in any current realm or service configuration;
+treat it as legacy if encountered in older material.[^3][^4]
 
 ### Rights from realm roles
 
-Right strings follow `<application>.<entity>.<action>`, e.g.
-`meta.entity.view` or `identity.role.add`. They are stored as attributes on
-**scope-mapped realm roles**, together with a `tenant` attribute (`*` or a
-tenant GUID). A custom Keycloak provider `ballware-token-mapper` copies the
-`right` attributes of matching roles (matching the user's `tenant` attribute
-or `*`) into the `right` claim.[^3][^7]
+Right strings follow `<application>.<entity>.<action>`, e.g. `meta.entity.view`
+or `identity.role.add`. They are stored as the `right` **attribute on realm
+roles**, next to a `tenant` attribute (`*` or a tenant GUID). The custom SPI
+provider `ballware-token-mapper` resolves the user's realm roles, keeps those
+whose role-attribute `tenant` equals the user's `tenant` attribute (or `*`),
+and copies their `right` attributes into the `right` claim (with
+`{{userattribute}}` placeholder substitution).[^1][^5]
+
+Exported roles show the pattern: `Administrator` (`right` attributes spanning
+`meta.*`, `identity.*`, `tenant.*`; `tenant = *`) and `Globaler Tenant
+Administrator` (`tenant.*` rights; tenant attribute includes the seeded admin
+tenant GUID — see [Tenancy](/docs/tenancy)).[^3]
 
 Management of users and roles goes through Keycloak **custom REST endpoints**
-`/ballware-user-api` and `/ballware-role-api` (realm resource providers),
-because direct admin-API access via protocol-mapper roles is disabled since
-Keycloak 26.7.1.[^1]
+`/realms/ballware/ballware-user-api` and `/realms/ballware/ballware-role-api`
+(all/byId/new/save/remove/selectlist/selectbyid; the user API also offers a
+`POST tenant?tenant=` switch guarded by `allowed_tenant`). They authorize
+against `right` claims like `identity.user.view` or `tenant.role.edit`,
+because admin-API access via protocol-mapper roles is disabled since Keycloak
+26.7.1.[^1][^6]
 
 ## How services enforce access
 
-Each service configures JWT bearer authentication with
-`MapInboundClaims = false` and validates audience/issuer, then applies
-authorization **policies named exactly like the required scope** (evaluated
-against the space-separated `scope` claim):[^2]
+Each service configures JWT bearer authentication against the Keycloak realm
+and applies authorization **policies named exactly like the required scope**;
+most endpoints are dual-scoped (user token **or** `serviceApi`), and
+service-scoped routes take an explicit `tenantId` in the path:[^2]
 
 | Service | User-facing policy | Service policy |
 | --- | --- | --- |
 | meta | `metaApi` | `serviceApi` |
 | generic | `genericApi`, `metaApi` | `serviceApi`, `schemaApi` |
 | storage | `storageApi` | `serviceApi` |
-| ml, llm | `mlApi` | `serviceApi` |
+| ml | `mlApi` | `serviceApi` |
 | document (reporting) | `documentApi` | `serviceApi` |
 
-Endpoints are typically dual-scoped: the same route accepts a user token
-(`metaApi` etc.) or a service token (`serviceApi`), and service-scoped routes
-take an explicit `tenantId` in the path.[^2]
-
-Beyond scopes, entity-level **rights** (`<application>.<entity>.<action>`) are
-checked from the `right` claim, optionally extended by a per-tenant/`entity`
-`RightsCheckScript` (JavaScript, Jint) on the server and compiled client-side
-in Angular.[^8] See [Metadata model](/docs/metadata-model).
-
-The API gateway validates the same tokens and denies by default; only
-`.../download/**` attachment routes are anonymous.[^9]
+Beyond scopes, entity-level **rights** from the `right` claim are checked per
+application/entity/action, extended by per-entity `RightsCheckScript`
+(JavaScript) evaluated with Jint in the generic service and compiled
+client-side in the web client.[^2] See [Metadata model](/docs/metadata-model).
 
 ## Web client configuration (env var names)
 
-`BALLWARE_IDENTITYURL`, `BALLWARE_CLIENTID` (production: `ballwareweb`),
-`BALLWARE_IDENTITYSCOPES` (production: `openid profile offline_access
-identityApi metaApi genericApi storageApi documentApi mlApi`),
-`BALLWARE_TENANTCLAIM`, `BALLWARE_USERNAMECLAIM`.[^10] Keycloak-side env vars
-of operational relevance (names only): `KC_PROXY_HEADERS=x-forwarded` behind
-the load balancer, `KC_BOOTSTRAP_ADMIN_USERNAME`/`KC_BOOTSTRAP_ADMIN_PASSWORD`,
-`KC_DB*`.[^1]
+The web client is configured entirely through `BALLWARE_*` variables
+(`BALLWARE_IDENTITYURL`, `BALLWARE_METAURL`, …, `BALLWARE_CLIENTID`,
+`BALLWARE_IDENTITYSCOPES`, `BALLWARE_TENANTCLAIM`, `BALLWARE_USERNAMECLAIM`);
+its SSR server signs users in through a Keycloak OIDC provider configured from
+the same names.[^7] Keycloak-side env names of operational relevance (values
+never documented): `KC_DB*`, `KC_HEALTH_ENABLED`, `KC_METRICS_ENABLED`,
+`KC_HTTPS_CERTIFICATE_FILE`/`KC_HTTPS_CERTIFICATE_KEY_FILE`,
+`KC_HOSTNAME_ADMIN_URL`, `KC_BOOTSTRAP_ADMIN_USERNAME`/`KC_BOOTSTRAP_ADMIN_PASSWORD`
+(dev only), `KC_PROXY_HEADERS` (26.x guidance).[^1][^4]
 
----
+:::caution Status: inconsistent proxy config in the evaluation stack
+The compose stack still sets the deprecated `KC_PROXY` variable, while the
+Keycloak repo's 26.8.2 notes require `KC_PROXY_HEADERS=x-forwarded` behind a
+load balancer (`KC_PROXY` was removed in Keycloak 26.0).[^1][^4]
+:::
 
-[^1]: `ballware-keycloak/README.md`
-[^2]: `ballware-meta-service/src/Ballware.Meta.Service/Startup.cs`, `ballware-generic-service/src/Ballware.Generic.Service/Startup.cs`, `ballware-storage-service/src/Ballware.Storage.Service/Startup.cs`, `ballware-ml-service/src/Ballware.Ml.Service/Startup.cs`, `ballware-llm-service/src/Ballware.Llm.Service/Startup.cs`, `ballware-document-service/src/Ballware.Document.Hosting/ServiceCollectionExtensions.cs`
-[^3]: `ballware-keycloak/import/ballware-realm.json`
-[^4]: `/Users/frank/Documents/GitHub/ballware-local/realms/ballware-realm.tpl`
-[^5]: `ballware-backend-coolify/README.md`
-[^6]: cross-checked across `ballware-keycloak/import/ballware-realm.json`, `ballware-local/realms/ballware-realm.tpl`, `ballware-angular`, backend services
-[^7]: `ballware-keycloak/token-mapper/src/main/java/ballware/keycloak/tokenmapper/ProtocolMapper.java`
-[^8]: `ballware-shared-dotnet/src/Ballware.Shared.Authorization.Jint/Internal/JavascriptEntityRightsChecker.cs`, `ballware-angular/libs/ngrx-meta-services/src/lib/meta/meta.store.ts`
-[^9]: `ballware-apigateway/README.md`
-[^10]: `ballware-angular/apps/webclient/src/ssr.server.ts`, `ballware-angular-coolify/docker-compose.yml`
+[^1]: `ballware-keycloak/README.md`, `ballware-keycloak/Dockerfile`
+[^2]: `ballware-meta-service/src/Ballware.Meta.Service/Startup.cs`, `ballware-generic-service/src/Ballware.Generic.Service/Startup.cs`, `ballware-storage-service/src/Ballware.Storage.Service/Startup.cs`, `ballware-ml-service/src/Ballware.Ml.Service/Startup.cs`, `ballware-document-service/src/Ballware.Document.Hosting/ServiceCollectionExtensions.cs` (per-service `Authorization` option defaults: `AuthorizationOptions.cs` in each service)
+[^3]: `ballware-keycloak/import/ballware-realm.json` (26.8.2 export)
+[^4]: `ballware-docker-compose/realms/ballware-realm.tpl`, `ballware-docker-compose/docker-compose.yml`
+[^5]: `ballware-keycloak/token-mapper/src/main/java/ballware/keycloak/tokenmapper/ProtocolMapper.java`
+[^6]: `ballware-keycloak/user-role-api/src/main/java/ballware/keycloak/userapi/UserRestProvider.java`, `.../roleapi/RoleRestProvider.java` (+ registered provider IDs `ballware-user-api`, `ballware-role-api`)
+[^7]: `ballware-angular/apps/webclient/src/app/env.ts`, `ballware-angular/apps/webclient/src/ssr.server.ts`

@@ -1,41 +1,31 @@
-# Website
+# ballware docs
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+Documentation portal for the ballware low-code platform — published at
+[docs.ballware.de](https://docs.ballware.de).
 
-## Installation
+Built with [Docusaurus 3](https://docusaurus.io/). The site has four content
+instances: `docs/` (platform), `administration/`, `guide/` (end users), and
+`api/` (OpenAPI-generated reference).
 
-```bash
-yarn
-```
-
-## Local Development
-
-```bash
-yarn start
-```
-
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-## Build
+## Local development
 
 ```bash
-yarn build
+npm ci
+npm start
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+## Build and checks
+
+```bash
+npm run typecheck
+npm run build
+npm run serve
+```
+
+`npm run build` fails on broken internal links (`onBrokenLinks: 'throw'`).
 
 ## Deployment
 
-Using SSH:
-
-```bash
-USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+The `pages.yml` workflow builds and deploys to GitHub Pages on `main`.
+`static/CNAME` maps the custom domain `docs.ballware.de` (GitHub Pages custom
+domain and DNS must be configured separately).

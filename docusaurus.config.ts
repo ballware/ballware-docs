@@ -4,9 +4,11 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
+const editUrl = 'https://github.com/ballware/ballware-docs/tree/main/';
+
 const config: Config = {
-  title: 'ballware',
-  tagline: 'Low-Code Entwicklungsplattform für Geschäftsanwendungen',
+  title: 'ballware docs',
+  tagline: 'Documentation for the ballware low-code platform for business applications',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -26,18 +28,24 @@ const config: Config = {
   projectName: 'ballware-docs', // Usually your repo name.
 
   onBrokenLinks: 'throw',
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'de',
-    locales: ['de'],
+    defaultLocale: 'en',
+    locales: ['en', 'de'],
     localeConfigs: {
+      en: {
+        label: 'English',
+        htmlLang: 'en-US',
+      },
       de: {
         label: 'Deutsch',
         htmlLang: 'de-DE',
-      }
+      },
     },
   },
 
@@ -46,12 +54,12 @@ const config: Config = {
       'classic',
       {
         docs: {
+          path: './docs',
+          routeBasePath: '/docs',
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/ballware/ballware-docs/tree/main/',
+          editUrl,
         },
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -59,9 +67,54 @@ const config: Config = {
     ],
   ],
 
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'administration',
+        path: './administration',
+        routeBasePath: '/administration',
+        sidebarPath: './sidebars.ts',
+        editUrl,
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'guide',
+        path: './guide',
+        routeBasePath: '/guide',
+        sidebarPath: './sidebars.ts',
+        editUrl,
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'api',
+        path: './api',
+        routeBasePath: '/api',
+        sidebarPath: './sidebars.ts',
+        editUrl,
+      },
+    ],
+  ],
+
+  themes: [
+    [
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      {
+        hashed: true,
+        indexDocs: true,
+        indexBlog: false,
+        indexPages: false,
+        language: ['en'],
+      },
+    ],
+  ],
+
   themeConfig: {
-    // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/social-card.png',
     colorMode: {
       respectPrefersColorScheme: true,
     },
@@ -74,66 +127,75 @@ const config: Config = {
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'docsSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Platform',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        {
+          type: 'docSidebar',
+          sidebarId: 'adminSidebar',
+          docsPluginId: 'administration',
+          position: 'left',
+          label: 'Administration',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'guideSidebar',
+          docsPluginId: 'guide',
+          position: 'left',
+          label: 'User Guide',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'apiSidebar',
+          docsPluginId: 'api',
+          position: 'left',
+          label: 'API',
+        },
+        {
+          type: 'localeDropdown',
+          position: 'right',
+        },
         {
           href: 'https://github.com/ballware/ballware-docs',
           label: 'GitHub',
           position: 'right',
         },
-        {
-          type: 'localeDropdown',
-          position: 'right',
-        }
       ],
     },
     footer: {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Documentation',
           items: [
-            {
-              label: 'Tutorial',
-              to: '/docs/intro',
-            },
+            {label: 'Platform', to: '/docs/overview'},
+            {label: 'Administration', to: '/administration/'},
+            {label: 'User Guide', to: '/guide/'},
+            {label: 'API Reference', to: '/api/'},
           ],
         },
         {
-          title: 'Community',
+          title: 'Ecosystem',
           items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
-            },
+            {label: 'ballware on GitHub', href: 'https://github.com/ballware'},
+            {label: 'ballware-angular', href: 'https://github.com/ballware/ballware-angular'},
+            {label: 'ballware-meta-service', href: 'https://github.com/ballware/ballware-meta-service'},
+            {label: 'ballware-generic-service', href: 'https://github.com/ballware/ballware-generic-service'},
+            {label: 'ballware-storage-service', href: 'https://github.com/ballware/ballware-storage-service'},
+            {label: 'ballware-apigateway', href: 'https://github.com/ballware/ballware-apigateway'},
+            {label: 'ballware-keycloak', href: 'https://github.com/ballware/ballware-keycloak'},
           ],
         },
         {
-          title: 'More',
+          title: 'Contact',
           items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/ballware/ballware-docs',
-            },
+            {label: 'ballware Software & Consulting Frank Ballmeyer', href: 'https://github.com/ballware'},
+            {label: 'Public API entry point', href: 'https://api.ballware.de'},
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Frank Ballmeyer, Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} ballware Software & Consulting Frank Ballmeyer.`,
     },
     prism: {
       theme: prismThemes.github,

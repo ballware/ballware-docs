@@ -1,0 +1,80 @@
+---
+title: Contribute
+sidebar_position: 900
+---
+
+# Contribute to the ballware docs
+
+Rules for writing and maintaining this documentation. They are binding for
+every change in this repository.
+
+## Content instances
+
+| Instance | Path | Purpose |
+| --- | --- | --- |
+| Platform | `/docs` | Platform, architecture, metadata model, development |
+| Administration | `/administration` | Environments, operations, backup & restore, configuration |
+| User Guide | `/guide` | End-user topics and metadata authoring |
+| API | `/api` | Generated OpenAPI reference and API-specific pages |
+
+## Language
+
+- English is the primary language (`defaultLocale: 'en'`).
+- German is maintained as translation in `i18n/de` (`npm run write-translations`), not as a fork.
+- Keep API identifiers, env-variable names, and code snippets **exactly** as they appear in the source; do not translate them.
+
+## Terminology
+
+Use these German–English pairs consistently (German appears in `i18n/de`
+translations and the glossary; English is used in the primary docs):
+
+| Deutsch | English |
+| --- | --- |
+| Mandant | tenant |
+| Objektdefinition | entity metadata |
+| Auswahlliste | lookup |
+| Pickliste | picklist |
+| Auswertung | statistic |
+| Dokumentation | documentation |
+| Benachrichtigung | notification |
+| Abonnement | subscription |
+| Berechtigung | right |
+| Stammdaten | master data |
+| Anhang | attachment |
+| Vorhersage | estimation |
+| Schnittstelle | API |
+
+Do not invent domain terms that do not exist in the code: there is **no**
+domain concept called *catalog*, *requirement* (as a platform term), or
+*interface* — `requirement` exists only as an application entity name in
+ballware-fwpro. `unit` and `person` are claim types.
+
+## Sourcing
+
+- Every statement must be traceable: cite the source repository and file path
+  (e.g. `ballware-meta-service/src/Ballware.Meta.Data.Ef/seed/…`) as a
+  footnote or inline reference.
+- If a statement is not verified against a source, mark it visibly instead of
+  stating it as fact:
+
+  ```mdx
+  :::caution Status: not verified
+  This section is reconstructed from … and needs confirmation by the maintainer.
+  :::
+  ```
+
+## Secrets
+
+- Document **names** of environment variables, secrets, and vault entries only.
+- Never copy values, passwords, tokens, client secrets, or connection strings
+  into the portal.
+
+## Checks before committing
+
+```bash
+npm run typecheck
+npm run build          # onBrokenLinks: 'throw' — broken internal links fail the build
+```
+
+- Internal links must resolve; category order is controlled by
+  `_category_.json` and `sidebar_position`.

@@ -1,62 +1,75 @@
-import type {ReactNode} from 'react';
+import type {JSX} from 'react';
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
-  description: ReactNode;
+  icon: JSX.Element;
+  description: JSX.Element;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Metadata-driven UI',
+    icon: (
+      <svg className={styles.featureIcon} viewBox="0 0 96 96" aria-hidden="true">
+        <rect x="14" y="14" width="68" height="68" rx="8" fill="none" stroke="currentColor" strokeWidth="5" />
+        <line x1="14" y1="38" x2="82" y2="38" stroke="currentColor" strokeWidth="5" />
+        <line x1="40" y1="38" x2="40" y2="82" stroke="currentColor" strokeWidth="5" />
+      </svg>
+    ),
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        ballware screens are not coded per application: entities, lookups,
+        layouts, and rights are described as metadata and rendered as working
+        lists and forms by the Angular web client.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Multi-service platform',
+    icon: (
+      <svg className={styles.featureIcon} viewBox="0 0 96 96" aria-hidden="true">
+        <circle cx="48" cy="48" r="12" fill="none" stroke="currentColor" strokeWidth="5" />
+        <circle cx="18" cy="24" r="8" fill="none" stroke="currentColor" strokeWidth="5" />
+        <circle cx="78" cy="24" r="8" fill="none" stroke="currentColor" strokeWidth="5" />
+        <circle cx="18" cy="72" r="8" fill="none" stroke="currentColor" strokeWidth="5" />
+        <circle cx="78" cy="72" r="8" fill="none" stroke="currentColor" strokeWidth="5" />
+        <line x1="24" y1="30" x2="40" y2="41" stroke="currentColor" strokeWidth="4" />
+        <line x1="72" y1="30" x2="56" y2="41" stroke="currentColor" strokeWidth="4" />
+        <line x1="24" y1="66" x2="40" y2="55" stroke="currentColor" strokeWidth="4" />
+        <line x1="72" y1="66" x2="56" y2="55" stroke="currentColor" strokeWidth="4" />
+      </svg>
+    ),
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Independent .NET services for metadata, generic data, documents,
+        storage, machine learning, and LLM features are fronted by a single
+        API gateway and secured by Keycloak.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'API, administration & user documentation',
+    icon: (
+      <svg className={styles.featureIcon} viewBox="0 0 96 96" aria-hidden="true">
+        <path d="M18 18 H48 A10 10 0 0 1 58 28 V78 A12 12 0 0 0 46 66 H18 Z" fill="none" stroke="currentColor" strokeWidth="5" strokeLinejoin="round" />
+        <path d="M78 18 H48 A10 10 0 0 0 38 28" fill="none" stroke="currentColor" strokeWidth="5" transform="translate(20 0)" />
+        <path d="M78 18 H58 A10 10 0 0 0 48 28 V78 A12 12 0 0 1 60 66 H78 Z" fill="none" stroke="currentColor" strokeWidth="5" strokeLinejoin="round" />
+      </svg>
+    ),
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        OpenAPI-derived API reference, operational runbooks for the deployed
+        environments, and an end-user guide for the metadata-driven
+        applications.
       </>
     ),
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
-  return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
-      </div>
-    </div>
-  );
-}
-
-export default function HomepageFeatures(): ReactNode {
+export default function HomepageFeatures(): JSX.Element {
   return (
     <section className={styles.features}>
       <div className="container">
@@ -67,5 +80,17 @@ export default function HomepageFeatures(): ReactNode {
         </div>
       </div>
     </section>
+  );
+}
+
+function Feature({title, icon, description}: FeatureItem) {
+  return (
+    <div className={clsx('col col--4')}>
+      <div className="text--center">{icon}</div>
+      <div className="text--center padding-horiz--md">
+        <Heading as="h3">{title}</Heading>
+        <p>{description}</p>
+      </div>
+    </div>
   );
 }

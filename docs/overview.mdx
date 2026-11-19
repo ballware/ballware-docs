@@ -1,0 +1,29 @@
+---
+title: Overview
+sidebar_position: 1
+---
+
+# ballware platform overview
+
+ballware is a **low-code platform for business applications**. Application
+screens (lists, forms, tabs, statistics) are not coded per application; they
+are described as **metadata** (entity definitions, lookups, page layouts,
+rights) and rendered at runtime by a shared Angular web client against a set
+of independent .NET services.
+
+The platform consists of:
+
+- **ballware-angular** — the web client (list/grid and form/edit renderers, metadata tooling)
+- **ballware-meta-service** — entity/page metadata, jobs, exports
+- **ballware-generic-service** — tenant data access driven by metadata
+- **ballware-document-service** — documents, reporting designer/viewer
+- **ballware-storage-service** — attachments and object storage
+- **ballware-ml-service** / **ballware-llm-service** — machine learning and LLM features
+- **ballware-apigateway** — the single public entry point (`api.ballware.de`)
+- **ballware-keycloak** — identity and access (OAuth2/OIDC)
+
+:::note Work in progress
+This portal is being built up phase by phase. Statements here are being
+verified against the source repositories; see [Contribute](./contribute.mdx)
+for the sourcing and verification rules.
+:::

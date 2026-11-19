@@ -42,3 +42,5 @@ coverage/
 *.pem
 *.key
 *.crt
+# Local Kilo/agent state
+.kilo/

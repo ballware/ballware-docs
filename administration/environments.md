@@ -29,7 +29,11 @@ current stable code, ahead of tagged releases if necessary.[^1]
 
 **Entry model:** there is no reverse proxy in this stack — services publish
 their ports directly, and the web client is wired to them via `BALLWARE_*URL`
-variables.[^1]
+variables. The platform's single-origin entry component, `ballware-apigateway`,
+is documented in these portal (routing, auth, health endpoint — see [Route
+map](/api/route-map)), but it is **not part of the compose stack**: it runs as
+its own container (`ghcr.io/ballware/ballware-apigateway-service`, listening on
+port `5010`) and is not composed by `ballware-docker-compose`.[^1][^2]
 
 ## Evaluation vs. production
 
@@ -37,7 +41,7 @@ variables.[^1]
 | --- | --- | --- |
 | Documented here | yes | **out of scope** (hosting repos excluded) |
 | Hosting | single machine | not documented |
-| Public entry | direct service ports | not documented |
+| Public entry | direct service ports (no gateway in the stack) | gateway component documented (`ballware-apigateway`); its hosting is not |
 | Identity | Keycloak 26.8.2 (compose, realm from rendered template) | Keycloak 26.8.2 per `ballware-keycloak` (production realm export contains only `ballwareweb` + built-ins) |
 | Databases | PostgreSQL 17 + SQL Server 2022 | not documented |
 | Object storage | MinIO | not documented |
@@ -51,3 +55,4 @@ scope for this portal — so no claims about it are made.
 :::
 
 [^1]: `ballware-docker-compose/docker-compose.yml` (services, build git contexts `#main`, ports, one-shot helpers)
+[^2]: `ballware-apigateway/src/Ballware.ApiGateway.Service/Dockerfile` (port `5010`), `.github/workflows/publish-packages.yml` (image publishing), `appsettings.json` (committed default destinations)

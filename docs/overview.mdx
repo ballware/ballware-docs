@@ -12,12 +12,13 @@ rendered at runtime by a shared Angular web client against a set of
 independent .NET services.[^1][^2]
 
 :::info Documentation scope
-These docs cover exactly eight repositories — `ballware-angular`,
+These docs cover exactly nine repositories — `ballware-angular`,
 `ballware-meta-service`, `ballware-generic-service`, `ballware-document-service`,
-`ballware-storage-service`, `ballware-ml-service`, `ballware-keycloak`, and
-`ballware-docker-compose`. Every statement is sourced from the **`main` branch**
-of these repos (state of 2026-11-19); the main branch carries the current
-stable versions. See [Repositories](/docs/repositories) for the version markers.
+`ballware-storage-service`, `ballware-ml-service`, `ballware-keycloak`,
+`ballware-apigateway`, and `ballware-docker-compose`. Every statement is sourced
+from the **`main` branch** of these repos (state of 2026-11-19); the main branch
+carries the current stable versions. See [Repositories](/docs/repositories) for
+the version markers.
 :::
 
 ## Capabilities
@@ -31,6 +32,7 @@ stable versions. See [Repositories](/docs/repositories) for the version markers.
 | Attachments & object storage | **ballware-storage-service** | Binary attachments and temporary files; blob providers for Azure Blob Storage and MinIO[^5] |
 | Machine learning | **ballware-ml-service** | AutoML training and prediction API (purpose reconstructed from the code; the README is content-free)[^6] |
 | Identity & access | **ballware-keycloak** | OAuth2/OIDC identity provider (Keycloak 26.8.2 with ballware SPI extensions), realm `ballware`[^7] |
+| API gateway | **ballware-apigateway** | Configuration-driven YARP reverse proxy: validates bearer tokens, applies CORS, routes `/meta`, `/tenant`, `/generic`, `/document`, `/storage`, `/ml`, `/ai` to the services, serves MCP protected-resource metadata[^9] |
 | Evaluation stack | **ballware-docker-compose** | Single-machine stack that builds every component above straight from its `main` branch[^8] |
 
 ## Application model
@@ -61,3 +63,4 @@ rights hooks in the web client.[^2][^1]
 [^6]: purpose reconstructed from `ballware-ml-service/src/` (`Ballware.Ml.Engine.AutoMl/`, jobs, service client); the service README is content-free
 [^7]: `ballware-keycloak/README.md`, `ballware-keycloak/Dockerfile`
 [^8]: `ballware-docker-compose/docker-compose.yml` (service `build` contexts point at the `main` branches of each component repo)
+[^9]: `ballware-apigateway/README.md`, `ballware-apigateway/src/Ballware.ApiGateway.Service/appsettings.json` (`ReverseProxy` routes/clusters)

@@ -6,6 +6,9 @@ title: API overview
 
 Each ballware service exposes its HTTP API directly on its own port and
 publishes OpenAPI documents (user API and internal `service`/`schema` APIs).
+Where the platform is fronted by `ballware-apigateway`, the same APIs are
+reached under one origin through the gateway's route prefixes — see [Route
+map](/api/route-map).
 
 Start here:
 

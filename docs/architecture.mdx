@@ -10,11 +10,13 @@ stack** (`ballware-docker-compose`), because it is fully evidenced in the
 documented repositories. Every component is built from its `main` branch, so
 the stack reflects current stable code.[^1]
 
-:::caution Status: production topology out of scope
-Production hosting (public reverse proxy behind `api.ballware.de`, k3s
-clusters, Coolify deployments) lives in repositories that are **out of scope**
-for these docs (see [Repositories](/docs/repositories)). Statements below that
-hold only for production are therefore not made.
+:::caution Status: production hosting out of scope
+Production hosting (k3s clusters, Coolify deployments) lives in repositories
+that are **out of scope** for these docs (see [Repositories](/docs/repositories)).
+The API gateway itself (`ballware-apigateway`) **is** in scope and documented
+below; hostnames appearing in its committed default configuration
+(`api.ballware.de`, `reporting.ballware.de`, `llm.ballware.de`) are stated as
+gateway routing config, not as a documented environment.
 :::
 
 ## Big picture
@@ -53,12 +55,16 @@ graph LR
   kc --> pg
 ```
 
-There is **no in-repo API gateway**: the web client is wired directly to each
-service's published port through the `BALLWARE_*URL` environment variables
-(`BALLWARE_METAURL`, `BALLWARE_STORAGEURL`, `BALLWARE_DOCUMENT*_URL`, …), and
-each service validates bearer tokens itself against the Keycloak authority —
-internally `http://keycloak:8080/realms/ballware`, browser-facing
-`https://localhost:3002/realms/ballware`.[^1]
+In the compose stack there is **no reverse proxy**: the web client is wired
+directly to each service's published port through the `BALLWARE_*URL`
+environment variables (`BALLWARE_METAURL`, `BALLWARE_STORAGEURL`,
+`BALLWARE_DOCUMENT*_URL`, …), and each service validates bearer tokens itself
+against the Keycloak authority — internally
+`http://keycloak:8080/realms/ballware`, browser-facing
+`https://localhost:3002/realms/ballware`.[^1] For a single public origin the
+platform instead uses the `ballware-apigateway` YARP proxy — see [API
+gateway](#api-gateway-ballware-apigateway) below; the compose repo does **not**
+include a gateway service.[^1][^6]
 
 ## Published ports (compose)
 
@@ -90,6 +96,75 @@ Each service maps its own routes (verified in its `Startup.cs`):
 | Keycloak | standard OIDC endpoints plus custom realm resources `/realms/ballware/ballware-user-api` and `/realms/ballware/ballware-role-api` | — |
 
 Details: [Route map](/api/route-map), [MCP endpoints](/api/mcp).[^2]
+
+## API gateway (`ballware-apigateway`)
+
+The gateway is a configuration-driven YARP reverse proxy (ASP.NET Core, .NET
+10): it terminates client traffic on one origin, validates OAuth2/OIDC bearer
+tokens against the configured authority, applies CORS, and forwards
+authenticated requests to the platform services. Routes, clusters, and request
+transforms live in JSON configuration (`ReverseProxy` section of
+`appsettings.json`), so services can be onboarded without recompiling.[^6]
+
+Pipeline (order is deliberate): Serilog request logging → routing → CORS →
+WebSockets → `204` answer to `OPTIONS` preflight → `AuthorizationTokenHeaderMiddleware`
+(copies a route-specific token header into `Authorization: Bearer …` *before*
+authentication) → authentication → authorization with a **deny-by-default
+fallback policy** — every proxied route is protected unless it declares
+`"AuthorizationPolicy": "Anonymous"` (used for file download routes) →
+anonymous `/.well-known/*` endpoints → `MapReverseProxy()`.[^6]
+
+```mermaid
+graph LR
+  client[Clients SPA / MCP / reporting]
+  gw[ballware-apigateway :5010]
+  meta[meta services via meta-cluster]
+  generic[generic services via generic-cluster]
+  report[document/reporting clusters]
+  storage[storage-cluster]
+  ml[ml-cluster]
+  ai[ai / ai-chat clusters]
+  kc[Keycloak authority token validation]
+  client --> gw
+  gw --> meta
+  gw --> generic
+  gw --> report
+  gw --> storage
+  gw --> ml
+  gw --> ai
+  gw -- "JWT issuer/authority" --> kc
+```
+
+Key behaviours:[^6]
+
+- Path-prefix routing (`/meta`, `/tenant`, `/generic`, `/document`, `/storage`,
+  `/ml`, `/ai`), host-based routing for the reporting app, header-based
+  matching for the WebSocket hub route.
+- Anonymous download routes (`/meta/{entity}/download/**`,
+  `/generic/{application}/{entity}/download/**`, `/document/{entity}/download/**`,
+  `/storage/attachment/downloadforentityandownerbyid/**`,
+  `/ml/mlmodel/download/**`).
+- Custom transforms: claim→header (`ai_key` → `x-litellm-api-key`), bearer
+  re-emission on another header, JSON body property injection (adds the
+  `ballware_meta_mcp`/`ballware_generic_mcp` MCP tool definitions to chat
+  requests).
+- RFC 9728 protected-resource metadata endpoints for MCP clients
+  (`/.well-known/oauth-protected-resource/**`).
+- `GET /_diag/ping` health endpoint; required `Authorization` configuration
+  fails startup when absent.
+
+Full route table and transforms: [Route map](/api/route-map),
+[Authentication](/api/authentication).
+
+:::caution Status: gateway is not part of the compose stack
+`ballware-docker-compose` runs no gateway — its web client reaches services
+directly. The gateway's committed default cluster destinations are public
+hostnames (`api.ballware.de` for all API clusters, `reporting.ballware.de` for
+the reporting app, `llm.ballware.de` for the chat route); deployments override
+them via `appsettings.local.json` or environment variables. The chat
+destination (a LiteLLM proxy) and the AI API targets are components outside
+the documented scope.
+:::
 
 ## Data stores
 
@@ -124,3 +199,4 @@ on how the documented services use those packages.[^5]
 [^3]: `ballware-docker-compose/initdb/postgres/00-create-databases-and-owners.sh`, `initdb/postgres/10-quartz-schema.sql`, `initdb/mssql/01-create-tenant-database.sql`, `initdb/mssql/02-setup-tenant-login-and-user.sql`
 [^4]: `ballware-storage-service/src/Ballware.Storage.Provider.Minio/Internal/MinioAttachmentStorageProvider.cs`
 [^5]: `ballware-meta-service/src/Ballware.Meta.Service/Startup.cs` (`StorageClient`/`SchemaClient` wiring, schema hooks), `ballware-generic-service/src/Ballware.Generic.Api/Endpoints/TenantSchemaEndpoint.cs`
+[^6]: `ballware-apigateway/README.md`, `ballware-apigateway/src/Ballware.ApiGateway.Service/Program.cs` (pipeline `:157`–`:190`, fallback policy `:127`, `/_diag/ping` and `.well-known` mapping), `appsettings.json` (`ReverseProxy`, `OAuthProtectedResourceRoutes`), `ballware-docker-compose/docker-compose.yml` (no gateway service)

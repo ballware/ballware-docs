@@ -8,8 +8,9 @@ sidebar_position: 2
 All ballware HTTP APIs are protected by OAuth2/OIDC tokens issued by Keycloak
 (realm **`ballware`**). In the documented evaluation stack the authority is
 `http://keycloak:8080/realms/ballware` for service-side validation and
-`https://localhost:3002/realms/ballware` for browser sign-on.[^1] Production
-hostnames live in out-of-scope repositories and are not documented here.
+`https://localhost:3002/realms/ballware` for browser sign-on.[^1] Where the
+platform fronts clients with `ballware-apigateway`, the gateway performs the
+same bearer validation before proxying — see [Gateway enforcement](#gateway-enforcement-ballware-apigateway).
 Two flows matter for API consumers: interactive user login and
 service-to-service client credentials.[^1][^2]
 
@@ -65,6 +66,44 @@ the `right` claim) gate data access.[^2]
 In the evaluation stack every service validates the audience **`metaApi`**
 (`Authorization__Audience`), matching the realm audience mappers.[^1][^4]
 
+## Gateway enforcement (`ballware-apigateway`)
+
+When clients reach the platform through the gateway, it validates the bearer
+token itself before forwarding:[^7]
+
+- JWT Bearer against the required `Authorization:Authority` and
+  `Authorization:Audience` configuration; the gateway **fails at startup**
+  (validation-on-start options → `ConfigurationException`) when these are
+  missing. `MapInboundClaims` is off; issuer validation uses
+  `Authorization:Issuer` when set, otherwise the authority.[^7]
+- Claim names are configurable — defaults `TenantClaim: tenant`,
+  `UserIdClaim: sub`, `RightClaim: right`, aligned with the platform claim
+  model; `RequiredMetaScope` (`metaApi`) and `RequiredServiceScope`
+  (`serviceApi`) exist as options for stricter deployments.[^7]
+- **Deny-by-default:** a fallback policy requires an authenticated user for
+  every route; only routes declaring `"AuthorizationPolicy": "Anonymous"`
+  (the download routes and the reporting app host route) are open.[^7]
+- For WebSockets and Server-Sent Events (`Accept: text/event-stream`) the
+  access token may be passed as an `access_token` **query parameter** —
+  accepted only for those request kinds.[^7]
+- `AuthorizationTokenHeaderMiddleware` lets clients that cannot send
+  `Authorization` (for example MCP clients using a provider-specific header)
+  present the token in a route-specific header, which is copied to
+  `Authorization: Bearer …` before authentication; enabled per route via route
+  metadata `AuthorizationTokenHeader`.[^7]
+- The gateway also serves RFC 9728 `/.well-known/oauth-protected-resource/**`
+  metadata so MCP clients can resolve the authorization server and scopes
+  (`metaApi` for `/meta/mcp`, `genericApi` for `/generic/mcp`) — see
+  [MCP endpoints](/api/mcp).[^7]
+
+:::caution Status: gateway authority values not committed
+`Authorization:Authority`/`Audience` are deliberately **not** part of the
+committed configuration (the README example uses `ballware` as audience).
+Which authority/audience a deployment configures is therefore not verifiable
+from the repository; in the compose stack the gateway is not deployed, and
+each service validates audience `metaApi` itself.[^1][^4]
+:::
+
 ## OpenAPI documents
 
 Each service serves Swagger JSON per named document (Swagger UI gated by
@@ -79,3 +118,4 @@ evaluation stack; see [API versions](/api/versions).[^6]
 [^4]: `ballware-docker-compose/realms/ballware-realm.tpl`
 [^5]: `ballware-generic-service/src/Ballware.Generic.Api/Endpoints/GenericDataEndpoint.cs`, `.../TenantSchemaEndpoint.cs`
 [^6]: `openapi/snapshot.json` in this repository
+[^7]: `ballware-apigateway/src/Ballware.ApiGateway.Service/Program.cs` (`:29`–`:35` fail-fast options, `:91`–`:120` JwtBearer + `access_token` query handling, `:127` fallback policy, `:175`–`:177` middleware order), `Configuration/AuthorizationOptions.cs` (`:9`–`:27`), `appsettings.json` (`AuthorizationPolicy: "Anonymous"` routes, `OAuthProtectedResourceRoutes`), `README.md` (auth and transforms sections)

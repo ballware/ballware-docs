@@ -253,6 +253,7 @@ const config: Config = {
             {label: 'ballware-storage-service', href: 'https://github.com/ballware/ballware-storage-service'},
             {label: 'ballware-ml-service', href: 'https://github.com/ballware/ballware-ml-service'},
             {label: 'ballware-keycloak', href: 'https://github.com/ballware/ballware-keycloak'},
+            {label: 'ballware-apigateway', href: 'https://github.com/ballware/ballware-apigateway'},
             {label: 'ballware-docker-compose', href: 'https://github.com/ballware/ballware-docker-compose'},
           ],
         },

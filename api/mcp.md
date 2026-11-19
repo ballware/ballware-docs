@@ -68,12 +68,33 @@ not a dedicated `mcp.*` right.[^2]
   `Mcp` section and mapped together with the protected-resource
   middleware.[^1]
 
-:::caution Status: verify per environment
-The effective required scope of each MCP endpoint follows the service config
-(`Mcp:RequiredMcpScope`); earlier portal text advertised `genericApi` for
-`/generic/mcp` based on out-of-scope deployment components.
+## Protected-resource discovery (gateway)
+
+Where clients reach the MCP endpoints through `ballware-apigateway`, the
+gateway serves RFC 9728 protected-resource metadata so MCP clients can resolve
+the authorization server and scopes:[^4]
+
+- `GET /.well-known/oauth-protected-resource` and
+  `/.well-known/oauth-protected-resource/{**resourcePath}` (anonymous; mapped
+  independently of the proxy routes).
+- Committed per-resource entries: `/.well-known/oauth-protected-resource/meta/mcp`
+  (`scopes_supported: openid profile metaApi`) and
+  `/.well-known/oauth-protected-resource/generic/mcp`
+  (`scopes_supported: openid profile genericApi`); bearer method `header`.
+- When not explicitly configured, `resource` is built from the public request
+  URL (honouring `X-Forwarded-Proto`/`X-Forwarded-Host`) and
+  `authorization_servers` defaults to the gateway's configured
+  `Authorization:Authority`.
+
+:::caution Status: metadata vs. enforcement
+The gateway's declared scope for `/generic/mcp` (`genericApi`) can differ from
+what the generic service actually enforces (`Mcp:RequiredMcpScope`, which
+defaults to `metaApi` there). Treat the discovery metadata as what the
+deployment **advertises** and the service configuration as what is
+**enforced**.[^2][^4]
 :::
 
 [^1]: `ballware-meta-service/src/Ballware.Meta.Service/Startup.cs` (`/meta/mcp` mapping, `Mcp` option wiring)
 [^2]: `ballware-generic-service/src/Ballware.Generic.Service/Startup.cs` (`Mcp.Enabled` gate, `/generic/mcp` mapping), `ballware-generic-service/src/Ballware.Generic.Mcp/Endpoints/GenericTools.cs` (tool templates, AiEnabled filtering, right checks)
 [^3]: `ballware-meta-service/src/Ballware.Meta.Mcp/Endpoints/` (`TenantTools.cs`, `EntityTools.cs`, `LookupTools.cs`, `PageTools.cs`, `PickvalueTools.cs`, `ProcessingStateTools.cs`, `StatisticTools.cs`)
+[^4]: `ballware-apigateway/src/Ballware.ApiGateway.Service/Program.cs` (`:180`, `:188` `.well-known` mappings), `appsettings.json` (`OAuthProtectedResourceRoutes`), `Configuration/OAuthProtectedResourceOptions.cs`, `README.md` (RFC 9728 section)

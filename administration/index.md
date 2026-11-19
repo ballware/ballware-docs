@@ -6,8 +6,9 @@ title: Administration overview
 
 This instance documents the environment of ballware that is **evidenced by the
 documented repositories**: the evaluation/integration stack
-`ballware-docker-compose`, plus configuration and operations facts derivable
-from the eight documented repos and their CI pipelines.
+`ballware-docker-compose`, the API gateway `ballware-apigateway` (deployed
+independently of that stack), plus configuration and operations facts derivable
+from the nine documented repos and their CI pipelines.
 
 - [Environments](/administration/environments) — what is documented, and what is not
 - [Evaluation with Docker Compose](/administration/evaluation-compose) — full stack on one machine, built from `main`

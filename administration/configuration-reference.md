@@ -6,8 +6,9 @@ sidebar_position: 3
 # Configuration reference
 
 **Names only — values of secrets are never documented** (portal rule).
-Sources: the compose stack on `main`, the services' `Configuration/` option
-classes, the web client's env contract, and CI pipeline secret references.
+Sources: the compose stack on `main`, the gateway's `appsettings.json` and
+`Configuration/` options, the services' `Configuration/` option classes, the
+web client's env contract, and CI pipeline secret references.
 
 ## Host `.env` (compose)
 
@@ -81,6 +82,23 @@ Runtime contract `window.ENV` → `ENV` token, variable names:
 `BALLWARE_IDENTITYAUTOREFRESH`, `BALLWARE_BASEURL` (SSR only). SSR server
 adds `AUTH_SECRET`.[^7]
 
+## API gateway (`ballware-apigateway`)
+
+| Section | Keys (names) | Notes |
+| --- | --- | --- |
+| `Authorization` | `Authority`, `Audience` (both **required** — startup fails without them), `Issuer`, `TenantClaim` (default `tenant`), `UserIdClaim` (default `sub`), `RightClaim` (default `right`), `RequireHttpsMetadata`, `RequiredMetaScope` (`metaApi`), `RequiredServiceScope` (`serviceApi`) | deliberately **not committed**; supplied via `appsettings.local.json` (git-ignored) or environment variables[^9] |
+| `Cors` | `AllowedOrigins` | any header/method, credentials enabled, only for listed origins[^9] |
+| `ReverseProxy` | `Routes` (per route: `ClusterId`, `AuthorizationPolicy`, `Match`, `Transforms`, `Metadata.AuthorizationTokenHeader`), `Clusters.Destinations.Address` | committed routing defaults; see [Route map](/api/route-map)[^9] |
+| `OAuthProtectedResourceRoutes` | per route: `Match`, `OAuthProtectedResource` (`ResourceName`, `ScopesSupported`, `BearerMethodsSupported`, optional `Resource`, `AuthorizationServers`, documentation/policy/ToS URIs, `JwksUri`, `AdditionalMetadata`) | RFC 9728 discovery metadata, see [MCP endpoints](/api/mcp)[^9] |
+| `Kestrel` | `Limits.MaxRequestLineSize`, `Limits.MaxRequestBodySize`, `Endpoints.Http.Url` (dev) | dev launch profiles: `http://localhost:5010`, `https://localhost:6010`[^9] |
+| `Serilog` / `Logging` | level overrides (`Yarp` at Debug) | console sink[^9] |
+
+Configuration layering order: `appsettings.json` →
+`appsettings.{ASPNETCORE_ENVIRONMENT}.json` → `appsettings.local.json` →
+environment variables. Container deployments supply everything through
+environment variables; the `Dockerfile` exposes port `5010` and runs as
+non-root `app`.[^9]
+
 ## CI secret names (never values)
 
 `GITHUB_TOKEN`, `GITHUB_USERNAME`, `GITHUB_PAT`, `SONAR_TOKEN`,
@@ -96,3 +114,4 @@ adds `AUTH_SECRET`.[^7]
 [^6]: `ballware-generic-service/src/Ballware.Generic.Tenant.Data.Postgres/Internal/PostgresSchemaProvider.cs` (generated tenant credentials persisted in the connection record)
 [^7]: `ballware-angular/apps/webclient/src/app/env.ts`, `apps/webclient/src/index.html`, `apps/webclient/docker-entrypoint.sh`, `apps/webclient/src/ssr.server.ts`
 [^8]: `.github/workflows/sonarqube-latest.yml` and `.github/workflows/publish-packages.yml` in the service repos; `ballware-document-service/src/Ballware.Document.Service/Dockerfile` (build args)
+[^9]: `ballware-apigateway/src/Ballware.ApiGateway.Service/appsettings.json`, `appsettings.Development.json`, `Configuration/AuthorizationOptions.cs`, `Configuration/OAuthProtectedResourceOptions.cs`, `Properties/launchSettings.json`, `Dockerfile`, `README.md` (configuration layering section)

@@ -26,6 +26,7 @@ APIs answer).[^1]
 | PostgreSQL / MinIO / SQL Server | compose healthchecks[^1] |
 | Keycloak | `KC_HEALTH_ENABLED=true` in the image build → health endpoints; production guidance probes `/health/ready` on the management port **9000**[^2][^3] |
 | The five .NET services | **none shipped**: no health-check endpoints exist in any of the five service repos (verified absence). Use port/HTTP liveness probes at the orchestrator level.[^4] |
+| API gateway (`ballware-apigateway`) | `GET /_diag/ping` → `{ "status": "ok" }` (anonymous) — documented for health probes and container readiness.[^8] |
 
 ## Upgrades
 
@@ -45,6 +46,12 @@ APIs answer).[^1]
   load balancer use `KC_PROXY_HEADERS=x-forwarded`, not `KC_PROXY`.[^3]
 - **Web client:** release images are published from git tags
   (`ghcr.io/ballware/ballware-angular:<tag>`, plus `:latest` from main).[^5]
+- **API gateway:** same release model (`v<SemVer>` tag + GHCR
+  `:SemVer`/`:stable` on `main`, `:latest` on `develop`, multi-arch images).
+  It is not part of the compose stack; upgrades mean swapping the
+  `ghcr.io/ballware/ballware-apigateway-service` image. Configuration changes
+  are deployment-side (`appsettings.local.json` / env vars), routing changes
+  need no recompilation.[^5][^8]
 
 ## Logs and routine ops
 
@@ -73,3 +80,4 @@ the realm/import state before destructive operations.[^1]
 [^5]: `GitVersion.yml` + `.github/workflows/publish-packages.yml` (per service repo), `ballware-keycloak/.github/workflows/docker-image.yml`, `ballware-angular/.github/workflows/docker-release.yml` + `docker-latest.yml`
 [^6]: `ballware-docker-compose/README.md` (troubleshooting section)
 [^7]: `ballware-meta-service/src/Ballware.Meta.Service/Startup.cs` (Serilog config), `ballware-docker-compose/docker-compose.yml` (Serilog override env keys)
+[^8]: `ballware-apigateway/src/Ballware.ApiGateway.Service/Program.cs` (`:178` `/_diag/ping`), `ballware-apigateway/README.md` (diagnostics + container/CI sections), `src/Ballware.ApiGateway.Service/Dockerfile`, `.github/workflows/publish-packages.yml`

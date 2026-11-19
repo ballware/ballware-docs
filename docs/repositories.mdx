@@ -5,7 +5,7 @@ sidebar_position: 7
 
 # Repositories
 
-These **eight repositories are the documented scope** of this portal. Each
+These **nine repositories are the documented scope** of this portal. Each
 entry reflects the **`main` branch** (state of 2026-11-19), which carries the
 current stable versions: the CI pipelines create a `v<SemVer>` git tag for
 each main release and publish the matching GHCR image with a `stable` tag.
@@ -28,6 +28,12 @@ reconstructed from the code and marked as such.[^1]
 | Repository | Purpose | Main tech | Latest `main` tag |
 | --- | --- | --- | --- |
 | [ballware-keycloak](https://github.com/ballware/ballware-keycloak) | Customized Keycloak **26.8.2**: SPI extensions (`token-mapper`, `user-role-api` → `ballware-user-api`/`ballware-role-api`), Keycloakify login/account theme | Java (Keycloak SPI), TypeScript (Keycloakify) | `v1.2.0` |
+
+## API gateway
+
+| Repository | Purpose | Main tech | Latest `main` tag |
+| --- | --- | --- | --- |
+| [ballware-apigateway](https://github.com/ballware/ballware-apigateway) | Configuration-driven YARP reverse proxy: bearer-token validation, CORS, path/host/header routing to the platform services, anonymous download routes, MCP protected-resource metadata (`/.well-known/oauth-protected-resource/**`) | C# / .NET 10, YARP 2.3.0 | `v2.0.12` |
 
 ## Deployments & environments
 
@@ -54,7 +60,7 @@ pages here are reconstructed from code and marked where reconstructed.[^1]
 ## Out of scope for these docs
 
 Explicitly not covered (even though they exist in the organization):
-`ballware-apigateway`, `ballware-shared-dotnet`, `ballware-backend-coolify`,
+`ballware-shared-dotnet`, `ballware-backend-coolify`,
 `ballware-identity-coolify`, `ballware-angular-coolify`, `ballware-ansible`
 (production hosting), `ballware-backups`, `ballware-llm-service`,
 `ballware-llm-gateway`, `ballware-ai-assistant`, `ballware-knowledge-service`,

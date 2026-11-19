@@ -14,7 +14,11 @@ import storageServiceApiSidebar from './storage-service/sidebar';
 
 const sidebars: SidebarsConfig = {
   apiSidebar: [
-    {type: 'category', label: 'API overview', items: ['index']},
+    {
+      type: 'category',
+      label: 'API overview',
+      items: ['index', 'authentication', 'route-map', 'mcp', 'versions'],
+    },
     ...metaApiSidebar,
     ...metaServiceApiSidebar,
     ...genericApiSidebar,

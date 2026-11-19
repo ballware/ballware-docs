@@ -8,12 +8,15 @@ The ballware platform exposes HTTP APIs fronted by `ballware-apigateway`
 (public entry point `api.ballware.de`). Each service publishes OpenAPI
 documents (user API and internal `service`/`schema` APIs).
 
-This instance will contain:
+Start here:
 
-- a **generated API reference** built from OpenAPI snapshots committed under `openapi/` in this repository
-- **authentication** — OAuth2/OIDC flows, audiences, token exchange
-- **route map** — gateway routes to the internal services
-- **MCP endpoints** — `/meta/mcp` and `/generic/mcp` tool surfaces
+- [Authentication](/api/authentication) — OAuth2/OIDC flows, scopes, audiences
+- [Route map](/api/route-map) — gateway routes to the internal services
+- [MCP endpoints](/api/mcp) — `/meta/mcp` and `/generic/mcp` tool surfaces
+- [API versions](/api/versions) — pinned service versions and snapshot policy
 
-The generated reference is not published yet; until it is, only the pages
-listed in this repository exist here.
+Below these pages, the sidebar contains the **generated API reference** built
+from OpenAPI snapshots committed under `openapi/` in this repository. Each
+service exposes a user API (`meta`, `generic`, `ml`, `reporting` = document
+service, `storage`) plus internal service/schema APIs used for
+service-to-service calls.

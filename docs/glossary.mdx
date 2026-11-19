@@ -1,0 +1,48 @@
+---
+title: Glossary
+sidebar_position: 6
+---
+
+# Glossary (EN ↔ DE)
+
+Binding terminology for this portal and for translations. English is the
+primary docs language; German translations use these pairs consistently.
+
+| Deutsch | English | Notes |
+| --- | --- | --- |
+| Mandant | tenant | Isolated customer unit; never "customer" |
+| Objektdefinition | entity metadata / entity definition | The metadata document describing a business object |
+| Auswahlliste | lookup | Parameterized selectable value list |
+| Pickliste | picklist | Static picklist on an entity field (`pickvalue` entries) |
+| Auswertung | statistic | Chart/map/pivot analytic view |
+| Dokumentation | documentation | Field-level help text metadata |
+| Benachrichtigung | notification | Notification definition (document service) |
+| Abonnement | subscription | User's e-mail subscription to a notification |
+| Berechtigung | right | Action permission `{application}.{entity}.{action}` |
+| Stammdaten | master data | Generic term for tenant business data |
+| Anhang | attachment | Binary file on an entity record (storage service) |
+| Vorhersage | estimation | ML prediction result |
+| Schnittstelle | API | Any HTTP interface |
+| Verarbeitungsstatus | processing state | Per-entity lifecycle state with successors |
+
+## Terms that do **not** exist as domain concepts
+
+Do not invent these: there is no platform domain term *catalog* (Katalog), no
+generic *requirement* (Anforderung) concept — `requirement` exists only as an
+application-specific entity name in `ballware-fwpro`. `unit` and `person` are
+claim types, not domain entities.
+
+## Name collisions to watch
+
+- `ModelAlias` exists **independently** in `ballware-llm-gateway`
+  (`Ballware.Llm.Gateway.Data`, a record aliasing a model to an LLM app) and
+  in `ballware-ai-assistant` (pipeline registration mapping a model alias to
+  a pipeline name). Do not treat them as one concept.[^1]
+- `ballware-knowledge-service` introduces its own terms — `silo`, `source`,
+  `chunk`, `ACL entry` — which are not platform-wide metadata concepts.[^2]
+- `ExportResult` is a shared-dotnet repository struct; `GenericExport` is the
+  generic-service equivalent with identical members.[^3]
+
+[^1]: `ballware-llm-gateway/src/Ballware.Llm.Gateway.Data/Public/ModelAlias.cs`, `ballware-ai-assistant/src/Ballware.Ai.Assistant.Pipeline/Registration/ModelAliasRegistration.cs`
+[^2]: `ballware-knowledge-service/docs/` — reconstructed purpose; service README is minimal
+[^3]: `ballware-shared-dotnet/src/Ballware.Shared.Data/Repository/ExportResult.cs`, `ballware-generic-service/src/Ballware.Generic.Tenant.Data/GenericExport.cs`

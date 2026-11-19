@@ -1,0 +1,63 @@
+---
+title: Repositories
+sidebar_position: 7
+---
+
+# Repositories
+
+All repositories of the [ballware GitHub organization](https://github.com/ballware)
+that are relevant to the platform. Purposes are sourced from each repo's
+README and code layout; where a README is empty, the purpose is reconstructed
+from the code and marked as such.
+
+## Platform services
+
+| Repository | Purpose | Main tech |
+| --- | --- | --- |
+| [ballware-angular](https://github.com/ballware/ballware-angular) | Metadata-driven Angular webclient shell; `@ballware/*` libs (`meta-model`, `meta-api`, `rest-meta-api`, `dx-renderer`, …) | TypeScript / Angular 19, Nx, DevExtreme |
+| [ballware-meta-service](https://github.com/ballware/ballware-meta-service) | Stores and serves tenant metadata (entities, pages, lookups, exports, jobs, statistics) | C# / .NET 8, ASP.NET Core, EF Core (Postgres/SQL Server) |
+| [ballware-generic-service](https://github.com/ballware/ballware-generic-service) | Generic metadata-driven data engine with REST + MCP endpoints, Jint scripting | C# / .NET 10, Dapper, Quartz |
+| [ballware-document-service](https://github.com/ballware/ballware-document-service) | Multi-tenant reporting: XtraReports definitions, Blazor designer/viewer, PDF/e-mail jobs | C# / .NET 10 + DevExpress, Blazor |
+| [ballware-storage-service](https://github.com/ballware/ballware-storage-service) | Attachment and temporary file storage (Azure Blob or MinIO) | C# / .NET 8, EF Core |
+| [ballware-ml-service](https://github.com/ballware/ballware-ml-service) | ML training/prediction service (AutoML). *Reconstructed — README is content-free* | C# / .NET 8, ML.NET AutoML |
+| [ballware-llm-service](https://github.com/ballware/ballware-llm-service) | LLM chat with pgvector RAG, Docling document conversion, MCP tools, SignalR chat | C# / .NET 10, PostgreSQL/pgvector |
+| [ballware-apigateway](https://github.com/ballware/ballware-apigateway) | Deny-by-default YARP reverse proxy; the only public API entry | C# / .NET 10, YARP |
+| [ballware-shared-dotnet](https://github.com/ballware/ballware-shared-dotnet) | Shared .NET libraries: tenancy, authorization, CRUD mapping, jobs, MCP, OIDC/session auth | C# / .NET 10 |
+
+## Identity
+
+| Repository | Purpose | Main tech |
+| --- | --- | --- |
+| [ballware-keycloak](https://github.com/ballware/ballware-keycloak) | Customized Keycloak 26.8: user/role management SPI extensions (`token-mapper`, `user-role-api`), Keycloakify theme | Java (Keycloak SPI), TypeScript |
+
+## Deployments & environments
+
+| Repository | Purpose | Main tech |
+| --- | --- | --- |
+| [ballware-docker-compose](https://github.com/ballware/ballware-docker-compose) | Local evaluation stack composing the full platform | Docker Compose |
+| [ballware-backend-coolify](https://github.com/ballware/ballware-backend-coolify) | Coolify deployment of backend data services with backup tooling (Postgres/pgBackRest, MSSQL, S3) | Docker Compose / Coolify |
+| [ballware-identity-coolify](https://github.com/ballware/ballware-identity-coolify) | Coolify deployment of the Keycloak database with dump-backup crons | Docker Compose / Coolify |
+| [ballware-angular-coolify](https://github.com/ballware/ballware-angular-coolify) | Coolify deployment wrapper for the Angular frontend | Docker Compose / Coolify |
+| [ballware-ansible](https://github.com/ballware/ballware-ansible) | Ansible automation of the self-hosted k3s production cluster | Ansible |
+
+## Early-stage / experimental
+
+:::caution Status: not verified
+`ballware-llm-gateway` (Phase-1 skeleton), `ballware-ai-assistant` (empty
+README; design in `CODEX_PROJECT_BLUEPRINT.md`), and
+`ballware-knowledge-service` (young Python service, minimal README) are early
+stage. Their docs coverage is limited to what the code proves.
+:::
+
+## Reference applications
+
+| Repository | Purpose |
+| --- | --- |
+| [ballware-fwpro](https://github.com/ballware/ballware-fwpro) | A complete tenant metadata deployment (Feuerwehr Preußisch Oldendorf) plus Python tooling that splits exported metadata into per-item JSON |
+
+## Out of scope for these docs
+
+`ballware-local` (superseded by `ballware-docker-compose`),
+`ballware-ansible-azure` (abandoned spike), and the non-ballware legacy items
+`prohistory`, `Minepacks`, `ballware-paper-backpacks` (third-party Minecraft
+software) are explicitly not documented here.

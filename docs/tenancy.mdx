@@ -1,0 +1,78 @@
+---
+title: Tenancy
+sidebar_position: 4
+---
+
+# Tenancy
+
+A **tenant** (Mandant) is an isolated customer unit of one shared platform
+deployment. Every tenant has its own database schema (with its own database
+user), its own tenant metadata (navigation, entities, templates, scripts), and
+its own realm role grants in Keycloak.[^1][^2]
+
+## Claim to schema
+
+Requests are routed to a tenant's data by a fixed chain:
+
+1. The access token carries the `tenant` claim (see [Identity and access](/docs/identity-and-access)).
+2. Shared endpoint bindings resolve `UserTenantId` from that claim.[^3]
+3. The generic service looks up the stored `TenantConnection` for that tenant
+   id and opens its dedicated database connection (user `tenant_<guid>`,
+   tenant schema).[^1]
+
+Service-to-service endpoints accept an explicit `{tenantId}` in the path
+instead, guarded by the `serviceApi` scope.[^4]
+
+## Schema-per-tenant
+
+The generic service keeps a **master store** (tenant registry, connections)
+plus business data in per-tenant schemas:[^1]
+
+- Metadata SQL uses a `[ballwareschema]` placeholder replaced by the tenant's
+  schema, alongside `@tenantId` and claim substitution.
+- A `schemaApi` provisioning API (`/api/tenant/createorupdateschemafortenant/{tenantId}`, …)
+  creates/updates/drops the tenant schema and its database user `tenant_<guid>`
+  with a generated password; model diffs drive DDL, and superseded models are
+  persisted as JSON in the master store.[^1]
+- Default schema is `dbo` (SQL Server) or `public` (PostgreSQL); SQL Server
+  contained databases are supported, and tenants may use `mssql` or
+  `postgres` providers side by side (chosen from the stored
+  `TenantConnection.Provider`).[^1]
+- Dropping a tenant removes schema, database user, and connection record.[^1]
+
+Tenant-scoped rows additionally carry a `tenant_id` column in the tenant
+schema.[^5]
+
+## Provisioning from the meta service
+
+When a tenant with `ManagedDatabase` is saved in the meta service, a hook
+calls the generic service's schema API and queues a `tenant/seed` job; tenant
+removal drops the schema first. Entity metadata changes trigger per-tenant
+table DDL through the same client.[^6]
+
+## Seeded tenants
+
+Seed data ships with the meta service:[^7]
+
+- An **admin tenant** with fixed id `3c8e9669-f3d8-4e46-3b27-08db043004ff`
+  (the same GUID appears as the tenant attribute of the realm role
+  *Globaler Tenant Administrator*, linking the Keycloak realm to the meta
+  tenant registry).
+- A placeholder **customer tenant** with the all-zero GUID.
+
+Seeding is disabled by default (`AutoSeedAdminTenant = false`) and enabled
+only in local configurations.[^7]
+
+:::caution Status: not verified
+The docs describe the local/compose provisioning path. Production tenant
+onboarding flow (SaaS self-service vs. manual) is not documented in the
+surveyed repositories.
+:::
+
+[^1]: `ballware-generic-service/README.md`, `ballware-generic-service/src/Ballware.Generic.Tenant.Data.Postgres/Internal/PostgresSchemaProvider.cs`, `.../Ballware.Generic.Tenant.Data.SqlServer/Internal/SqlServerSchemaProvider.cs`
+[^2]: `ballware-keycloak/import/ballware-realm.json` (realm roles with `tenant` attribute)
+[^3]: `ballware-shared-dotnet/src/Ballware.Shared.Api.Endpoints/Bindings/UserTenantId.cs`, `ballware-shared-dotnet/src/Ballware.Shared.Authorization/Internal/DefaultPrincipalUtils.cs`
+[^4]: `ballware-generic-service/src/Ballware.Generic.Api/Endpoints/TenantDataEndpoint.cs`
+[^5]: `ballware-generic-service/src/Ballware.Generic.Tenant.Data.Postgres/Internal/PostgresDbConnectionExtensions.cs`
+[^6]: `ballware-meta-service/src/Ballware.Meta.Service/Extensions/GenericSchemaTenantRepositoryHook.cs`
+[^7]: `ballware-meta-service/src/Ballware.Meta.Data.Ef/seed/admin-tenant.json`, `.../seed/customer-tenant.json`, `.../Configuration/StorageOptions.cs`

@@ -1,0 +1,129 @@
+---
+title: Metadata model
+sidebar_position: 5
+---
+
+# Metadata model
+
+The platform's core idea: an application is a set of **metadata documents**,
+not code. This page lists the domain concepts with their exact names in the
+code. German pairs are given for the translated docs; see
+[Glossary](/docs/glossary).
+
+## Concepts at a glance
+
+| Concept (EN / DE) | Meaning |
+| --- | --- |
+| entity / Objektdefinition | A business object type with queries, statements, scripts, layouts, and rights |
+| lookup / Auswahlliste | A selectable value list (`ListQuery`/`ByIdQuery`, optional parameter via `HasParam`) |
+| pickvalue / Picklistenwert | A static picklist entry for an entity field (`Field`, `Value`, `Text`, `Sorting`) |
+| statistic / Auswertung | A read-only analytic view: `FetchSql` plus optional Jint `FetchScript`, layout `chart|map|pivot` |
+| page / Seite | A screen definition: layout items (`tabs|tab|entitygrid|statistic|crudcontainer|grid|map`), toolbar items, page custom scripts |
+| documentation / Dokumentation | Field-level help text (`Entity`, `Field`, `Content`) |
+| export / Export | An async export job descriptor (`Application`, `Entity`, `Query`, `ExpirationStamp`, `MediaType`) |
+| job / Job | Async job record tracked in meta (`State` of `Unknown|Queued|InProgress|Finished|Error`) |
+| processingstate / Verarbeitungsstatus | Per-entity lifecycle state with allowed successors — not a fixed enum |
+| document / Dokument | A report instance owned by the document service (`DisplayName`, `Entity`, `State`, `ReportParameter`) |
+| notification / Benachrichtigung | A parameterized notification definition bound to a document |
+| subscription / Abonnement | A user's e-mail subscription to a notification (`UserId`, `Mail`, `Frequency`, `Active`) |
+| right / Berechtigung | An action permission with identifier `{application}.{entity}.{action}` |
+| tenant / Mandant | An isolated customer unit with own schema, navigation, scripts, templates |
+
+## Entity descriptor
+
+An entity definition is one JSON document (seeded or authored via the meta
+API). Top-level fields as present in `ballware-meta-service` seeds and the
+C# contract `EntityMetadata`:[^1][^2]
+
+`Id`, `Meta`, `GeneratedSchema`, `KeyColumn`, `NoIdentity`, `Application`,
+`Entity`, `DisplayName`, `BaseUrl`, `ItemMappingScript`,
+`ItemReverseMappingScript`, `ListQuery`, `ByIdQuery`, `NewQuery`,
+`ScalarValueQuery`, `SaveStatement`, `RemoveStatement`,
+`RemovePreliminaryCheckScript`, `ListScript`, `RemoveScript`, `ByIdScript`,
+`BeforeSaveScript`, `SaveScript`, `Lookups`, `Picklists`, `CustomScripts`,
+`GridLayout`, `EditLayout`, `CustomFunctions`, `StateColumn`,
+`StateReasonColumn`, `Templates`, `StateAllowedScript`, `Indices`,
+`ProviderModelDefinition`, `States`, `Rights`, `Pickvalues`,
+`CharacteristicAssociations`, plus the derived `RightsCheckScript`.
+
+:::note Application/entity addressing
+Entities are addressed as `{application}/{entity}`; the meta service stores
+them per tenant. Queries (`QueryEntry`: `Identifier`, `Query`, `AiEnabled`,
+`Description`, `Parameters`, `ResultColumns`) drive generic-service data
+access.[^2][^3]
+:::
+
+### Custom functions
+
+`CustomFunctions` are toolbar actions on lists/forms. Wire types:
+`add`, `edit`, `default_add`, `default_view`, `default_edit`, `external`,
+`export`, `import` (import/export carry `format`/`delimiter` options —
+`xml|json|csv`).[^2][^3]
+
+### Custom script hooks
+
+`CustomScripts` keys (client + server extension points): `rightsCheck`,
+`rightsParamForHead`, `rightsParamForItem`, `prepareGridLayout`,
+`prepareEditLayout`, `prepareMaterializedEditItem`, `prepareCustomParam`,
+`prepareCustomFunction`, `evaluateCustomFunction`, `editorPreparing`,
+`editorInitialized`, `editorValueChanged`, `editorEvent`, `editorEntered`,
+`editorValidating`, `detailGridCellPreparing`, `detailGridRowValidating`,
+`initNewDetailItem`, `prepareTemplateInstance`, and (server) `extendedRightsCheck`,
+`commonUtils`, `interactionKeyboardLine`.[^1][^3]
+
+### Server-side lifecycle scripts (generic service)
+
+`ListScript`, `ByIdScript`, `BeforeSaveScript`, `SaveScript`,
+`RemovePreliminaryCheckScript`, `RemoveScript`, `StateAllowedScript`,
+`ExtendedRightsCheckScript`; tenant-wide helper libraries via
+`Tenant.ServerScriptDefinitions`.[^2]
+
+## State model
+
+`States` (processing states) are metadata-defined per entity: `State`
+(integer), `Name`, `Successors` (array of state ids), `RecordFinished`,
+`RecordLocked`, `ReasonRequired`.[^1][^2] Example from the seeded `document`
+entity: `0` Entwicklung → `5` Test → `10` Produktiv → `20` Benachrichtigung.
+State-visibility rights use the pattern `visiblestate.<state>`.[^1]
+
+## Jobs, imports, exports
+
+- Jobs are tracked in the meta service with state names
+  `Unknown|Queued|InProgress|Finished|Error`.[^1][^4]
+- The generic service runs the import job (`JobKey("import","generic")`) and
+  reports progress via meta.[^2]
+- Repository-level exports produce `ExportResult` (`FileName`, `MediaType`,
+  `Data`); the generic service's tenant-level equivalent is `GenericExport`
+  with the same members.[^4][^2]
+
+:::caution Not consistent across services
+The generic service's local `JobStates` enum uses numeric values
+`InProgress=2, Finished=3, Error=4` while the shared/meta contract uses
+`InProgress=5, Finished=10, Error=99`. Only the **names** are stable on the
+wire — always compare job states by name, not number.[^2][^4]
+:::
+
+## Rights
+
+Rights are per-entity (`entityright`): `Id`, `Entity`, `Identifier`,
+`DisplayName`, `Container`. Standard actions are `view`, `add`, `edit`,
+`delete`; custom-function rights (`exportjson`, `importjson`, `print`, …) and
+state-visibility rights appear as additional identifiers.[^1] Rights checks
+are two-stage: tenant-level `RightsCheckScript`, then entity-level
+`RightsCheckScript` / `StateAllowedScript` evaluated with Jint.[^4]
+
+## Layouts
+
+`GridLayout` (list): `columns` (type, sorting, editable, fixed position,
+summaries, detail grids), `allowMultiselect`, `allowEditing`, `editLayout`
+link. `EditLayout` (form): nested `items` (`colCount`, `colSpan`), field
+options (`dataMember`, `lookup`, `pickvalueEntity/Field`, `validations`,
+`required`, `readonly`). Page layout items: `tabs|tab|entitygrid|statistic|
+crudcontainer|grid|map` with toolbar items (lookup/number/text/button …).[^3]
+
+Details on authoring: [Guide — metadata authoring](/guide/).
+
+[^1]: `ballware-meta-service/src/Ballware.Meta.Data/Public/` (EntityMetadata.cs, ProcessingState.cs, Pickvalue.cs, Lookup.cs, Page.cs, Statistic.cs, Export.cs, Job.cs, EntityRight.cs, Documentation.cs, Tenant.cs), `ballware-meta-service/src/Ballware.Meta.Data.Ef/seed/`
+[^2]: `ballware-generic-service/src/Ballware.Generic.Metadata/` (Entity.cs, Lookup.cs, Statistic.cs, ProcessingState.cs, Export.cs, Job.cs, Tenant.cs), `ballware-generic-service/README.md`
+[^3]: `ballware-angular/libs/meta-model/src/lib/` (entity.ts, page.ts, statistic.ts, tenant.ts)
+[^4]: `ballware-shared-dotnet/src/Ballware.Shared.Api/Public/Job.cs`, `ballware-shared-dotnet/src/Ballware.Shared.Data/Repository/ExportResult.cs`, `ballware-shared-dotnet/README.md`

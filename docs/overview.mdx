@@ -6,24 +6,53 @@ sidebar_position: 1
 # ballware platform overview
 
 ballware is a **low-code platform for business applications**. Application
-screens (lists, forms, tabs, statistics) are not coded per application; they
-are described as **metadata** (entity definitions, lookups, page layouts,
-rights) and rendered at runtime by a shared Angular web client against a set
-of independent .NET services.
+screens (lists, forms, tabs, statistics) are not coded per application:
+entities, lookups, page layouts, and rights are described as **metadata** and
+rendered at runtime by a shared Angular web client against a set of
+independent .NET services.[^1][^2]
 
-The platform consists of:
+## Capabilities
 
-- **ballware-angular** — the web client (list/grid and form/edit renderers, metadata tooling)
-- **ballware-meta-service** — entity/page metadata, jobs, exports
-- **ballware-generic-service** — tenant data access driven by metadata
-- **ballware-document-service** — documents, reporting designer/viewer
-- **ballware-storage-service** — attachments and object storage
-- **ballware-ml-service** / **ballware-llm-service** — machine learning and LLM features
-- **ballware-apigateway** — the single public entry point (`api.ballware.de`)
-- **ballware-keycloak** — identity and access (OAuth2/OIDC)
+| Capability | Component | Notes |
+| --- | --- | --- |
+| Metadata-driven UI | **ballware-angular** (webclient + `dx-renderer`) | Renders grids and forms from `GridLayout`/`EditLayout` metadata using DevExtreme[^1] |
+| Tenant business data | **ballware-generic-service** | Generic CRUD/query/import engine executing metadata against per-tenant schemas; exposes an MCP endpoint for AI agents[^2] |
+| Metadata management | **ballware-meta-service** | Stores entities, pages, lookups, pick values, documentation, exports, jobs, statistics[^3] |
+| Documents & reporting | **ballware-document-service** | DevExpress XtraReports definitions, Blazor report designer/viewer (`reporting.ballware.de`), PDF and e-mail jobs[^4] |
+| Attachments & object storage | **ballware-storage-service** | Binary attachments and temporary files; blobs in Azure Blob Storage or MinIO[^5] |
+| Machine learning | **ballware-ml-service** | AutoML training and prediction API[^6] |
+| LLM features & knowledge RAG | **ballware-llm-service** | OpenAI-compatible chat with RAG over a pgvector knowledge base; SignalR chat hub[^7] |
+| Identity & access | **ballware-keycloak** | OAuth2/OIDC identity provider, realm `ballware`[^8] |
+| Single public API entry | **ballware-apigateway** | Deny-by-default reverse proxy fronting all services behind `api.ballware.de`[^9] |
+| Shared .NET building blocks | **ballware-shared-dotnet** | Tenant persistence, claim/script authorization, CRUD endpoint mapping, jobs, MCP server plumbing[^10] |
 
-:::note Work in progress
-This portal is being built up phase by phase. Statements here are being
-verified against the source repositories; see [Contribute](./contribute.mdx)
-for the sourcing and verification rules.
-:::
+## Application model
+
+A *tenant* (Mandant) is an isolated customer deployment unit of the same
+platform: its data lives in its own database schema, and its application
+behavior is shaped by tenant metadata (navigation, entity definitions,
+templates, scripts). See [Tenancy](/docs/tenancy) and the
+[metadata model](/docs/metadata-model).
+
+Application behavior that goes beyond CRUD is expressed in **scripts**
+(Jint/JavaScript) at several extension points: server-side entity lifecycle
+scripts in the generic service, rights-check scripts, and client-side
+layout/rights hooks in the web client.[^2][^1]
+
+## Where to go next
+
+- [Architecture](/docs/architecture) — services, gateway routes, identity flow
+- [API reference](/api/) — OpenAPI-derived reference
+- [Administration](/administration/) — environments and operations
+- [User guide](/guide/) — end users and metadata authoring
+
+[^1]: `ballware-angular/README.md`
+[^2]: `ballware-generic-service/README.md`
+[^3]: `ballware-meta-service/README.md`
+[^4]: `ballware-document-service/README.md`
+[^5]: `ballware-storage-service/README.md`
+[^6]: purpose reconstructed from `ballware-ml-service/src/` (AutoML engine, jobs, service client); the service README is empty of content
+[^7]: `ballware-llm-service/README.md`
+[^8]: `ballware-keycloak/README.md`
+[^9]: `ballware-apigateway/README.md`
+[^10]: `ballware-shared-dotnet/README.md`
